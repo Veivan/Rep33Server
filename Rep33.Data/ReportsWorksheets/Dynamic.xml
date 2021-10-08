@@ -1,0 +1,642 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ReportStructure>
+  <Name>Отчет по грузообороту</Name>
+  <Header>
+    <Row Cell="A1" Style="Header2">
+      <Caption Cell="A1">Динамика грузооборота Москва Карго</Caption>
+    </Row>
+    <Row Cell="A2:{#}2" Style="Header2">
+      <Caption Cell="A2" Data="Date" DateFormat="dd.MM.yyyy">16.01.2018</Caption>
+      <Values>
+        <Value Cell="{#}2" IsFormula="false" DateFormat="ddd" IsPrevDays="true" Data="Date">TEXT(DATE(2018,1,15), "ДДД")</Value>
+        <Value Cell="{#}2" IsFormula="false" DateFormat="ddd" Data="ReportDate">TEXT(DATE(2018,1,16), "ДДД")</Value>
+      </Values>
+    </Row>
+  </Header>
+  <Table Cell="A3:{#}91">
+    <Row Cell="A3:{#}4" Style="Header1">
+      <Caption Cell="A3"></Caption>
+      <Values>
+        <Value Cell="{#}3" IsFormula="false" DateFormat="dd.MMM" IsPrevDays="true" Data="Date"></Value>
+        <Value Cell="{#}3" IsFormula="false" DateFormat="dd.MMM" Data="ReportDate"></Value>
+      </Values>
+    </Row>
+    <Row Cell="A4:{#}4" Style="Header1">
+      <Caption Cell="A4">Общий грузооборот </Caption>
+      <Values>
+        <Value Cell="{#}4" IsFormula="true" IsPrevDays="true">{#}5+{#}41</Value>
+        <Value Cell="{#}4" IsFormula="true">'Отчет за день'!Q4</Value>
+      </Values>
+    </Row>
+    <Row Cell="A5:{#}5" Style="Header2">
+      <Caption Cell="A5">Всего груза выдано (в тоннах)</Caption>
+      <Values>
+        <Value Cell="{#}5" IsFormula="true" IsPrevDays="true">{#}6+{#}17+{#}26</Value>
+        <Value Cell="{#}5" IsFormula="true">'Отчет за день'!Q5</Value>
+      </Values>
+    </Row>
+    <Row Cell="A6:{#}6" Style="Header3">
+      <Caption Cell="A6">Вылетело на воздушных судах</Caption>
+      <Values>
+        <Value Cell="{#}6" IsFormula="true" IsPrevDays="true">{#}7+{#}12</Value>
+        <Value Cell="{#}6" IsFormula="true">'Отчет за день'!Q6</Value>
+      </Values>
+    </Row>
+    <Row Cell="A7:{#}7" Style="Header4" Collapsed="false">
+      <Caption Cell="A7">Груз</Caption>
+      <Values>
+        <Value Cell="{#}7" IsFormula="true" IsPrevDays="true">{#}8+{#}9+{#}10+{#}11</Value>
+        <Value Cell="{#}7" IsFormula="true">'Отчет за день'!Q7</Value>
+      </Values>
+    </Row>
+    <Row Cell="A8:{#}8" Style="Header5" Collapsed="false">
+      <Caption Cell="A8">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="{#}8" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='IssuedAirCargoAeroflot' and DATEREPORT=#{#}#" DataValue="VALUE">17</Value>
+        <Value Cell="{#}8" IsFormula="true">'Отчет за день'!Q8</Value>
+      </Values>
+    </Row>
+    <Row Cell="A9:{#}9" Style="Header5" Collapsed="false">
+      <Caption Cell="A9">AirBridgeCargo</Caption>
+      <Values>
+        <Value Cell="{#}9" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='IssuedAirCargoBridge' and DATEREPORT=#{#}#" DataValue="VALUE">22</Value>
+        <Value Cell="{#}9" IsFormula="true">'Отчет за день'!Q9</Value>
+      </Values>
+    </Row>
+    <Row Cell="A10:{#}10" Style="Header5" Collapsed="false">
+      <Caption Cell="A10">Nordwind Airlines (+ Pegas Fly)</Caption>
+      <Values>
+        <Value Cell="{#}10" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='IssuedAirCargoNord' and DATEREPORT=#{#}#" DataValue="VALUE">21</Value>
+        <Value Cell="{#}10" IsFormula="true">'Отчет за день'!Q10</Value>
+      </Values>
+    </Row>
+    <Row Cell="A11:{#}11" Style="Header5" Collapsed="false">
+      <Caption Cell="A11">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="{#}11" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='IssuedAirCargoOther' and DATEREPORT=#{#}#" DataValue="VALUE">21</Value>
+        <Value Cell="{#}11" IsFormula="true">'Отчет за день'!Q11</Value>
+      </Values>
+    </Row>
+    <Row Cell="A12:{#}12" Style="Header4" Collapsed="false">
+      <Caption Cell="A12">Почта</Caption>
+      <Values>
+        <Value Cell="{#}12" IsFormula="true" IsPrevDays="true">{#}13+{#}14+{#}15+{#}16</Value>
+        <Value Cell="{#}12" IsFormula="true">'Отчет за день'!Q12</Value>
+      </Values>
+    </Row>
+    <Row Cell="A13:{#}13" Style="Header5" Collapsed="false">
+      <Caption Cell="A13">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="{#}13" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='IssuedAirMailAeroflot' and DATEREPORT=#{#}#" DataValue="VALUE">44</Value>
+        <Value Cell="{#}13" IsFormula="true">'Отчет за день'!Q13</Value>
+      </Values>
+    </Row>
+    <Row Cell="A14:{#}14" Style="Header5" Collapsed="false">
+      <Caption Cell="A14">AirBridgeCargo</Caption>
+      <Values>
+        <Value Cell="{#}14" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='IssuedAirMailBridge' and DATEREPORT=#{#}#" DataValue="VALUE">33</Value>
+        <Value Cell="{#}14" IsFormula="true">'Отчет за день'!Q14</Value>
+      </Values>
+    </Row>
+    <Row Cell="A15:{#}15" Style="Header5" Collapsed="false">
+      <Caption Cell="A15">Nordwind Airlines (+ Pegas Fly)</Caption>
+      <Values>
+        <Value Cell="{#}15" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='IssuedAirMailNord' and DATEREPORT=#{#}#" DataValue="VALUE">33</Value>
+        <Value Cell="{#}15" IsFormula="true">'Отчет за день'!Q15</Value>
+      </Values>
+    </Row>
+    <Row Cell="A16:{#}16" Style="Header5" Collapsed="false">
+      <Caption Cell="A16">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="{#}16" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='IssuedAirMailOther' and DATEREPORT=#{#}#" DataValue="VALUE">33</Value>
+        <Value Cell="{#}16" IsFormula="true">'Отчет за день'!Q16</Value>
+      </Values>
+    </Row>
+    <Row Cell="A17:{#}17" Style="Header3">
+      <Caption Cell="A17">Выдано клиентам в Москве </Caption>
+      <Values>
+        <Value Cell="{#}17" IsFormula="true" IsPrevDays="true">{#}18+{#}22</Value>
+        <Value Cell="{#}17" IsFormula="true">'Отчет за день'!Q17</Value>
+      </Values>
+    </Row>
+    <Row Cell="A18:{#}18" Style="Header4">
+      <Caption Cell="A18">ВВЛ</Caption>
+      <Values>
+        <Value Cell="{#}18" IsFormula="true" IsPrevDays="true">{#}19+{#}20+{#}21</Value>
+        <Value Cell="{#}18" IsFormula="true">'Отчет за день'!Q18</Value>
+      </Values>
+    </Row>
+    <Row Cell="A19:{#}19" Style="Header5" Collapsed="true">
+      <Caption Cell="A19">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="{#}19" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='IssuedMoscowVVLAeroflot' and DATEREPORT=#{#}#" DataValue="VALUE">66</Value>
+        <Value Cell="{#}19" IsFormula="true">'Отчет за день'!Q19</Value>
+      </Values>
+    </Row>
+    <Row Cell="A20:{#}20" Style="Header5" Collapsed="true">
+      <Caption Cell="A20">Nordwind Airlines (+ Pegas Fly)</Caption>
+      <Values>
+        <Value Cell="{#}20" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='IssuedMoscowVVLNord' and DATEREPORT=#{#}#" DataValue="VALUE">11</Value>
+        <Value Cell="{#}20" IsFormula="true">'Отчет за день'!Q20</Value>
+      </Values>
+    </Row>
+    <Row Cell="A21:{#}21" Style="Header5" Collapsed="true">
+      <Caption Cell="A21">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="{#}21" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='IssuedMoscowVVLOther' and DATEREPORT=#{#}#" DataValue="VALUE">11</Value>
+        <Value Cell="{#}21" IsFormula="true">'Отчет за день'!Q21</Value>
+      </Values>
+    </Row>
+    <Row Cell="A22:{#}22" Style="Header4">
+      <Caption Cell="A22">МВЛ</Caption>
+      <Values>
+        <Value Cell="{#}22" IsFormula="true" IsPrevDays="true">{#}23+{#}24+{#}25</Value>
+        <Value Cell="{#}22" IsFormula="true">'Отчет за день'!Q22</Value>
+      </Values>
+    </Row>
+    <Row Cell="A23:{#}23" Style="Header5" Collapsed="true">
+      <Caption Cell="A23">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="{#}23" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='IssuedMoscowMVLAeroflot' and DATEREPORT=#{#}#" DataValue="VALUE">65</Value>
+        <Value Cell="{#}23" IsFormula="true">'Отчет за день'!Q23</Value>
+      </Values>
+    </Row>
+    <Row Cell="A24:{#}24" Style="Header5" Collapsed="true">
+      <Caption Cell="A24">Nordwind Airlines (+ Pegas Fly)</Caption>
+      <Values>
+        <Value Cell="{#}24" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='IssuedMoscowMVLNord' and DATEREPORT=#{#}#" DataValue="VALUE">54</Value>
+        <Value Cell="{#}24" IsFormula="true">'Отчет за день'!Q24</Value>
+      </Values>
+    </Row>
+    <Row Cell="A25:{#}25" Style="Header5" Collapsed="true">
+      <Caption Cell="A25">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="{#}25" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='IssuedMoscowMVLOther' and DATEREPORT=#{#}#" DataValue="VALUE">54</Value>
+        <Value Cell="{#}25" IsFormula="true">'Отчет за день'!Q25</Value>
+      </Values>
+    </Row>
+    <Row Cell="A26:{#}26" Style="Header3">
+      <Caption Cell="A26">Выдано на другие СВХ в Москве</Caption>
+      <Values>
+        <Value Cell="{#}26" IsFormula="true" IsPrevDays="true">{#}27+{#}30+{#}33</Value>
+        <Value Cell="{#}26" IsFormula="true">'Отчет за день'!Q26</Value>
+      </Values>
+    </Row>
+    <Row Cell="A27:{#}27" Style="Header4">
+      <Caption Cell="A27">с рейсов Аэрофлот</Caption>
+      <Values>
+        <Value Cell="{#}27" IsFormula="true" IsPrevDays="true">{#}28+{#}29</Value>
+        <Value Cell="{#}27" IsFormula="true">'Отчет за день'!Q27</Value>
+      </Values>
+    </Row>
+    <Row Cell="A28:{#}28" Style="Header5" Collapsed="true">
+      <Caption Cell="A28">через склад</Caption>
+      <Values>
+        <Value Cell="{#}28" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='IssuedSVHAeroflotStock' and DATEREPORT=#{#}#" DataValue="VALUE">54</Value>
+        <Value Cell="{#}28" IsFormula="true">'Отчет за день'!Q28</Value>
+      </Values>
+    </Row>
+    <Row Cell="A29:{#}29" Style="Header5" Collapsed="true">
+      <Caption Cell="A29">из под борта</Caption>
+      <Values>
+        <Value Cell="{#}29" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='IssuedSVHAeroflotBoard' and DATEREPORT=#{#}#" DataValue="VALUE">54</Value>
+        <Value Cell="{#}29" IsFormula="true">'Отчет за день'!Q29</Value>
+      </Values>
+    </Row>
+    <Row Cell="A30:{#}30" Style="Header4">
+      <Caption Cell="A30">с рейсов AirBridgeCargo</Caption>
+      <Values>
+        <Value Cell="{#}30" IsFormula="true" IsPrevDays="true">{#}31+{#}32</Value>
+        <Value Cell="{#}30" IsFormula="true">'Отчет за день'!Q30</Value>
+      </Values>
+    </Row>
+    <Row Cell="A31:{#}31" Style="Header5" Collapsed="true">
+      <Caption Cell="A31">через склад</Caption>
+      <Values>
+        <Value Cell="{#}31" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='IssuedSVHBridgeStock' and DATEREPORT=#{#}#" DataValue="VALUE">56</Value>
+        <Value Cell="{#}31" IsFormula="true">'Отчет за день'!Q31</Value>
+      </Values>
+    </Row>
+    <Row Cell="A32:{#}32" Style="Header5" Collapsed="true">
+      <Caption Cell="A32">из под борта</Caption>
+      <Values>
+        <Value Cell="{#}32" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='IssuedSVHBridgeBoard' and DATEREPORT=#{#}#" DataValue="VALUE">54</Value>
+        <Value Cell="{#}32" IsFormula="true">'Отчет за день'!Q32</Value>
+      </Values>
+    </Row>
+    <Row Cell="A33:{#}33" Style="Header4">
+      <Caption Cell="A33">с рейсов Nordwind Airlines (+ Pegas Fly)</Caption>
+      <Values>
+        <Value Cell="{#}33" IsFormula="true" IsPrevDays="true">{#}34+{#}35</Value>
+        <Value Cell="{#}33" IsFormula="true">'Отчет за день'!Q33</Value>
+      </Values>
+    </Row>
+    <Row Cell="A34:{#}34" Style="Header5" Collapsed="true">
+      <Caption Cell="A34">через склад</Caption>
+      <Values>
+        <Value Cell="{#}34" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='IssuedSVHNordStock' and DATEREPORT=#{#}#" DataValue="VALUE">56</Value>
+        <Value Cell="{#}34" IsFormula="true">'Отчет за день'!Q34</Value>
+      </Values>
+    </Row>
+    <Row Cell="A35:{#}35" Style="Header5" Collapsed="true">
+      <Caption Cell="A35">из под борта</Caption>
+      <Values>
+        <Value Cell="{#}35" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='IssuedSVHNordBoard' and DATEREPORT=#{#}#" DataValue="VALUE">54</Value>
+        <Value Cell="{#}35" IsFormula="true">'Отчет за день'!Q35</Value>
+      </Values>
+    </Row>
+    <Row Cell="A36:{#}36" Style="Header3">
+      <Caption Cell="A36">Обслужено рейсов по вылету</Caption>
+      <Values>
+        <Value Cell="{#}36" IsFormula="true" IsPrevDays="true">{#}37+{#}38+{#}39+{#}40</Value>
+        <Value Cell="{#}36" IsFormula="true">'Отчет за день'!Q36</Value>
+      </Values>
+    </Row>
+    <Row Cell="A37:{#}37" Style="Header5" Collapsed="true">
+      <Caption Cell="A37">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="{#}37" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='IssuedDepartureAeroflot' and DATEREPORT=#{#}#" DataValue="VALUE">34</Value>
+        <Value Cell="{#}37" IsFormula="true">'Отчет за день'!Q37</Value>
+      </Values>
+    </Row>
+    <Row Cell="A38:{#}38" Style="Header5" Collapsed="true">
+      <Caption Cell="A38">AirBridgeCargo</Caption>
+      <Values>
+        <Value Cell="{#}38" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='IssuedDepartureBridge' and DATEREPORT=#{#}#" DataValue="VALUE">74</Value>
+        <Value Cell="{#}38" IsFormula="true">'Отчет за день'!Q38</Value>
+      </Values>
+    </Row>
+    <Row Cell="A39:{#}39" Style="Header5" Collapsed="true">
+      <Caption Cell="A39">Nordwind Airlines (+ Pegas Fly)</Caption>
+      <Values>
+        <Value Cell="{#}39" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='IssuedDepartureNord' and DATEREPORT=#{#}#" DataValue="VALUE">23</Value>
+        <Value Cell="{#}39" IsFormula="true">'Отчет за день'!Q39</Value>
+      </Values>
+    </Row>
+    <Row Cell="A40:{#}40" Style="Header5" Collapsed="true">
+      <Caption Cell="A40">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="{#}40" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='IssuedDepartureOther' and DATEREPORT=#{#}#" DataValue="VALUE">23</Value>
+        <Value Cell="{#}40" IsFormula="true">'Отчет за день'!Q40</Value>
+      </Values>
+    </Row>
+    <Row Cell="A41:{#}41" Style="Header2">
+      <Caption Cell="A41">Всего груза поступило (в тоннах)</Caption>
+      <Values>
+        <Value Cell="{#}41" IsFormula="true" IsPrevDays="true">{#}42+{#}54+{#}63</Value>
+        <Value Cell="{#}41" IsFormula="true">'Отчет за день'!Q41</Value>
+      </Values>
+    </Row>
+    <Row Cell="A42:{#}42" Style="Header3">
+      <Caption Cell="A42">Прилетело на воздушных судах</Caption>
+      <Values>
+        <Value Cell="{#}42" IsFormula="true" IsPrevDays="true">{#}43+{#}49</Value>
+        <Value Cell="{#}42" IsFormula="true">'Отчет за день'!Q42</Value>
+      </Values>
+    </Row>
+    <Row Cell="A43:{#}43" Style="Header4" Collapsed="false">
+      <Caption Cell="A43">Груз</Caption>
+      <Values>
+        <Value Cell="{#}43" IsFormula="true" IsPrevDays="true">{#}44+{#}45+{#}47+{#}48</Value>
+        <Value Cell="{#}43" IsFormula="true">'Отчет за день'!Q43</Value>
+      </Values>
+    </Row>
+    <Row Cell="A44:{#}44" Style="Header5" Collapsed="false">
+      <Caption Cell="A44">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="{#}44" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='ReceivedAirCargoAeroflot' and DATEREPORT=#{#}#" DataValue="VALUE">67</Value>
+        <Value Cell="{#}44" IsFormula="true">'Отчет за день'!Q44</Value>
+      </Values>
+    </Row>
+    <Row Cell="A45:{#}45" Style="Header5" Collapsed="false">
+      <Caption Cell="A45">AirBridgeCargo</Caption>
+      <Values>
+        <Value Cell="{#}45" IsFormula="true" IsPrevDays="true" Data="" QueryName="" Filter="" DataValue="">{#}30+{#}46</Value>
+        <Value Cell="{#}45" IsFormula="true">'Отчет за день'!Q45</Value>
+      </Values>
+    </Row>
+    <Row Cell="A46:{#}46" Style="Header6" Collapsed="true">
+      <Caption Cell="A46">справочно: в т.ч. Импорт Москва Карго</Caption>
+      <Values>
+        <Value Cell="{#}46" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='ReceivedAirCargoBridge' and DATEREPORT=#{#}#" DataValue="VALUE">0</Value>
+        <Value Cell="{#}46" IsFormula="true">'Отчет за день'!Q46</Value>
+      </Values>
+    </Row>
+    <Row Cell="A47:{#}47" Style="Header5" Collapsed="false">
+      <Caption Cell="A47">Nordwind Airlines (+ Pegas Fly)</Caption>
+      <Values>
+        <Value Cell="{#}47" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='ReceivedAirCargoNord' and DATEREPORT=#{#}#" DataValue="VALUE">34</Value>
+        <Value Cell="{#}47" IsFormula="true">'Отчет за день'!Q47</Value>
+      </Values>
+    </Row>
+    <Row Cell="A48:{#}48" Style="Header5" Collapsed="false">
+      <Caption Cell="A48">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="{#}48" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='ReceivedAirCargoOther' and DATEREPORT=#{#}#" DataValue="VALUE">34</Value>
+        <Value Cell="{#}48" IsFormula="true">'Отчет за день'!Q48</Value>
+      </Values>
+    </Row>
+    <Row Cell="A49:{#}49" Style="Header4" Collapsed="false">
+      <Caption Cell="A49">Почта</Caption>
+      <Values>
+        <Value Cell="{#}49" IsFormula="true" IsPrevDays="true">{#}50+{#}51+{#}52+{#}53</Value>
+        <Value Cell="{#}49" IsFormula="true">'Отчет за день'!Q49</Value>
+      </Values>
+    </Row>
+    <Row Cell="A50:{#}50" Style="Header5" Collapsed="false">
+      <Caption Cell="A50">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="{#}50" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='ReceivedAirMailAeroflot' and DATEREPORT=#{#}#" DataValue="VALUE">33</Value>
+        <Value Cell="{#}50" IsFormula="true">'Отчет за день'!Q50</Value>
+      </Values>
+    </Row>
+    <Row Cell="A51:{#}51" Style="Header5" Collapsed="false">
+      <Caption Cell="A51">AirBridgeCargo</Caption>
+      <Values>
+        <Value Cell="{#}51" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='ReceivedAirMailBridge' and DATEREPORT=#{#}#" DataValue="VALUE">78</Value>
+        <Value Cell="{#}51" IsFormula="true">'Отчет за день'!Q51</Value>
+      </Values>
+    </Row>
+    <Row Cell="A52:{#}52" Style="Header5" Collapsed="false">
+      <Caption Cell="A52">Nordwind Airlines (+ Pegas Fly)</Caption>
+      <Values>
+        <Value Cell="{#}52" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='ReceivedAirMailNord' and DATEREPORT=#{#}#" DataValue="VALUE">28</Value>
+        <Value Cell="{#}52" IsFormula="true">'Отчет за день'!Q52</Value>
+      </Values>
+    </Row>
+    <Row Cell="A53:{#}53" Style="Header5" Collapsed="false">
+      <Caption Cell="A53">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="{#}53" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='ReceivedAirMailOther' and DATEREPORT=#{#}#" DataValue="VALUE">28</Value>
+        <Value Cell="{#}53" IsFormula="true">'Отчет за день'!Q53</Value>
+      </Values>
+    </Row>
+    <Row Cell="A54:{#}54" Style="Header3">
+      <Caption Cell="A54">Принято от клиентов в Москве</Caption>
+      <Values>
+        <Value Cell="{#}54" IsFormula="true" IsPrevDays="true">{#}55+{#}59</Value>
+        <Value Cell="{#}54" IsFormula="true">'Отчет за день'!Q54</Value>
+      </Values>
+    </Row>
+    <Row Cell="A55:{#}55" Style="Header4">
+      <Caption Cell="A55">ВВЛ</Caption>
+      <Values>
+        <Value Cell="{#}55" IsFormula="true" IsPrevDays="true">{#}56+{#}57+{#}58</Value>
+        <Value Cell="{#}55" IsFormula="true">'Отчет за день'!Q55</Value>
+      </Values>
+    </Row>
+    <Row Cell="A56:{#}56" Style="Header5" Collapsed="true">
+      <Caption Cell="A56">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="{#}56" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='ReceivedMoscowVVLAeroflot' and DATEREPORT=#{#}#" DataValue="VALUE">58</Value>
+        <Value Cell="{#}56" IsFormula="true">'Отчет за день'!Q56</Value>
+      </Values>
+    </Row>
+    <Row Cell="A57:{#}57" Style="Header5" Collapsed="true">
+      <Caption Cell="A57">Nordwind Airlines (+ Pegas Fly)</Caption>
+      <Values>
+        <Value Cell="{#}57" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='ReceivedMoscowVVLNord' and DATEREPORT=#{#}#" DataValue="VALUE">44</Value>
+        <Value Cell="{#}57" IsFormula="true">'Отчет за день'!Q57</Value>
+      </Values>
+    </Row>
+    <Row Cell="A58:{#}58" Style="Header5" Collapsed="true">
+      <Caption Cell="A58">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="{#}58" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='ReceivedMoscowVVLOther' and DATEREPORT=#{#}#" DataValue="VALUE">44</Value>
+        <Value Cell="{#}58" IsFormula="true">'Отчет за день'!Q58</Value>
+      </Values>
+    </Row>
+    <Row Cell="A59:{#}59" Style="Header4">
+      <Caption Cell="A59">МВЛ</Caption>
+      <Values>
+        <Value Cell="{#}59" IsFormula="true" IsPrevDays="true">{#}60+{#}61+{#}62</Value>
+        <Value Cell="{#}59" IsFormula="true">'Отчет за день'!Q59</Value>
+      </Values>
+    </Row>
+    <Row Cell="A60:{#}60" Style="Header5" Collapsed="true">
+      <Caption Cell="A60">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="{#}60" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='ReceivedMoscowMVLAeroflot' and DATEREPORT=#{#}#" DataValue="VALUE">56</Value>
+        <Value Cell="{#}60" IsFormula="true">'Отчет за день'!Q60</Value>
+      </Values>
+    </Row>
+    <Row Cell="A61:{#}61" Style="Header5" Collapsed="true">
+      <Caption Cell="A61">Nordwind Airlines (+ Pegas Fly)</Caption>
+      <Values>
+        <Value Cell="{#}61" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='ReceivedMoscowMVLNord' and DATEREPORT=#{#}#" DataValue="VALUE">23</Value>
+        <Value Cell="{#}61" IsFormula="true">'Отчет за день'!Q61</Value>
+      </Values>
+    </Row>
+    <Row Cell="A62:{#}62" Style="Header5" Collapsed="true">
+      <Caption Cell="A62">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="{#}62" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='ReceivedMoscowMVLOther' and DATEREPORT=#{#}#" DataValue="VALUE">23</Value>
+        <Value Cell="{#}62" IsFormula="true">'Отчет за день'!Q62</Value>
+      </Values>
+    </Row>
+    <Row Cell="A63:{#}63" Style="Header3">
+      <Caption Cell="A63">Получено с  других СВХ в Москве</Caption>
+      <Values>
+        <Value Cell="{#}63" IsFormula="true" IsPrevDays="true">{#}64+{#}68</Value>
+        <Value Cell="{#}63" IsFormula="true">'Отчет за день'!Q63</Value>
+      </Values>
+    </Row>
+    <Row Cell="A64:{#}64" Style="Header4" Collapsed="true">
+      <Caption Cell="A64">ВВЛ</Caption>
+      <Values>
+        <Value Cell="{#}64" IsFormula="true" IsPrevDays="true">{#}65+{#}66+{#}67</Value>
+        <Value Cell="{#}64" IsFormula="true">'Отчет за день'!Q64</Value>
+      </Values>
+    </Row>
+    <Row Cell="A65:{#}65" Style="Header5" Collapsed="true">
+      <Caption Cell="A65">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="{#}65" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='ReceivedSVHVVLAeroflot' and DATEREPORT=#{#}#" DataValue="VALUE">87</Value>
+        <Value Cell="{#}65" IsFormula="true">'Отчет за день'!Q65</Value>
+      </Values>
+    </Row>
+    <Row Cell="A66:{#}66" Style="Header5" Collapsed="true">
+      <Caption Cell="A66">Nordwind Airlines (+ Pegas Fly)</Caption>
+      <Values>
+        <Value Cell="{#}66" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='ReceivedSVHVVLNord' and DATEREPORT=#{#}#" DataValue="VALUE">54</Value>
+        <Value Cell="{#}66" IsFormula="true">'Отчет за день'!Q66</Value>
+      </Values>
+    </Row>
+    <Row Cell="A67:{#}67" Style="Header5" Collapsed="true">
+      <Caption Cell="A67">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="{#}67" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='ReceivedSVHVVLOther' and DATEREPORT=#{#}#" DataValue="VALUE">54</Value>
+        <Value Cell="{#}67" IsFormula="true">'Отчет за день'!Q67</Value>
+      </Values>
+    </Row>
+    <Row Cell="A68:{#}68" Style="Header4" Collapsed="true">
+      <Caption Cell="A68">МВЛ</Caption>
+      <Values>
+        <Value Cell="{#}68" IsFormula="true" IsPrevDays="true">{#}69+{#}70+{#}71</Value>
+        <Value Cell="{#}68" IsFormula="true">'Отчет за день'!Q68</Value>
+      </Values>
+    </Row>
+    <Row Cell="A69:{#}69" Style="Header5" Collapsed="true">
+      <Caption Cell="A69">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="{#}69" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='ReceivedSVHMVLAeroflot' and DATEREPORT=#{#}#" DataValue="VALUE">34</Value>
+        <Value Cell="{#}69" IsFormula="true">'Отчет за день'!Q69</Value>
+      </Values>
+    </Row>
+    <Row Cell="A70:{#}70" Style="Header5" Collapsed="true">
+      <Caption Cell="A70">Nordwind Airlines (+ Pegas Fly)</Caption>
+      <Values>
+        <Value Cell="{#}70" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='ReceivedSVHMVLNord' and DATEREPORT=#{#}#" DataValue="VALUE">34</Value>
+        <Value Cell="{#}70" IsFormula="true">'Отчет за день'!Q70</Value>
+      </Values>
+    </Row>
+    <Row Cell="A71:{#}71" Style="Header5" Collapsed="true">
+      <Caption Cell="A71">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="{#}71" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='ReceivedSVHMVLOther' and DATEREPORT=#{#}#" DataValue="VALUE">34</Value>
+        <Value Cell="{#}71" IsFormula="true">'Отчет за день'!Q71</Value>
+      </Values>
+    </Row>
+    <Row Cell="A72:{#}72" Style="Header3">
+      <Caption Cell="A72">Обслужено рейсов по прилету</Caption>
+      <Values>
+        <Value Cell="{#}72" IsFormula="true" IsPrevDays="true">SUM({#}73:{#}76)</Value>
+        <Value Cell="{#}72" IsFormula="true">'Отчет за день'!Q72</Value>
+      </Values>
+    </Row>
+    <Row Cell="A73:{#}73" Style="Header5" Collapsed="true">
+      <Caption Cell="A73">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="{#}73" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='ReceivedDepartureAeroflot' and DATEREPORT=#{#}#" DataValue="VALUE">87</Value>
+        <Value Cell="{#}73" IsFormula="true">'Отчет за день'!Q73</Value>
+      </Values>
+    </Row>
+    <Row Cell="A74:{#}74" Style="Header5" Collapsed="true">
+      <Caption Cell="A74">AirBridgeCargo</Caption>
+      <Values>
+        <Value Cell="{#}74" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='ReceivedDepartureBridge' and DATEREPORT=#{#}#" DataValue="VALUE">23</Value>
+        <Value Cell="{#}74" IsFormula="true">'Отчет за день'!Q74</Value>
+      </Values>
+    </Row>
+    <Row Cell="A75:{#}75" Style="Header5" Collapsed="true">
+      <Caption Cell="A75">Nordwind Airlines (+ Pegas Fly)</Caption>
+      <Values>
+        <Value Cell="{#}75" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='ReceivedDepartureNord' and DATEREPORT=#{#}#" DataValue="VALUE">92</Value>
+        <Value Cell="{#}75" IsFormula="true">'Отчет за день'!Q75</Value>
+      </Values>
+    </Row>
+    <Row Cell="A76:{#}76" Style="Header5" Collapsed="true">
+      <Caption Cell="A76">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="{#}76" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='ReceivedDepartureOther' and DATEREPORT=#{#}#" DataValue="VALUE">92</Value>
+        <Value Cell="{#}76" IsFormula="true">'Отчет за день'!Q76</Value>
+      </Values>
+    </Row>
+    <Row Cell="A77:{#}77" Style="Header2">
+      <Caption Cell="A77">Складские остатки (в тоннах)</Caption>
+      <Values>
+        <Value Cell="{#}77" IsFormula="true" IsPrevDays="true">{#}78+{#}85</Value>
+        <Value Cell="{#}77" IsFormula="true">'Отчет за день'!Q77</Value>
+      </Values>
+    </Row>
+    <Row Cell="A78:{#}78" Style="Header3">
+      <Caption Cell="A78">Импортный груз</Caption>
+      <Values>
+        <Value Cell="{#}78" IsFormula="true" IsPrevDays="true">{#}79+{#}82</Value>
+        <Value Cell="{#}78" IsFormula="true">'Отчет за день'!Q78</Value>
+      </Values>
+    </Row>
+    <Row Cell="A79:{#}79" Style="Header4">
+      <Caption Cell="A79">ВВЛ</Caption>
+      <Values>
+        <Value Cell="{#}79" IsFormula="true" IsPrevDays="true">{#}80+{#}81</Value>
+        <Value Cell="{#}79" IsFormula="true">'Отчет за день'!Q79</Value>
+      </Values>
+    </Row>
+    <Row Cell="A80:{#}80" Style="Header5" Collapsed="true">
+      <Caption Cell="A80">Готов к выдаче</Caption>
+      <Values>
+        <Value Cell="{#}80" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='StockImportVVLReady' and DATEREPORT=#{#}#" DataValue="VALUE">23</Value>
+        <Value Cell="{#}80" IsFormula="true">'Отчет за день'!Q80</Value>
+      </Values>
+    </Row>
+    <Row Cell="A81:{#}81" Style="Header5" Collapsed="true">
+      <Caption Cell="A81">В обработке на складе</Caption>
+      <Values>
+        <Value Cell="{#}81" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='StockImportVVLProcess' and DATEREPORT=#{#}#" DataValue="VALUE">83</Value>
+        <Value Cell="{#}81" IsFormula="true">'Отчет за день'!Q81</Value>
+      </Values>
+    </Row>
+    <Row Cell="A82:{#}82" Style="Header4">
+      <Caption Cell="A82">МВЛ</Caption>
+      <Values>
+        <Value Cell="{#}82" IsFormula="true" IsPrevDays="true">{#}83+{#}84</Value>
+        <Value Cell="{#}82" IsFormula="true">'Отчет за день'!Q82</Value>
+      </Values>
+    </Row>
+    <Row Cell="A83:{#}83" Style="Header5" Collapsed="true">
+      <Caption Cell="A83">Готов к выдаче</Caption>
+      <Values>
+        <Value Cell="{#}83" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='StockImportMVLReady' and DATEREPORT=#{#}#" DataValue="VALUE">46</Value>
+        <Value Cell="{#}83" IsFormula="true">'Отчет за день'!Q83</Value>
+      </Values>
+    </Row>
+    <Row Cell="A84:{#}84" Style="Header5" Collapsed="true">
+      <Caption Cell="A84">В обработке на складе</Caption>
+      <Values>
+        <Value Cell="{#}84" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='StockImportMVLProcess' and DATEREPORT=#{#}#" DataValue="VALUE">85</Value>
+        <Value Cell="{#}84" IsFormula="true">'Отчет за день'!Q84</Value>
+      </Values>
+    </Row>
+    <Row Cell="A85:{#}85" Style="Header3">
+      <Caption Cell="A85">Экспортный груз</Caption>
+      <Values>
+        <Value Cell="{#}85" IsFormula="true" IsPrevDays="true">{#}86+{#}89</Value>
+        <Value Cell="{#}85" IsFormula="true">'Отчет за день'!Q85</Value>
+      </Values>
+    </Row>
+    <Row Cell="A86:{#}86" Style="Header4">
+      <Caption Cell="A86">ВВЛ</Caption>
+      <Values>
+        <Value Cell="{#}86" IsFormula="true" IsPrevDays="true">{#}87+{#}88</Value>
+        <Value Cell="{#}86" IsFormula="true">'Отчет за день'!Q86</Value>
+      </Values>
+    </Row>
+    <Row Cell="A87:{#}87" Style="Header5" Collapsed="true">
+      <Caption Cell="A87">Трансферный груз</Caption>
+      <Values>
+        <Value Cell="{#}87" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='StockExportVVLTransfer' and DATEREPORT=#{#}#" DataValue="VALUE">33</Value>
+        <Value Cell="{#}87" IsFormula="true">'Отчет за день'!Q87</Value>
+      </Values>
+    </Row>
+    <Row Cell="A88:{#}88" Style="Header5" Collapsed="true">
+      <Caption Cell="A88">Экспортный груз</Caption>
+      <Values>
+        <Value Cell="{#}88" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='StockExportVVLExport' and DATEREPORT=#{#}#" DataValue="VALUE">67</Value>
+        <Value Cell="{#}88" IsFormula="true">'Отчет за день'!Q88</Value>
+      </Values>
+    </Row>
+    <Row Cell="A89:{#}89" Style="Header4">
+      <Caption Cell="A89">МВЛ</Caption>
+      <Values>
+        <Value Cell="{#}89" IsFormula="true" IsPrevDays="true">{#}90+{#}91</Value>
+        <Value Cell="{#}89" IsFormula="true">'Отчет за день'!Q89</Value>
+      </Values>
+    </Row>
+    <Row Cell="A90:{#}90" Style="Header5" Collapsed="true">
+      <Caption Cell="A90">Трансферный груз</Caption>
+      <Values>
+        <Value Cell="{#}90" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='StockExportMVLTransfer' and DATEREPORT=#{#}#" DataValue="VALUE">44</Value>
+        <Value Cell="{#}90" IsFormula="true">'Отчет за день'!Q90</Value>
+      </Values>
+    </Row>
+    <Row Cell="A91:{#}91" Style="Header5" Collapsed="true">
+      <Caption Cell="A91">Экспортный груз</Caption>
+      <Values>
+        <Value Cell="{#}91" IsFormula="false" IsPrevDays="true" Data="" QueryName="PrevDays" Filter="VALUENAME='StockExportMVLExport' and DATEREPORT=#{#}#" DataValue="VALUE">23</Value>
+        <Value Cell="{#}91" IsFormula="true">'Отчет за день'!Q91</Value>
+      </Values>
+    </Row>
+  </Table>
+  <Freeze Row ="1" Col="2"></Freeze>
+</ReportStructure>
