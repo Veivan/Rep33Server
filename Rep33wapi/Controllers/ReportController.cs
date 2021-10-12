@@ -13,16 +13,22 @@ namespace Rep33.WEB.Controllers
     {
 
         [Route("api/report/build")]
-        public void Get()
+        public string BuildAdmin([FromQuery] DateTime dateRep, bool isSave = false, bool useSavedData = false)
         {
-            var reportManager = new ReportManager();
-            reportManager.CreateReport(System.DateTime.Today, "d:\\Work\\Temp\\r33.xls", false, true);
+            var reportManager = new ReportManager(Common.RepKind.Manual, isSave, useSavedData);
+            reportManager.CreateReport(dateRep);
+            //return "built";
+
+            return $"dateRep={dateRep}; isSave={isSave}; useSavedData={useSavedData}";
         }
 
         [Route("api/report/buildsend")]
-        public string GetParam()
+        public void BuildMan([FromQuery] DateTime dateRep)
         {
-            return "builtsent";
+            var reportManager = new ReportManager(Common.RepKind.Manual);
+            reportManager.CreateReport(dateRep);
+            //reportManager.CreateReport(System.DateTime.Today, "d:\\Work\\Temp\\r33.xls", false, true);
+            //return "builtsent";
         }
 
     }

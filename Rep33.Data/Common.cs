@@ -4,6 +4,13 @@ namespace Rep33.Data
 {
     public static class Common
     {
+        public enum RepKind
+        {
+            Auto,
+            Manual,
+            Admin
+        }
+
         public static string GetNextAvailableFilename(string filename)
         {
             if (!System.IO.File.Exists(filename)) return filename;

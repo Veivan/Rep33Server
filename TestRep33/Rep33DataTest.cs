@@ -9,8 +9,9 @@ namespace TestRep33
         [TestMethod]
         public void ReportManagerTest()
         {
-            var reportManager = new ReportManager();
-            reportManager.CreateReport(System.DateTime.Today, "d:\\Work\\Temp\\r33.xls", false, true);
+            var reportManager = new ReportManager(Common.RepKind.Manual);
+            reportManager.CreateReport(System.DateTime.Today);
+//            reportManager.CreateReport(System.DateTime.Today, "d:\\Work\\Temp\\r33.xls", false, true);
         }
 
         [TestMethod]

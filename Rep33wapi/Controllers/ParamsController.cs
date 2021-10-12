@@ -12,7 +12,7 @@ namespace Rep33.WEB.Controllers
         [HttpGet]
         public string GetParams()
         {
-            string[] parnames = { "lanch_date", "lanch_time", "save2bd", "use_bd_data", "use_timer" };
+            string[] parnames = { "use_timer", "launch_time", "save2bd" };
             JObject o = new JObject();
 
             foreach (var parn in parnames)

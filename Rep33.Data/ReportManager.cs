@@ -9,10 +9,39 @@ namespace Rep33.Data
 {
     public class ReportManager
     {
-        public bool CreateReport(DateTime rd, string FileName, bool IsSave, bool UseSavedData)
+        private Common.RepKind state;
+        private bool IsSave;
+        private bool UseSavedData;
+
+        public ReportManager(Common.RepKind _state, bool isSave, bool useSavedData)
         {
+            this.state = _state;
+            this.IsSave = isSave;
+            this.UseSavedData = useSavedData;
+        }
+
+        public ReportManager(Common.RepKind _state)
+        {
+            this.state = _state;
+            if (_state == Common.RepKind.Manual)
+            {
+                this.IsSave = false;
+                this.UseSavedData = true;
+            }
+            else
+            {
+                this.IsSave = true;
+                this.UseSavedData = false;
+            }
+        }
+
+        public bool CreateReport(DateTime rd)
+        {
+            string FileName = "";
+
             var data = new ReportData("reporter", "RepTi87BnVuy21", "(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=orabase.mcargo)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=CHAOS)))", "MASTER", "all%work", "partner", "172.30.80.49");
-            //DB.ReportData data = new DB.ReportData("reporter", "RepTi87BnVuy21", "(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=10.80.15.3)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=CHAOS)))", "MASTER", "all%work", "partner", "10.80.0.48");
+
+            //var data = new ReportData("reporter", "RepTi87BnVuy21", "(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=10.80.15.3)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=CHAOS)))", "MASTER", "all%work", "partner", "10.80.0.48");
             //DB.ReportData data = new DB.ReportData("reporter", "RepTi87BnVuy21", "(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=10.80.15.3)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=CHAOS)))", "MASTER", "all%work", "partner", "172.30.80.49");
             try
             {
@@ -43,7 +72,7 @@ namespace Rep33.Data
                 rpt.ReportData = data;
                 rpt.FileName = FileName; 
                 rpt.ReportName = "Отчет по грузообороту 33В";
-                rpt.IsSaveValues = IsSave; // chkSave.Checked;
+                rpt.IsSaveValues = IsSave; 
                 
                 Log.Information("Построение отчета");
                 if (!rpt.CreateReport()) {
