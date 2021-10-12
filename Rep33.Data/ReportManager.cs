@@ -13,6 +13,13 @@ namespace Rep33.Data
         private bool IsSave;
         private bool UseSavedData;
 
+
+        /// <summary>
+        /// Constructor used with Common.RepKind.Admin
+        /// </summary>
+        /// <param name="_state"></param>
+        /// <param name="isSave"></param>
+        /// <param name="useSavedData"></param>
         public ReportManager(Common.RepKind _state, bool isSave, bool useSavedData)
         {
             this.state = _state;
@@ -20,6 +27,10 @@ namespace Rep33.Data
             this.UseSavedData = useSavedData;
         }
 
+        /// <summary>
+        /// Constructor used with Common.RepKind.Manual & Auto
+        /// </summary>
+        /// <param name="_state"></param>
         public ReportManager(Common.RepKind _state)
         {
             this.state = _state;
@@ -79,7 +90,30 @@ namespace Rep33.Data
                     Log.Error($"Построение отчета:{rpt.Error}");
                     return false;
                 }
-//                if (chkSave.Checked && !UseSavedData) data.Save(rpt.DataToSave, rd);
+
+                if (string.IsNullOrWhiteSpace(FileName)) FileName = rpt.ReportName;
+                if (File.Exists(FileName))
+                {
+                    try
+                    {
+                        File.Delete(FileName);
+                    }
+                    catch
+                    {
+                        FileName = Common.GetNextAvailableFilename(FileName);
+                    }
+                }
+                try
+                {
+                    File.WriteAllBytes(FileName, rpt.excelbin);
+                }
+                catch (Exception ex)
+                {
+                     Log.Error($"Ошибка excel.SaveAs:{ex}");
+                    return false;
+                }
+
+                //                if (chkSave.Checked && !UseSavedData) data.Save(rpt.DataToSave, rd);
                 rpt = null;
             }
             finally
