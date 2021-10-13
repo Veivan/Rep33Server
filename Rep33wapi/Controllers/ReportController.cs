@@ -16,7 +16,10 @@ namespace Rep33.WEB.Controllers
         public string BuildAdmin([FromQuery] DateTime dateRep, bool isSave = false, bool useSavedData = false)
         {
             var reportManager = new ReportManager(Common.RepKind.Manual, isSave, useSavedData);
-            reportManager.CreateReport(dateRep);
+            if (!reportManager.CreateReport(dateRep))
+                return "";
+            reportManager.SaveFile();
+
             //return "built";
 
             return $"dateRep={dateRep}; isSave={isSave}; useSavedData={useSavedData}";
@@ -26,7 +29,9 @@ namespace Rep33.WEB.Controllers
         public void BuildMan([FromQuery] DateTime dateRep)
         {
             var reportManager = new ReportManager(Common.RepKind.Manual);
-            reportManager.CreateReport(dateRep);
+            if (!reportManager.CreateReport(dateRep))
+                return;
+            reportManager.SaveFile();
             //reportManager.CreateReport(System.DateTime.Today, "d:\\Work\\Temp\\r33.xls", false, true);
             //return "builtsent";
         }

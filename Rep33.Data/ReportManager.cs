@@ -1,8 +1,7 @@
-﻿using System;
+﻿using Serilog;
+using System;
+using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using Serilog;
 
 
 namespace Rep33.Data
@@ -12,6 +11,8 @@ namespace Rep33.Data
         private Common.RepKind state;
         private bool IsSave;
         private bool UseSavedData;
+
+        private List<byte> excelbin = new List<byte>();
 
 
         /// <summary>
@@ -48,8 +49,7 @@ namespace Rep33.Data
 
         public bool CreateReport(DateTime rd)
         {
-            string FileName = "";
-
+            excelbin.Clear();
             var data = new ReportData("reporter", "RepTi87BnVuy21", "(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=orabase.mcargo)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=CHAOS)))", "MASTER", "all%work", "partner", "172.30.80.49");
 
             //var data = new ReportData("reporter", "RepTi87BnVuy21", "(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=10.80.15.3)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=CHAOS)))", "MASTER", "all%work", "partner", "10.80.0.48");
@@ -81,7 +81,7 @@ namespace Rep33.Data
                 rpt.AddWorksheet("Rep33.Data.ReportsWorksheets.Comparison.xml");
                 rpt.ReportDate = rd;
                 rpt.ReportData = data;
-                rpt.FileName = FileName; 
+                rpt.FileName = ""; // not used
                 rpt.ReportName = "Отчет по грузообороту 33В";
                 rpt.IsSaveValues = IsSave; 
                 
@@ -91,36 +91,42 @@ namespace Rep33.Data
                     return false;
                 }
 
-                if (string.IsNullOrWhiteSpace(FileName)) FileName = rpt.ReportName;
-                if (File.Exists(FileName))
-                {
-                    try
-                    {
-                        File.Delete(FileName);
-                    }
-                    catch
-                    {
-                        FileName = Common.GetNextAvailableFilename(FileName);
-                    }
-                }
-                try
-                {
-                    File.WriteAllBytes(FileName, rpt.excelbin);
-                }
-                catch (Exception ex)
-                {
-                     Log.Error($"Ошибка excel.SaveAs:{ex}");
-                    return false;
-                }
+                excelbin.AddRange(rpt.excelbin);
+                //Array.Copy(rpt.excelbin, this.excelbin, rpt.excelbin.Length);
 
-                //                if (chkSave.Checked && !UseSavedData) data.Save(rpt.DataToSave, rd);
-                rpt = null;
+                if (IsSave && !UseSavedData) data.Save(rpt.DataToSave, rd);
             }
             finally
             {
                 data.Dispose();
             }
             return true;
+        }
+
+        public void SaveFile()
+        {
+            if (excelbin.Count == 0) return;
+
+            string FileName = "Отчет по грузообороту 33В.xlsx";
+            if (File.Exists(FileName))
+            {
+                try
+                {
+                    File.Delete(FileName);
+                }
+                catch
+                {
+                    FileName = Common.GetNextAvailableFilename(FileName);
+                }
+            }
+            try
+            {
+                File.WriteAllBytes(FileName, excelbin.ToArray());
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Ошибка excel.SaveAs:{ex}");
+            }
         }
     }
 }
