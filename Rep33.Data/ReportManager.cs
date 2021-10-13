@@ -15,7 +15,7 @@ namespace Rep33.Data
         private DateTime dateReport = DateTime.Today;
 
         /// <summary>
-        /// Constructor used with Common.RepKind.Admin
+        /// Constructor is used with Common.RepKind.Admin
         /// </summary>
         /// <param name="_state"></param>
         /// <param name="isSave"></param>
@@ -28,7 +28,7 @@ namespace Rep33.Data
         }
 
         /// <summary>
-        /// Constructor used with Common.RepKind.Manual & Auto
+        /// Constructor is used with Common.RepKind.Manual & Auto
         /// </summary>
         /// <param name="_state"></param>
         public ReportManager(Common.RepKind _state)
