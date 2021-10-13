@@ -1,16 +1,18 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Rep33.Data;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Rep33.WEB.Controllers
 {
     [ApiController]
     public class ReportController : Controller
     {
+        private readonly ILogger<ReportController> _logger;
+        public ReportController(ILogger<ReportController> logger)
+        {
+            _logger = logger;
+        }
 
         [Route("api/report/build")]
         public string BuildAdmin([FromQuery] DateTime dateRep, bool isSave = false, bool useSavedData = false)
@@ -31,7 +33,7 @@ namespace Rep33.WEB.Controllers
             var reportManager = new ReportManager(Common.RepKind.Manual);
             if (!reportManager.CreateReport(dateRep))
                 return;
-            reportManager.SaveFile();
+            reportManager.SendMail();
             //reportManager.CreateReport(System.DateTime.Today, "d:\\Work\\Temp\\r33.xls", false, true);
             //return "builtsent";
         }

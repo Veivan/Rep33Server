@@ -13,6 +13,7 @@ namespace TestRep33
             var ret = reportManager.CreateReport(System.DateTime.Today);
             Assert.IsTrue(ret);
             reportManager.SaveFile();
+            reportManager.SendMail();            
         }
 
         [TestMethod]
