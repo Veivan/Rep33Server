@@ -19,6 +19,16 @@ namespace Rep33wapi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                    builder =>
+                    {
+                        builder.WithOrigins("http://localhost:3000") // "*"
+                                .WithMethods("POST", "GET")  // 'GET, HEAD, OPTIONS, POST, PUT'
+                                .WithHeaders("Origin", "X-Requested-With", "Content-Type", "Accept", "Authorization");
+                    });
+            });
 
             services.AddHostedService<Worker>();
             services.AddControllers();
@@ -50,6 +60,8 @@ namespace Rep33wapi
             app.UseSerilogRequestLogging();
 
             app.UseRouting();
+
+            app.UseCors();
 
             app.UseAuthorization();
 
