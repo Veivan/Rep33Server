@@ -17,7 +17,7 @@ namespace Rep33.WEB.Controllers
         [Route("api/report/build")]
         public string BuildAdmin([FromQuery] DateTime dateRep, bool isSave = false, bool useSavedData = false)
         {
-            var reportManager = new ReportManager(Common.RepKind.Manual, isSave, useSavedData);
+            var reportManager = new ReportManager(Common.RepKind.Admin, isSave, useSavedData);
             if (!reportManager.CreateReport(dateRep))
                 return "";
             reportManager.SaveFile();

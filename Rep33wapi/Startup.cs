@@ -24,9 +24,10 @@ namespace Rep33wapi
                 options.AddDefaultPolicy(
                     builder =>
                     {
-                        builder.WithOrigins("http://localhost:3000") // "*"
+                        builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+                        /*builder.WithOrigins("*") // "http://localhost:3000"
                                 .WithMethods("POST", "GET")  // 'GET, HEAD, OPTIONS, POST, PUT'
-                                .WithHeaders("Origin", "X-Requested-With", "Content-Type", "Accept", "Authorization");
+                                .WithHeaders("Origin", "X-Requested-With", "Content-Type", "Accept", "Authorization"); */
                     });
             });
 
