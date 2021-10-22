@@ -9,7 +9,7 @@ namespace Rep33.WEB.Controllers
     [ApiController]
     public class ParamsController : Controller
     {
-        string[] parnames = { "use_timer", "launch_time", "save2bd" };
+        string[] parnames = { "use_timer", "launch_time", "save2bd", "emails" };
 
         // GET: api/params
         [HttpGet]

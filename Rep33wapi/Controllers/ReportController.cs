@@ -20,7 +20,7 @@ namespace Rep33.WEB.Controllers
             var reportManager = new ReportManager(Common.RepKind.Admin, isSave, useSavedData);
             if (!reportManager.CreateReport(dateRep))
                 return "";
-            reportManager.SaveFile();
+            //reportManager.SaveFile(); 
 
             //return "built";
 
@@ -33,9 +33,8 @@ namespace Rep33.WEB.Controllers
             var reportManager = new ReportManager(Common.RepKind.Manual);
             if (!reportManager.CreateReport(dateRep))
                 return;
-            reportManager.SendMail();
-            //reportManager.CreateReport(System.DateTime.Today, "d:\\Work\\Temp\\r33.xls", false, true);
-            //return "builtsent";
+            reportManager.SendMail(); 
+            //return $"dateRep={dateRep}";
         }
 
     }
