@@ -32,6 +32,8 @@ namespace Rep33.Data.Report
         public List<DataToSave> DataToSave { get { return _DataToSave; }}
         public string Error { get; set; }
 
+        public byte[] excelbin { get; set; }
+
         public void AddWorksheet(string XmlForWorksheetsFile)
         {
             _WorksheetsFiles.Add(XmlForWorksheetsFile);
@@ -93,26 +95,7 @@ namespace Rep33.Data.Report
                 //excel.Workbook.Worksheets[1].Row(35).Collapsed = false;
                 //excel.Workbook.Worksheets[1].Row(40).Collapsed = false;
 
-                if (string.IsNullOrWhiteSpace(FileName)) FileName = ReportName;
-                if (File.Exists(FileName))
-                {
-                    try
-                    {
-                        File.Delete(FileName);
-                    } catch
-                    {
-                        FileName = Common.GetNextAvailableFilename(FileName);
-                    }
-                }
-                try
-                {
-                    excel.SaveAs(new FileInfo(FileName));
-                } catch (Exception ex)
-                {
-                    Error = ex.Message;
-                    Log.Error($"Ошибка excel.SaveAs:{ex}");
-                    return false;
-                }
+                excelbin = excel.GetAsByteArray();
             }
             return true;
         }

@@ -22,10 +22,23 @@ namespace Rep33wapi
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                bool useTimer = AppSettings.GetAppSetting("use_timer") == "True";                
-                _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-                _logger.LogInformation($"useTimer: {useTimer}");
-                await Task.Delay(10000, stoppingToken);
+                bool useTimer = AppSettings.GetAppSetting("use_timer").ToLower() == "true";
+                if (useTimer)
+                {
+                    var launch_time = AppSettings.GetAppSetting("launch_time");
+                    var curtime = DateTime.Now.ToString("HH:mm");
+                    if (curtime == launch_time)
+                    {
+                        _logger.LogInformation("Worker started.");
+                        var reportManager = new ReportManager(Common.RepKind.Manual);
+                        var dateRep = DateTime.Now.AddDays(-1);
+                        var done = reportManager.CreateReport(dateRep);
+                        if (done)
+                            reportManager.SendMail();
+                        _logger.LogInformation($"Worker finished. Result = {done}");
+                    }
+                }
+                await Task.Delay(60000, stoppingToken);
             }
         }
     }
