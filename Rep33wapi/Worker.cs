@@ -29,8 +29,13 @@ namespace Rep33wapi
                     var curtime = DateTime.Now.ToString("HH:mm");
                     if (curtime == launch_time)
                     {
-                        _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-                        _logger.LogInformation($"useTimer: {useTimer}");
+                        _logger.LogInformation("Worker started.");
+                        var reportManager = new ReportManager(Common.RepKind.Manual);
+                        var dateRep = DateTime.Now.AddDays(-1);
+                        var done = reportManager.CreateReport(dateRep);
+                        if (done)
+                            reportManager.SendMail();
+                        _logger.LogInformation($"Worker finished. Result = {done}");
                     }
                 }
                 await Task.Delay(60000, stoppingToken);
