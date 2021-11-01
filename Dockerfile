@@ -2,7 +2,7 @@
 
 FROM registry.mwc.local/dotnet/aspnet:5.0 AS base
 WORKDIR /app
-EXPOSE 80
+EXPOSE 5000
 
 FROM registry.mwc.local/dotnet/sdk:5.0 AS build
 WORKDIR /src
@@ -26,9 +26,9 @@ WORKDIR "/src/Rep33wapi"
 RUN dotnet build "Rep33.WEB.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Rep33.WEB.csproj" -c Release -o /app/publish
+RUN dotnet publish "Rep33.WEB.csproj" -c Release -o /app/
 
 FROM base AS final
 WORKDIR /app
-COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Rep33wapi.dll"]
+COPY --from=publish /app .
+ENTRYPOINT ["dotnet", "Rep33.WEB.dll"]
