@@ -6,4 +6,4 @@ COPY /distrib/ /opt/distrib
 RUN unzip /opt/distrib/rep33server.zip
 RUN rm -rf /opt/distrib && mkdir /share
 WORKDIR /rep33server
-ENTRYPOINT dotnet ./Rep33wapi.dll
+ENTRYPOINT dotnet ./Rep33.WEB.dll
