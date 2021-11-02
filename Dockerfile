@@ -1,6 +1,8 @@
 #See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
 FROM registry.mwc.local/dotnet/aspnet:5.0 AS base
+RUN apt-get update && apt-get install -y libgdiplus
+
 WORKDIR /app
 EXPOSE 5000
 
