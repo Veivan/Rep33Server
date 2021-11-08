@@ -48,7 +48,7 @@ namespace Rep33.Data
 #endif
             var builder = new ConfigurationBuilder()
                             .SetBasePath(AppContext.BaseDirectory)
-                            .AddJsonFile(appset, optional: false, reloadOnChange: true)
+                            .AddJsonFile(appset, optional: false, reloadOnChange: false)
                             .AddEnvironmentVariables();
 
             IConfigurationRoot configuration = builder.Build();
@@ -71,7 +71,7 @@ namespace Rep33.Data
                     s.FileProvider = null;
                     s.Path = appset;
                     s.Optional = false;
-                    s.ReloadOnChange = true;
+                    s.ReloadOnChange = false;
                     s.ResolveFileProvider();
                 })).Build();
             configuration.GetSection(Key).Value = value;

@@ -1,0 +1,35 @@
+version: '2.4'
+
+services:
+  rep33server:
+    labels:
+      log: spring
+      org.label-schema.group: "rms"
+    image: mcargo/rep33server:latest
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "5"
+        max-size: "50m"
+    restart: unless-stopped
+    ports:
+      - "40002:80"
+    environment:
+            #- launchUrl=http://0.0.0.0:80
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+      - DOTNET_HOSTBUILDER__RELOADCONFIGONCHANGE=false
+      - DOTNET_USE_POLLING_FILE_WATCHER=true
+      - NAME=rep33server
+      - LOG_LEVEL=INFO
+      - LOG_BODY=false
+      - "TZ=Europe/Moscow"
+    volumes:
+      # Directory for heapdump
+      - /var/docker/data/rep33server:/share:rw
+    networks:
+      - rep33
+
+
+networks:
+  rep33:
+    driver: bridge
