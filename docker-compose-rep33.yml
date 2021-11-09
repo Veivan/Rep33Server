@@ -17,8 +17,6 @@ services:
     environment:
             #- launchUrl=http://0.0.0.0:80
       - ASPNETCORE_URLS=http://0.0.0.0:80
-      - DOTNET_HOSTBUILDER__RELOADCONFIGONCHANGE=false
-      - DOTNET_USE_POLLING_FILE_WATCHER=true
       - NAME=rep33server
       - LOG_LEVEL=INFO
       - LOG_BODY=false

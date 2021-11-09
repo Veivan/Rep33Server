@@ -130,6 +130,12 @@ namespace Rep33.Data
             }
         }
 
+        public byte[] GetExcelData()
+        {
+            if (excelbin.Count == 0) return null;
+            return excelbin.ToArray();
+        }
+
         public void SendMail() 
         {
             if (excelbin.Count == 0) return;
