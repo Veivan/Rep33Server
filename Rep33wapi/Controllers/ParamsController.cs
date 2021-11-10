@@ -8,10 +8,13 @@ namespace Rep33.WEB.Controllers
     [Route("api/[controller]")]
     [ApiController]
     public class ParamsController : Controller
-    {
+    {      
         string[] parnames = { "use_timer", "launch_time", "save2bd", "emails" };
 
-        // GET: api/params
+        /// <summary>
+        /// Чтение параметров.
+        /// GET: api/params
+        /// </summary>      
         [HttpGet]
         public string GetParams()
         {
@@ -25,7 +28,21 @@ namespace Rep33.WEB.Controllers
             return o.ToString();
         }
 
-        // POST: api/params
+        /// <summary>
+        /// Задание значений параметров.
+        /// POST: api/params
+        /// </summary>
+        /// <remarks>
+        /// Пример запроса:
+        ///
+        ///     POST api/params
+        ///     {
+        ///        "use_timer": true,
+        ///        "launch_time": "04:00",
+        ///        "save2bd": true
+        ///     }
+        ///     
+        /// </remarks>
         [HttpPost]
         public void SetParams([FromBody] JsonElement json)
         {
@@ -44,7 +61,16 @@ namespace Rep33.WEB.Controllers
             } 
         }
 
-        // PUT: api/params/save2bd/true
+        /// <summary>
+        /// Задание значения параметра.
+        /// PUT: api/params/{key}/{val}
+        /// </summary>
+        /// <remarks>
+        /// Пример запроса:
+        ///
+        ///     PUT api/params/save2bd/true
+        ///     
+        /// </remarks>
         [HttpPut("{key}/{val}")]
         public void SetParam(string key, string val)
         {

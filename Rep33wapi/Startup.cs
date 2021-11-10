@@ -4,6 +4,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
+using Microsoft.OpenApi.Models;
+using System.Reflection;
+using System.IO;
+using System;
 
 namespace Rep33wapi
 {
@@ -33,12 +37,16 @@ namespace Rep33wapi
 
             services.AddHostedService<Worker>();
             services.AddControllers();
-            services.AddSwaggerGen();
 
-/*            services.AddSwaggerGen(c =>
+            services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Rep33wapi", Version = "v1" });
-            }); */
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Report33 Api", Version = "v1" });
+
+                // Set the comments path for the Swagger JSON and UI.
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
