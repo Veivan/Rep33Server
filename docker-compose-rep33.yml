@@ -27,6 +27,31 @@ services:
     networks:
       - rep33
 
+  rep33client:
+    labels:
+      log: spring
+      org.label-schema.group: "rms"
+    image: mcargo/rep33client:latest
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "5"
+        max-size: "50m"
+    restart: unless-stopped
+    ports:
+      - "40003:3000"
+    environment:
+      - launchUrl=http://0.0.0.0:5000
+      #- ASPNETCORE_URLS=http://0.0.0.0:80
+      - NAME=rep33client
+      - LOG_LEVEL=INFO
+      - LOG_BODY=false
+      - "TZ=Europe/Moscow"
+    volumes:
+      # Directory for heapdump
+      - /var/docker/data/rep33server:/share:rw
+    networks:
+      - rep33
 
 networks:
   rep33:
