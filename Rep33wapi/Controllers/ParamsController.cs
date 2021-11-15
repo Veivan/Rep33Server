@@ -9,7 +9,7 @@ namespace Rep33.WEB.Controllers
     [ApiController]
     public class ParamsController : Controller
     {      
-        string[] parnames = { "use_timer", "launch_time", "save2bd", "emails" };
+        string[] parnames = { "use_timer", "launch_time", "emails" };
 
         /// <summary>
         /// Чтение параметров.
@@ -38,8 +38,7 @@ namespace Rep33.WEB.Controllers
         ///     POST api/params
         ///     {
         ///        "use_timer": true,
-        ///        "launch_time": "04:00",
-        ///        "save2bd": true
+        ///        "launch_time": "04:00"
         ///     }
         ///     
         /// </remarks>
@@ -68,7 +67,7 @@ namespace Rep33.WEB.Controllers
         /// <remarks>
         /// Пример запроса:
         ///
-        ///     PUT api/params/save2bd/true
+        ///     PUT api/params/use_timer/true
         ///     
         /// </remarks>
         [HttpPut("{key}/{val}")]
