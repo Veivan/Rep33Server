@@ -248,7 +248,7 @@
     <Row Cell="A43:Q43" Style="Header4">
       <Caption Cell="A43">Груз</Caption>
       <Values>
-        <Value Cell="Q43" IsFormula="true">Q44+Q45+Q47+48</Value>
+        <Value Cell="Q43" IsFormula="true">Q44+Q45+Q47+Q48</Value>
       </Values>
     </Row>
     <Row Cell="A44:Q44" Style="Header5" Collapsed="false">

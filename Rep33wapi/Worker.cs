@@ -30,11 +30,8 @@ namespace Rep33wapi
                     if (curtime == launch_time)
                     {
                         _logger.LogInformation("Worker started.");
-
-                        // TODO Manual только на время отладки!!!
-                        
-                        var reportManager = new ReportManager(Common.RepKind.Manual); 
-                        //var reportManager = new ReportManager(Common.RepKind.Auto);
+                      
+                        var reportManager = new ReportManager(Common.RepKind.Auto);
                         
                         var dateRep = DateTime.Today.AddDays(-1);
                         var done = reportManager.CreateReport(dateRep);
