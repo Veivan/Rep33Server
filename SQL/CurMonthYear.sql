@@ -1,0 +1,3 @@
+SELECT VALUENAME, VALUE FROM REPORTER.RPT_AVG_DATA_33B 
+WHERE trunc(add_months(DATEREPORT, 12),'MM') = trunc(:DBEGIN, 'MM')
+and trunc(add_months(DATEREPORT, 12),'YYYY') = trunc(:DBEGIN, 'YYYY')
