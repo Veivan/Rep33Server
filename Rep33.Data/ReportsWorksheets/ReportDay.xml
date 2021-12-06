@@ -122,31 +122,76 @@
     <Row Cell="A22:Q22" Style="Header4">
       <Caption Cell="A22">МВЛ</Caption>
       <Values>
-        <Value Cell="Q22" IsFormula="true">Q23+Q24+Q25</Value>
+        <Value Cell="Q22" IsFormula="true">Q23+Q28</Value>
       </Values>
     </Row>
-    <Row Cell="A23:Q23" Style="Header5" Collapsed="true">
-      <Caption Cell="A23">Аэрофлот</Caption>
+
+    <Row Cell="A23:Q23" Style="Header4">
+      <Caption Cell="A23">ГТ-1</Caption>
       <Values>
-        <Value Cell="Q23" IsFormula="false" Data="IssuedMoscowMVLAeroflot" QueryName="IssuedMoscow" Filter="VL='MVL' AND AIRLINE='AEROFLOT'" DataValue="WEIGHT">78</Value>
+        <Value Cell="Q23" IsFormula="true">Q24+Q25+Q26+Q27</Value>
       </Values>
     </Row>
     <Row Cell="A24:Q24" Style="Header5" Collapsed="true">
-      <Caption Cell="A24">Nordwind Airlines (+ Pegas Fly)</Caption>
+      <Caption Cell="A24">Аэрофлот</Caption>
       <Values>
-        <Value Cell="Q24" IsFormula="false" Data="IssuedMoscowMVLNord" QueryName="IssuedMoscow" Filter="VL='MVL' AND AIRLINE='NORD'" DataValue="WEIGHT">34</Value>
+        <Value Cell="Q24" IsFormula="false" Data="IssuedMoscowMVLAeroflot" QueryName="IssuedMoscow" Filter="VL='MVL' AND AIRLINE='AEROFLOT'" DataValue="WEIGHT">78</Value>
       </Values>
     </Row>
     <Row Cell="A25:Q25" Style="Header5" Collapsed="true">
-      <Caption Cell="A25">Другие авиакомпании</Caption>
+      <Caption Cell="A25">AirBridgeCargo</Caption>
       <Values>
-        <Value Cell="Q25" IsFormula="false" Data="IssuedMoscowMVLOther" QueryName="IssuedMoscow" Filter="VL='MVL' AND AIRLINE='OTHER'" DataValue="WEIGHT">34</Value>
+        <Value Cell="Q25" IsFormula="false" Data="IssuedMoscowMVLAirBridge" QueryName="IssuedMoscow" Filter="VL='MVL' AND AIRLINE='BRIDGE'" DataValue="WEIGHT">45</Value>
       </Values>
     </Row>
-    <Row Cell="A26:Q26" Style="Header3">
-      <Caption Cell="A26">Выдано на другие СВХ в Москве</Caption>
+    <Row Cell="A26:Q26" Style="Header5" Collapsed="true">
+      <Caption Cell="A26">Nordwind Airlines (+ Pegas Fly)</Caption>
       <Values>
-        <Value Cell="Q26" IsFormula="true">Q27+Q30+Q33</Value>
+        <Value Cell="Q25" IsFormula="false" Data="IssuedMoscowMVLNord" QueryName="IssuedMoscow" Filter="VL='MVL' AND AIRLINE='NORD'" DataValue="WEIGHT">34</Value>
+      </Values>
+    </Row>
+    <Row Cell="A27:Q27" Style="Header5" Collapsed="true">
+      <Caption Cell="A27">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="Q27" IsFormula="false" Data="IssuedMoscowMVLOther" QueryName="IssuedMoscow" Filter="VL='MVL' AND AIRLINE='OTHER'" DataValue="WEIGHT">34</Value>
+      </Values>
+    </Row>
+	
+	<Row Cell="A28:Q28" Style="Header4">
+      <Caption Cell="A28">ГТ-2</Caption>
+      <Values>
+        <Value Cell="Q28" IsFormula="true">Q29+Q30+Q31+Q32</Value>
+      </Values>
+    </Row>
+    <Row Cell="A29:Q29" Style="Header5" Collapsed="true">
+      <Caption Cell="A29">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="Q29" IsFormula="false" Data="IssuedMoscowMVLAeroflot" QueryName="IssuedMoscow" Filter="VL='MVL' AND AIRLINE='AEROFLOT'" DataValue="WEIGHT">78</Value>
+      </Values>
+    </Row>
+    <Row Cell="A30:Q30" Style="Header5" Collapsed="true">
+      <Caption Cell="A30">AirBridgeCargo</Caption>
+      <Values>
+        <Value Cell="Q30" IsFormula="false" Data="IssuedMoscowMVLAirBridge" QueryName="IssuedMoscow" Filter="VL='MVL' AND AIRLINE='BRIDGE'" DataValue="WEIGHT">45</Value>
+      </Values>
+    </Row>
+    <Row Cell="A31:Q31" Style="Header5" Collapsed="true">
+      <Caption Cell="A31">Nordwind Airlines (+ Pegas Fly)</Caption>
+      <Values>
+        <Value Cell="Q31" IsFormula="false" Data="IssuedMoscowMVLNord" QueryName="IssuedMoscow" Filter="VL='MVL' AND AIRLINE='NORD'" DataValue="WEIGHT">34</Value>
+      </Values>
+    </Row>
+    <Row Cell="A32:Q32" Style="Header5" Collapsed="true">
+      <Caption Cell="A32">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="Q32" IsFormula="false" Data="IssuedMoscowMVLOther" QueryName="IssuedMoscow" Filter="VL='MVL' AND AIRLINE='OTHER'" DataValue="WEIGHT">34</Value>
+      </Values>
+    </Row>
+
+    <Row Cell="A33:Q33" Style="Header3">
+      <Caption Cell="A33">Выдано на другие СВХ в Москве</Caption>
+      <Values>
+        <Value Cell="Q33" IsFormula="true">Q27+Q30+Q33</Value>
       </Values>
     </Row>
     <Row Cell="A27:Q27" Style="Header4">
