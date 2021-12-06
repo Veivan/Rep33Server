@@ -116,6 +116,28 @@ namespace Rep33.Data.Report
         public bool Hide { get; set; }
     }
 
+    [XmlRoot(ElementName = "PValue")]
+    public class PValue
+    {
+        [XmlAttribute(AttributeName = "Caption")]
+        public string Caption { get; set; }
+        [XmlAttribute(AttributeName = "Data")]
+        public string Data { get; set; }
+        [XmlAttribute(AttributeName = "QueryName")]
+        public string QueryName { get; set; }
+        [XmlAttribute(AttributeName = "Filter")]
+        public string Filter { get; set; }
+        [XmlAttribute(AttributeName = "DataValue")]
+        public string DataValue { get; set; }
+    }
+
+    [XmlRoot(ElementName = "Placeholders")]
+    public class Placeholders
+    {
+        [XmlElement(ElementName = "PValue")]
+        public List<PValue> Items { get; set; }
+    }
+
     [XmlRoot(ElementName = "ReportStructure")]
     public class ReportStructure
     {
@@ -137,5 +159,9 @@ namespace Rep33.Data.Report
         public List<NumberFormat> NumberFormats { get; set; }
         [XmlElement(ElementName = "Freeze")]
         public Freeze Freeze { get; set; }
+
+        [XmlElement(ElementName = "Placeholders")]
+        public Placeholders Placeholders { get; set; }
+
     }
 }
