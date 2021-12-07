@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
+using System.Text;
 using System.Xml.Serialization;
 
 namespace Rep33.Data.Report
@@ -28,15 +29,80 @@ namespace Rep33.Data.Report
         public ReportData ReportData { get; set; }
         public string FileName { get; set; }
         public bool IsSaveValues { get; set; }
-        public DateTime ReportDate{ get; set; }
-        public List<DataToSave> DataToSave { get { return _DataToSave; }}
+        public DateTime ReportDate { get; set; }
+        public List<DataToSave> DataToSave { get { return _DataToSave; } }
         public string Error { get; set; }
 
         public byte[] excelbin { get; set; }
+        public string ReportShablon { get; set; }
 
         public void AddWorksheet(string XmlForWorksheetsFile)
         {
             _WorksheetsFiles.Add(XmlForWorksheetsFile);
+        }
+
+        public bool CreateReportOld()
+        {
+            if (ReportData == null) return false;
+            if (_WorksheetsFiles.Count <= 0) return false;
+
+            var assembly = Assembly.GetExecutingAssembly();
+
+            using (Stream inpStream = assembly.GetManifestResourceStream(ReportShablon))
+            using (var outStream = new MemoryStream())
+            using (var excel = new ExcelPackage(outStream, inpStream))
+            {
+                /*               foreach(var wf in _WorksheetsFiles)
+                               {
+                                   _rs = DeSerializeXML(wf, assembly);
+                                   var ws = excel.Workbook.Worksheets.Add(_rs.Name);
+                                   AddHeader(ws);
+                                   ws.OutLineSummaryBelow = false;
+                                   AddTable(ws);
+                                   string tablecell = _rs.Table.Cell;
+                                   tablecell = tablecell.Replace("{#}", Common.GetColumnLetter((ReportDate.Day).ToString()));
+                                   ws.Cells[tablecell].Style.Border.Bottom.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+                                   ws.Cells[tablecell].Style.Border.Left.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+                                   ws.Cells[tablecell].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+                                   ws.Cells[tablecell].Style.Border.Right.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+                                   //ws.Workbook.CalcMode = ExcelCalcMode.Automatic;
+                                   //ws.Cells[rs.Table.Cell].Calculate();
+                                   foreach (var nf in _rs.NumberFormats)
+                                   {
+                                       ws.Cells[nf.Cell].Style.Numberformat.Format = nf.Text;
+                                   }
+                                   foreach (var cf in _rs.CoditionalFormats)
+                                   {
+                                       SetCoditionalFormat(ws, new ExcelAddress(cf));
+                                   }
+                                   foreach (var wt in _rs.WrapTexts)
+                                   {
+                                       ws.Cells[wt].Style.WrapText = true;
+                                   }
+                                   ws.Cells[ws.Dimension.Address].AutoFitColumns();
+                                   foreach (var merge in _rs.Merges)
+                                   {
+                                       ws.Cells[merge].Merge = true;
+                                   }
+                                   foreach (var col in _rs.Columns)
+                                   {
+                                       if (col.Hide) ws.Column(col.Number).Hidden = true;
+                                       if (!string.IsNullOrWhiteSpace(col.Width)) ws.Column(col.Number).Width = Convert.ToDouble(col.Width);
+                                   }
+                                   if (_rs.Freeze != null) ws.View.FreezePanes(_rs.Freeze.Row, _rs.Freeze.Col);
+                               } 
+                excel.Workbook.Calculate();
+                excel.Workbook.Worksheets[1].View.ZoomScale = 80;
+                excel.Workbook.Worksheets[2].View.ZoomScale = 80;
+                excel.Workbook.Worksheets[3].View.ZoomScale = 80;*/
+                //excel.Workbook.Worksheets[1].Row(6).Collapsed = false;
+                //excel.Workbook.Worksheets[1].Row(10).Collapsed = false;
+                //excel.Workbook.Worksheets[1].Row(35).Collapsed = false;
+                //excel.Workbook.Worksheets[1].Row(40).Collapsed = false;
+
+                excelbin = excel.GetAsByteArray();
+            }
+            return true;
         }
 
         public bool CreateReport()
@@ -45,55 +111,55 @@ namespace Rep33.Data.Report
             if (_WorksheetsFiles.Count <= 0) return false;
 
             var assembly = Assembly.GetExecutingAssembly();
-            using (var excel = new ExcelPackage())
+
+            using (Stream inpStream = assembly.GetManifestResourceStream(ReportShablon))
+            using (var outStream = new MemoryStream())
+            using (var excel = new ExcelPackage(outStream, inpStream))
             {
-                foreach(var wf in _WorksheetsFiles)
+                foreach (var wf in _WorksheetsFiles)
                 {
                     _rs = DeSerializeXML(wf, assembly);
-                    var ws = excel.Workbook.Worksheets.Add(_rs.Name);
-                    AddHeader(ws);
+                    var ws = excel.Workbook.Worksheets[_rs.Name];
                     ws.OutLineSummaryBelow = false;
-                    AddTable(ws);
-                    string tablecell = _rs.Table.Cell;
-                    tablecell = tablecell.Replace("{#}", Common.GetColumnLetter((ReportDate.Day).ToString()));
-                    ws.Cells[tablecell].Style.Border.Bottom.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
-                    ws.Cells[tablecell].Style.Border.Left.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
-                    ws.Cells[tablecell].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
-                    ws.Cells[tablecell].Style.Border.Right.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
-                    //ws.Workbook.CalcMode = ExcelCalcMode.Automatic;
-                    //ws.Cells[rs.Table.Cell].Calculate();
-                    foreach (var nf in _rs.NumberFormats)
-                    {
-                        ws.Cells[nf.Cell].Style.Numberformat.Format = nf.Text;
-                    }
-                    foreach (var cf in _rs.CoditionalFormats)
-                    {
-                        SetCoditionalFormat(ws, new ExcelAddress(cf));
-                    }
-                    foreach (var wt in _rs.WrapTexts)
-                    {
-                        ws.Cells[wt].Style.WrapText = true;
-                    }
-                    ws.Cells[ws.Dimension.Address].AutoFitColumns();
-                    foreach (var merge in _rs.Merges)
-                    {
-                        ws.Cells[merge].Merge = true;
-                    }
-                    foreach (var col in _rs.Columns)
-                    {
-                        if (col.Hide) ws.Column(col.Number).Hidden = true;
-                        if (!string.IsNullOrWhiteSpace(col.Width)) ws.Column(col.Number).Width = Convert.ToDouble(col.Width);
-                    }
-                    if (_rs.Freeze != null) ws.View.FreezePanes(_rs.Freeze.Row, _rs.Freeze.Col);
+                    var namedCell1 = ws.Names["IssuedAirCargoAeroflot"];
+                    namedCell1.Value = "555";
+
+                    /*                    AddTable(ws);
+                                        string tablecell = _rs.Table.Cell;
+                                        tablecell = tablecell.Replace("{#}", Common.GetColumnLetter((ReportDate.Day).ToString()));
+                                        ws.Cells[tablecell].Style.Border.Bottom.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+                                        ws.Cells[tablecell].Style.Border.Left.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+                                        ws.Cells[tablecell].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+                                        ws.Cells[tablecell].Style.Border.Right.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+
+                                        foreach (var nf in _rs.NumberFormats)
+                                        {
+                                            ws.Cells[nf.Cell].Style.Numberformat.Format = nf.Text;
+                                        }
+                                        foreach (var cf in _rs.CoditionalFormats)
+                                        {
+                                            SetCoditionalFormat(ws, new ExcelAddress(cf));
+                                        }
+                                        foreach (var wt in _rs.WrapTexts)
+                                        {
+                                            ws.Cells[wt].Style.WrapText = true;
+                                        }
+                                        ws.Cells[ws.Dimension.Address].AutoFitColumns();
+                                        foreach (var merge in _rs.Merges)
+                                        {
+                                            ws.Cells[merge].Merge = true;
+                                        }
+                                        foreach (var col in _rs.Columns)
+                                        {
+                                            if (col.Hide) ws.Column(col.Number).Hidden = true;
+                                            if (!string.IsNullOrWhiteSpace(col.Width)) ws.Column(col.Number).Width = Convert.ToDouble(col.Width);
+                                        }
+                                        if (_rs.Freeze != null) ws.View.FreezePanes(_rs.Freeze.Row, _rs.Freeze.Col); */
                 }
                 excel.Workbook.Calculate();
+                excel.Workbook.Worksheets[0].View.ZoomScale = 80;
                 excel.Workbook.Worksheets[1].View.ZoomScale = 80;
                 excel.Workbook.Worksheets[2].View.ZoomScale = 80;
-                excel.Workbook.Worksheets[3].View.ZoomScale = 80;
-                //excel.Workbook.Worksheets[1].Row(6).Collapsed = false;
-                //excel.Workbook.Worksheets[1].Row(10).Collapsed = false;
-                //excel.Workbook.Worksheets[1].Row(35).Collapsed = false;
-                //excel.Workbook.Worksheets[1].Row(40).Collapsed = false;
 
                 excelbin = excel.GetAsByteArray();
             }
@@ -116,7 +182,7 @@ namespace Rep33.Data.Report
                         {
                             string cell = val.Cell;
                             if (NextLetter != "") { cell = cell.Replace("{#}", NextLetter); }
-                            if (string.IsNullOrWhiteSpace(val.DateFormat))                            
+                            if (string.IsNullOrWhiteSpace(val.DateFormat))
                             {
                                 ws.Cells[cell].Style.Numberformat.Format = "0";
                             }
@@ -181,10 +247,11 @@ namespace Rep33.Data.Report
                 if (string.IsNullOrWhiteSpace(header.Caption.Data))
                 {
                     ws.Cells[header.Caption.Cell].Value = header.Caption.Text;
-                } else
+                }
+                else
                 {
                     // Дата неправильно отображается в iOS preview поэтому даты будут в виде текста
-                    if (header.Caption.Data == "Date") ws.Cells[header.Caption.Cell].Value = ReportDate.ToString(header.Caption.DateFormat);                    
+                    if (header.Caption.Data == "Date") ws.Cells[header.Caption.Cell].Value = ReportDate.ToString(header.Caption.DateFormat);
                 }
                 if (header.Values != null)
                 {
@@ -252,7 +319,7 @@ namespace Rep33.Data.Report
                 DateTime currentDate = new DateTime(ReportDate.Year, ReportDate.Month, day);
                 string letter = Common.GetColumnLetter((i++).ToString());
                 string cell = val.Cell.Replace("{#}", letter);
-                if (string.IsNullOrWhiteSpace(val.DateFormat))                
+                if (string.IsNullOrWhiteSpace(val.DateFormat))
                 {
                     ws.Cells[cell].Style.Numberformat.Format = "0";
                 }
