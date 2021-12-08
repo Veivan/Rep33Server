@@ -1,0 +1,2113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ReportStructure>
+  <Name>Сравнение показателей грузооб.</Name>
+  <wsType>T3</wsType>
+
+  <Header>
+    <Row Cell="A1" Style="Header2">
+      <Caption Cell="A1">Динамика грузооборота Москва Карго</Caption>
+    </Row>
+    <Row Cell="A2:Q2" Style="Header2">
+      <Caption Cell="A2" Data="Date" DateFormat="dd.MM.yyyy">16.01.2018</Caption>
+    </Row>
+  </Header>
+  <Table Cell="A3:S92">
+    <Row Cell="A3:S3" Style="Header1">
+      <Caption Cell="A3"></Caption>
+      <Values>
+        <Value Cell="B3" DateFormat="dd.MM.yyyy" Data="Common.Date"></Value>
+        <Value Cell="C3" IsNotConvert="true">Среднее за текущий месяц</Value>
+        <Value Cell="D3" IsNotConvert="true">Среднее за предыдущий месяц</Value>
+        <Value Cell="E3" IsNotConvert="true">Отклонение от среднего текущего месяца</Value>
+        <Value Cell="F3" IsNotConvert="true">Отклонение от среднего предыдущего месяца</Value>
+        <Value Cell="G3" IsNotConvert="true">Отклонение от среднего текущего месяца</Value>
+        <Value Cell="H3" IsNotConvert="true">Отклонение от среднего предыдущего месяц</Value>
+        <Value Cell="I3" DateFormat="yyyy" Data="ContainDate" AddYear="-1">Отклонение от среднего месяца {#} года</Value>
+        <Value Cell="J3" DateFormat="yyyy" Data="ContainDate" AddYear="-1">Отклонение от среднего месяца {#} года</Value>
+        <Value Cell="K3" DateFormat="yyyy" Data="ContainDate" AddYear="-1">Cреднее месяца {#} года</Value>
+        <Value Cell="L3" DateFormat="yyyy" Data="ContainDate" AddYear="-1">Нарастающий итог за месяц {#} года</Value>
+        <Value Cell="M3" DateFormat="yyyy" Data="ContainDate" AddYear="-2">Отклонение от среднего месяца {#} года</Value>
+        <Value Cell="N3" DateFormat="yyyy" Data="ContainDate" AddYear="-1">Отклонение от нарастающего итога аналогичного месяца {#} года</Value>
+        <Value Cell="O3" DateFormat="yyyy" Data="ContainDate" AddYear="-1">Отклонение от нарастающего итога аналогичного месяца {#} года</Value>
+        <Value Cell="P3" IsNotConvert="true">Нарастающий итог текущего месяца</Value>
+        <Value Cell="Q3" DateFormat="yyyy" Data="ContainDate" AddYear="-2" >Cреднее месяца {#} года</Value>
+        <Value Cell="R3" DateFormat="yyyy" Data="ContainDate" AddYear="-2">Нарастающий итог за месяц {#} года</Value>
+        <Value Cell="S3" DateFormat="yyyy" Data="ContainDate" AddYear="-2">Отклонение от нарастающего итога аналогичного месяца {#} года</Value>
+      </Values>
+    </Row>
+    <Row Cell="A4:S4" Style="Header1">
+      <Caption Cell="A4"></Caption>
+      <Values>
+        <Value Cell="B4" IsNotConvert="true">тонн</Value>
+        <Value Cell="E4" IsNotConvert="true">в тоннах</Value>
+        <Value Cell="G4" IsNotConvert="true">в %</Value>
+        <Value Cell="I4" IsNotConvert="true">в тоннах</Value>
+        <Value Cell="J4" IsNotConvert="true">в %</Value>
+        <Value Cell="K4" IsNotConvert="true">в тоннах</Value>
+        <Value Cell="L4" IsNotConvert="true">в тоннах</Value>
+        <Value Cell="M4" IsNotConvert="true">в %</Value>
+        <Value Cell="N4" IsNotConvert="true">в тоннах</Value>
+        <Value Cell="O4" IsNotConvert="true">в %</Value>
+        <Value Cell="P4" IsNotConvert="true">в тоннах</Value>
+        <Value Cell="Q4" IsNotConvert="true">в тоннах</Value>
+        <Value Cell="R4" IsNotConvert="true">в тоннах</Value>
+        <Value Cell="S4" IsNotConvert="true">в %</Value>
+      </Values>
+    </Row>
+    <Row Cell="A5:S5" Style="Header1">
+      <Caption Cell="A5">Общий грузооборот</Caption>
+      <Values>
+        <Value Cell="B5" IsFormula="true">'Отчет за день'!Q4</Value>
+        <Value Cell="C5" IsFormula="true">C6+C42</Value>
+        <Value Cell="D5" IsFormula="true">D6+D42</Value>
+        <Value Cell="E5" IsFormula="true">B5-C5</Value>
+        <Value Cell="F5" IsFormula="true">B5-D5</Value>
+        <Value Cell="G5" IsFormula="true">IFERROR((B5-C5)/C5,0)</Value>
+        <Value Cell="H5" IsFormula="true">IFERROR((B5-D5)/D5,0)</Value>
+        <Value Cell="I5" IsFormula="true">C5-K5</Value>
+        <Value Cell="J5" IsFormula="true">IFERROR((C5-K5)/K5,0)</Value>
+        <Value Cell="K5" IsFormula="true">K6+K42</Value>
+        <Value Cell="L5" IsFormula="true">L6+L42</Value>
+        <Value Cell="M5" IsFormula="true">IFERROR((C5-Q5)/Q5,0)</Value>
+        <Value Cell="N5" IsFormula="true">P5-L5</Value>
+        <Value Cell="O5" IsFormula="true">IFERROR((P5-L5)/L5,0)</Value>
+        <Value Cell="P5" IsFormula="true">P6+P42</Value>
+        <Value Cell="Q5" IsFormula="true">Q6+Q42</Value>
+        <Value Cell="R5" IsFormula="true">R6+R42</Value>
+        <Value Cell="S5" IsFormula="true">IFERROR((P5-R5)/R5,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A6:S6" Style="Header2">
+      <Caption Cell="A6">Всего груза выдано (в тоннах) </Caption>
+      <Values>
+        <Value Cell="B6" IsFormula="true">'Отчет за день'!Q5</Value>
+        <Value Cell="C6" IsFormula="true">C7+C18+C27</Value>
+        <Value Cell="D6" IsFormula="true">D7+D18+D27</Value>
+        <Value Cell="E6" IsFormula="true">B6-C6</Value>
+        <Value Cell="F6" IsFormula="true">B6-D6</Value>
+        <Value Cell="G6" IsFormula="true">IFERROR((B6-C6)/C6,0)</Value>
+        <Value Cell="H6" IsFormula="true">IFERROR((B6-D6)/D6,0)</Value>
+        <Value Cell="I6" IsFormula="true">C6-K6</Value>
+        <Value Cell="J6" IsFormula="true">IFERROR((C6-K6)/K6,0)</Value>
+        <Value Cell="K6" IsFormula="true">K7+K18+K27</Value>
+        <Value Cell="L6" IsFormula="true">L7+L18+L27</Value>
+        <Value Cell="M6" IsFormula="true">IFERROR((C6-Q6)/Q6,0)</Value>
+        <Value Cell="N6" IsFormula="true">P6-L6</Value>
+        <Value Cell="O6" IsFormula="true">IFERROR((P6-L6)/L6,0)</Value>
+        <Value Cell="P6" IsFormula="true">P7+P18+P27</Value>
+        <Value Cell="Q6" IsFormula="true">Q7+Q18+Q27</Value>
+        <Value Cell="R6" IsFormula="true">R7+R18+R27</Value>
+        <Value Cell="S6" IsFormula="true">IFERROR((P6-R6)/R6,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A7:S7" Style="Header3">
+      <Caption Cell="A7">Вылетело на воздушных судах</Caption>
+      <Values>
+        <Value Cell="B7" IsFormula="true">'Отчет за день'!Q6</Value>
+        <Value Cell="C7" IsFormula="true">C8+C13</Value>
+        <Value Cell="D7" IsFormula="true">D8+D13</Value>
+        <Value Cell="E7" IsFormula="true">B7-C7</Value>
+        <Value Cell="F7" IsFormula="true">B7-D7</Value>
+        <Value Cell="G7" IsFormula="true">IFERROR((B7-C7)/C7,0)</Value>
+        <Value Cell="H7" IsFormula="true">IFERROR((B7-D7)/D7,0)</Value>
+        <Value Cell="I7" IsFormula="true">C7-K7</Value>
+        <Value Cell="J7" IsFormula="true">IFERROR((C7-K7)/K7,0)</Value>
+        <Value Cell="K7" IsFormula="true">K8+K13</Value>
+        <Value Cell="L7" IsFormula="true">L8+L13</Value>
+        <Value Cell="M7" IsFormula="true">IFERROR((C7-Q7)/Q7,0)</Value>
+        <Value Cell="N7" IsFormula="true">P7-L7</Value>
+        <Value Cell="O7" IsFormula="true">IFERROR((P7-L7)/L7,0)</Value>
+        <Value Cell="P7" IsFormula="true">P8+P13</Value>
+        <Value Cell="Q7" IsFormula="true">Q8+Q13</Value>
+        <Value Cell="R7" IsFormula="true">R8+R13</Value>
+        <Value Cell="S7" IsFormula="true">IFERROR((P7-R7)/R7,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A8:S8" Style="Header4" Collapsed="false">
+      <Caption Cell="A8">Груз</Caption>
+      <Values>
+        <Value Cell="B8" IsFormula="true">'Отчет за день'!Q7</Value>
+        <Value Cell="C8" IsFormula="true">C9+C10+C11+C12</Value>
+        <Value Cell="D8" IsFormula="true">D9+D10+D11+D12</Value>
+        <Value Cell="E8" IsFormula="true">B8-C8</Value>
+        <Value Cell="F8" IsFormula="true">B8-D8</Value>
+        <Value Cell="G8" IsFormula="true">IFERROR((B8-C8)/C8,0)</Value>
+        <Value Cell="H8" IsFormula="true">IFERROR((B8-D8)/D8,0)</Value>
+        <Value Cell="I8" IsFormula="true">C8-K8</Value>
+        <Value Cell="J8" IsFormula="true">IFERROR((C8-K8)/K8,0)</Value>
+        <Value Cell="K8" IsFormula="true">K9+K10+K11+K12</Value>
+        <Value Cell="L8" IsFormula="true">L9+L10+L11+L12</Value>
+        <Value Cell="M8" IsFormula="true">IFERROR((C8-Q8)/Q8,0)</Value>
+        <Value Cell="N8" IsFormula="true">P8-L8</Value>
+        <Value Cell="O8" IsFormula="true">IFERROR((P8-L8)/L8,0)</Value>
+        <Value Cell="P8" IsFormula="true">P9+P10+P11+P12</Value>
+        <Value Cell="Q8" IsFormula="true">Q9+Q10+Q11+Q12</Value>
+        <Value Cell="R8" IsFormula="true">R9+R10+R11+R12</Value>
+        <Value Cell="S8" IsFormula="true">IFERROR((P8-R8)/R8,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A9:S9" Style="Header5" Collapsed="false">
+      <Caption Cell="A9">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="B9" IsFormula="true">'Отчет за день'!Q8</Value>
+        <Value Cell="C9" IsFormula="true">AVERAGE('Отчет по грузообороту'!B8:AF8)</Value>
+        <Value Cell="D9" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='IssuedAirCargoAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="E9" IsFormula="true">B9-C9</Value>
+        <Value Cell="F9" IsFormula="true">B9-D9</Value>
+        <Value Cell="G9" IsFormula="true">IFERROR((B9-C9)/C9,0)</Value>
+        <Value Cell="H9" IsFormula="true">IFERROR((B9-D9)/D9,0)</Value>
+        <Value Cell="I9" IsFormula="true">C9-K9</Value>
+        <Value Cell="J9" IsFormula="true">IFERROR((C9-K9)/K9,0)</Value>
+        <Value Cell="K9" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='IssuedAirCargoAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="L9" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='IssuedAirCargoAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="M9" IsFormula="true">IFERROR((C9-Q9)/Q9,0)</Value>
+        <Value Cell="N9" IsFormula="true">P9-L9</Value>
+        <Value Cell="O9" IsFormula="true">IFERROR((P9-L9)/L9,0)</Value>
+        <Value Cell="P9" IsFormula="true">SUM('Отчет по грузообороту'!B8:AF8)</Value>
+        <Value Cell="Q9" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='IssuedAirCargoAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="R9" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='IssuedAirCargoAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="S9" IsFormula="true">IFERROR((P9-R9)/R9,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A10:S10" Style="Header5" Collapsed="false">
+      <Caption Cell="A10">AirBridgeCargo</Caption>
+      <Values>
+        <Value Cell="B10" IsFormula="true">'Отчет за день'!Q9</Value>
+        <Value Cell="C10" IsFormula="true">AVERAGE('Отчет по грузообороту'!B9:AF9)</Value>
+        <Value Cell="D10" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='IssuedAirCargoBridge'" DataValue="VALUE"></Value>
+        <Value Cell="E10" IsFormula="true">B10-C10</Value>
+        <Value Cell="F10" IsFormula="true">B10-D10</Value>
+        <Value Cell="G10" IsFormula="true">IFERROR((B10-C10)/C10,0)</Value>
+        <Value Cell="H10" IsFormula="true">IFERROR((B10-D10)/D10,0)</Value>
+        <Value Cell="I10" IsFormula="true">C10-K10</Value>
+        <Value Cell="J10" IsFormula="true">IFERROR((C10-K10)/K10,0)</Value>
+        <Value Cell="K10" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='IssuedAirCargoBridge'" DataValue="VALUE"></Value>
+        <Value Cell="L10" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='IssuedAirCargoBridge'" DataValue="VALUE"></Value>
+        <Value Cell="M10" IsFormula="true">IFERROR((C10-Q10)/Q10,0)</Value>
+        <Value Cell="N10" IsFormula="true">P10-L10</Value>
+        <Value Cell="O10" IsFormula="true">IFERROR((P10-L10)/L10,0)</Value>
+        <Value Cell="P10" IsFormula="true">SUM('Отчет по грузообороту'!B9:AF9)</Value>
+        <Value Cell="Q10" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='IssuedAirCargoBridge'" DataValue="VALUE"></Value>
+        <Value Cell="R10" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='IssuedAirCargoBridge'" DataValue="VALUE"></Value>
+        <Value Cell="S10" IsFormula="true">IFERROR((P10-R10)/R10,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A11:S11" Style="Header5" Collapsed="false">
+      <Caption Cell="A11">Nordwind Airlines (+ Pegas Fly)</Caption>
+      <Values>
+        <Value Cell="B11" IsFormula="true">'Отчет за день'!Q10</Value>
+        <Value Cell="C11" IsFormula="true">AVERAGE('Отчет по грузообороту'!B10:AF10)</Value>
+        <Value Cell="D11" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='IssuedAirCargoNord'" DataValue="VALUE"></Value>
+        <Value Cell="E11" IsFormula="true">B11-C11</Value>
+        <Value Cell="F11" IsFormula="true">B11-D11</Value>
+        <Value Cell="G11" IsFormula="true">IFERROR((B11-C11)/C11,0)</Value>
+        <Value Cell="H11" IsFormula="true">IFERROR((B11-D11)/D11,0)</Value>
+        <Value Cell="I11" IsFormula="true">C11-K11</Value>
+        <Value Cell="J11" IsFormula="true">IFERROR((C11-K11)/K11,0)</Value>
+        <Value Cell="K11" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='IssuedAirCargoNord'" DataValue="VALUE"></Value>
+        <Value Cell="L11" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='IssuedAirCargoNord'" DataValue="VALUE"></Value>
+        <Value Cell="M11" IsFormula="true">IFERROR((C11-Q11)/Q11,0)</Value>
+        <Value Cell="N11" IsFormula="true">P11-L11</Value>
+        <Value Cell="O11" IsFormula="true">IFERROR((P11-L11)/L11,0)</Value>
+        <Value Cell="P11" IsFormula="true">SUM('Отчет по грузообороту'!B10:AF10)</Value>
+        <Value Cell="Q11" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='IssuedAirCargoNord'" DataValue="VALUE"></Value>
+        <Value Cell="R11" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='IssuedAirCargoNord'" DataValue="VALUE"></Value>
+        <Value Cell="S11" IsFormula="true">IFERROR((P11-R11)/R11,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A12:S12" Style="Header5" Collapsed="false">
+      <Caption Cell="A12">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="B12" IsFormula="true">'Отчет за день'!Q11</Value>
+        <Value Cell="C12" IsFormula="true">AVERAGE('Отчет по грузообороту'!B10:AF10)</Value>
+        <Value Cell="D12" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='IssuedAirCargoOther'" DataValue="VALUE"></Value>
+        <Value Cell="E12" IsFormula="true">B12-C12</Value>
+        <Value Cell="F12" IsFormula="true">B12-D12</Value>
+        <Value Cell="G12" IsFormula="true">IFERROR((B12-C12)/C12,0)</Value>
+        <Value Cell="H12" IsFormula="true">IFERROR((B12-D12)/D12,0)</Value>
+        <Value Cell="I12" IsFormula="true">C12-K12</Value>
+        <Value Cell="J12" IsFormula="true">IFERROR((C12-K12)/K12,0)</Value>
+        <Value Cell="K12" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='IssuedAirCargoOther'" DataValue="VALUE"></Value>
+        <Value Cell="L12" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='IssuedAirCargoOther'" DataValue="VALUE"></Value>
+        <Value Cell="M12" IsFormula="true">IFERROR((C12-Q12)/Q12,0)</Value>
+        <Value Cell="N12" IsFormula="true">P12-L12</Value>
+        <Value Cell="O12" IsFormula="true">IFERROR((P12-L12)/L12,0)</Value>
+        <Value Cell="P12" IsFormula="true">SUM('Отчет по грузообороту'!B11:AF11)</Value>
+        <Value Cell="Q12" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='IssuedAirCargoOther'" DataValue="VALUE"></Value>
+        <Value Cell="R12" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='IssuedAirCargoOther'" DataValue="VALUE"></Value>
+        <Value Cell="S12" IsFormula="true">IFERROR((P12-R12)/R12,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A13:S13" Style="Header4" Collapsed="false">
+      <Caption Cell="A13">Почта</Caption>
+      <Values>
+        <Value Cell="B13" IsFormula="true">'Отчет за день'!Q12</Value>
+        <Value Cell="C13" IsFormula="true">C14+C15+C16+C17</Value>
+        <Value Cell="D13" IsFormula="true">D14+D15+D16+D17</Value>
+        <Value Cell="E13" IsFormula="true">B13-C13</Value>
+        <Value Cell="F13" IsFormula="true">B13-D13</Value>
+        <Value Cell="G13" IsFormula="true">IFERROR((B13-C13)/C13,0)</Value>
+        <Value Cell="H13" IsFormula="true">IFERROR((B13-D13)/D13,0)</Value>
+        <Value Cell="I13" IsFormula="true">C13-K13</Value>
+        <Value Cell="J13" IsFormula="true">IFERROR((C13-K13)/K13,0)</Value>
+        <Value Cell="K13" IsFormula="true">K14+K15+K16+K17</Value>
+        <Value Cell="L13" IsFormula="true">L14+L15+L16+L17</Value>
+        <Value Cell="M13" IsFormula="true">IFERROR((C13-Q13)/Q13,0)</Value>
+        <Value Cell="N13" IsFormula="true">P13-L13</Value>
+        <Value Cell="O13" IsFormula="true">IFERROR((P13-L13)/L13,0)</Value>
+        <Value Cell="P13" IsFormula="true">P14+P15+P16+P17</Value>
+        <Value Cell="Q13" IsFormula="true">Q14+Q15+Q16+Q17</Value>
+        <Value Cell="R13" IsFormula="true">R14+R15+R16+R17</Value>
+        <Value Cell="S13" IsFormula="true">IFERROR((P13-R13)/R13,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A14:S14" Style="Header5" Collapsed="false">
+      <Caption Cell="A14">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="B14" IsFormula="true">'Отчет за день'!Q13</Value>
+        <Value Cell="C14" IsFormula="true">AVERAGE('Отчет по грузообороту'!B13:AF13)</Value>
+        <Value Cell="D14" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='IssuedAirMailAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="E14" IsFormula="true">B14-C14</Value>
+        <Value Cell="F14" IsFormula="true">B14-D14</Value>
+        <Value Cell="G14" IsFormula="true">IFERROR((B14-C14)/C14,0)</Value>
+        <Value Cell="H14" IsFormula="true">IFERROR((B14-D14)/D14,0)</Value>
+        <Value Cell="I14" IsFormula="true">C14-K14</Value>
+        <Value Cell="J14" IsFormula="true">IFERROR((C14-K14)/K14,0)</Value>
+        <Value Cell="K14" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='IssuedAirMailAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="L14" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='IssuedAirMailAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="M14" IsFormula="true">IFERROR((C14-Q14)/Q14,0)</Value>
+        <Value Cell="N14" IsFormula="true">P14-L14</Value>
+        <Value Cell="O14" IsFormula="true">IFERROR((P14-L14)/L14,0)</Value>
+        <Value Cell="P14" IsFormula="true">SUM('Отчет по грузообороту'!B13:AF13)</Value>
+        <Value Cell="Q14" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='IssuedAirMailAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="R14" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='IssuedAirMailAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="S14" IsFormula="true">IFERROR((P14-R14)/R14,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A15:S15" Style="Header5" Collapsed="false">
+      <Caption Cell="A15">AirBridgeCargo</Caption>
+      <Values>
+        <Value Cell="B15" IsFormula="true">'Отчет за день'!Q14</Value>
+        <Value Cell="C15" IsFormula="true">AVERAGE('Отчет по грузообороту'!B13:AF13)</Value>
+        <Value Cell="D15" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='IssuedAirMailBridge'" DataValue="VALUE"></Value>
+        <Value Cell="E15" IsFormula="true">B15-C15</Value>
+        <Value Cell="F15" IsFormula="true">B15-D15</Value>
+        <Value Cell="G15" IsFormula="true">IFERROR((B15-C15)/C15,0)</Value>
+        <Value Cell="H15" IsFormula="true">IFERROR((B15-D15)/D15,0)</Value>
+        <Value Cell="I15" IsFormula="true">C15-K15</Value>
+        <Value Cell="J15" IsFormula="true">IFERROR((C15-K15)/K15,0)</Value>
+        <Value Cell="K15" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='IssuedAirMailBridge'" DataValue="VALUE"></Value>
+        <Value Cell="L15" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='IssuedAirMailBridge'" DataValue="VALUE"></Value>
+        <Value Cell="M15" IsFormula="true">IFERROR((C15-Q15)/Q15,0)</Value>
+        <Value Cell="N15" IsFormula="true">P15-L15</Value>
+        <Value Cell="O15" IsFormula="true">IFERROR((P15-L15)/L15,0)</Value>
+        <Value Cell="P15" IsFormula="true">SUM('Отчет по грузообороту'!B14:AF14)</Value>
+        <Value Cell="Q15" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='IssuedAirMailBridge'" DataValue="VALUE"></Value>
+        <Value Cell="R15" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='IssuedAirMailBridge'" DataValue="VALUE"></Value>
+        <Value Cell="S15" IsFormula="true">IFERROR((P15-R15)/R15,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A16:S16" Style="Header5" Collapsed="false">
+      <Caption Cell="A16">Nordwind Airlines (+ Pegas Fly)</Caption>
+      <Values>
+        <Value Cell="B16" IsFormula="true">'Отчет за день'!Q15</Value>
+        <Value Cell="C16" IsFormula="true">AVERAGE('Отчет по грузообороту'!B15:AF15)</Value>
+        <Value Cell="D16" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='IssuedAirMailNord'" DataValue="VALUE"></Value>
+        <Value Cell="E16" IsFormula="true">B16-C16</Value>
+        <Value Cell="F16" IsFormula="true">B16-D16</Value>
+        <Value Cell="G16" IsFormula="true">IFERROR((B16-C16)/C16,0)</Value>
+        <Value Cell="H16" IsFormula="true">IFERROR((B16-D16)/D16,0)</Value>
+        <Value Cell="I16" IsFormula="true">C16-K16</Value>
+        <Value Cell="J16" IsFormula="true">IFERROR((C16-K16)/K16,0)</Value>
+        <Value Cell="K16" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='IssuedAirMailNord'" DataValue="VALUE"></Value>
+        <Value Cell="L16" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='IssuedAirMailNord'" DataValue="VALUE"></Value>
+        <Value Cell="M16" IsFormula="true">IFERROR((C16-Q16)/Q16,0)</Value>
+        <Value Cell="N16" IsFormula="true">P16-L16</Value>
+        <Value Cell="O16" IsFormula="true">IFERROR((P16-L16)/L16,0)</Value>
+        <Value Cell="P16" IsFormula="true">SUM('Отчет по грузообороту'!B15:AF15)</Value>
+        <Value Cell="Q16" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='IssuedAirMailNord'" DataValue="VALUE"></Value>
+        <Value Cell="R16" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='IssuedAirMailNord'" DataValue="VALUE"></Value>
+        <Value Cell="S16" IsFormula="true">IFERROR((P16-R16)/R16,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A17:S17" Style="Header5" Collapsed="false">
+      <Caption Cell="A17">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="B17" IsFormula="true">'Отчет за день'!Q16</Value>
+        <Value Cell="C17" IsFormula="true">AVERAGE('Отчет по грузообороту'!B16:AF16)</Value>
+        <Value Cell="D17" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='IssuedAirMailOther'" DataValue="VALUE"></Value>
+        <Value Cell="E17" IsFormula="true">B17-C17</Value>
+        <Value Cell="F17" IsFormula="true">B17-D17</Value>
+        <Value Cell="G17" IsFormula="true">IFERROR((B17-C17)/C17,0)</Value>
+        <Value Cell="H17" IsFormula="true">IFERROR((B17-D17)/D17,0)</Value>
+        <Value Cell="I17" IsFormula="true">C17-K17</Value>
+        <Value Cell="J17" IsFormula="true">IFERROR((C17-K17)/K17,0)</Value>
+        <Value Cell="K17" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='IssuedAirMailOther'" DataValue="VALUE"></Value>
+        <Value Cell="L17" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='IssuedAirMailOther'" DataValue="VALUE"></Value>
+        <Value Cell="M17" IsFormula="true">IFERROR((C17-Q17)/Q17,0)</Value>
+        <Value Cell="N17" IsFormula="true">P17-L17</Value>
+        <Value Cell="O17" IsFormula="true">IFERROR((P17-L17)/L17,0)</Value>
+        <Value Cell="P17" IsFormula="true">SUM('Отчет по грузообороту'!B16:AF16)</Value>
+        <Value Cell="Q17" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='IssuedAirMailOther'" DataValue="VALUE"></Value>
+        <Value Cell="R17" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='IssuedAirMailOther'" DataValue="VALUE"></Value>
+        <Value Cell="S17" IsFormula="true">IFERROR((P17-R17)/R17,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A18:S18" Style="Header3">
+      <Caption Cell="A18">Выдано клиентам в Москве </Caption>
+      <Values>
+        <Value Cell="B18" IsFormula="true">'Отчет за день'!Q17</Value>
+        <Value Cell="C18" IsFormula="true">C19+C23</Value>
+        <Value Cell="D18" IsFormula="true">D19+D23</Value>
+        <Value Cell="E18" IsFormula="true">B18-C18</Value>
+        <Value Cell="F18" IsFormula="true">B18-D18</Value>
+        <Value Cell="G18" IsFormula="true">IFERROR((B18-C18)/C18,0)</Value>
+        <Value Cell="H18" IsFormula="true">IFERROR((B18-D18)/D18,0)</Value>
+        <Value Cell="I18" IsFormula="true">C18-K18</Value>
+        <Value Cell="J18" IsFormula="true">IFERROR((C18-K18)/K18,0)</Value>
+        <Value Cell="K18" IsFormula="true">K19+K23</Value>
+        <Value Cell="L18" IsFormula="true">L19+L23</Value>
+        <Value Cell="M18" IsFormula="true">IFERROR((C18-Q18)/Q18,0)</Value>
+        <Value Cell="N18" IsFormula="true">P18-L18</Value>
+        <Value Cell="O18" IsFormula="true">IFERROR((P18-L18)/L18,0)</Value>
+        <Value Cell="P18" IsFormula="true">P19+P23</Value>
+        <Value Cell="Q18" IsFormula="true">Q19+Q23</Value>
+        <Value Cell="R18" IsFormula="true">R19+R23</Value>
+        <Value Cell="S18" IsFormula="true">IFERROR((P18-R18)/R18,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A19:S19" Style="Header4">
+      <Caption Cell="A19">ВВЛ</Caption>
+      <Values>
+        <Value Cell="B19" IsFormula="true">'Отчет за день'!Q18</Value>
+        <Value Cell="C19" IsFormula="true">C20+C21+C22</Value>
+        <Value Cell="D19" IsFormula="true">D20+D21+D22</Value>
+        <Value Cell="E19" IsFormula="true">B19-C19</Value>
+        <Value Cell="F19" IsFormula="true">B19-D19</Value>
+        <Value Cell="G19" IsFormula="true">IFERROR((B19-C19)/C19,0)</Value>
+        <Value Cell="H19" IsFormula="true">IFERROR((B19-D19)/D19,0)</Value>
+        <Value Cell="I19" IsFormula="true">C19-K19</Value>
+        <Value Cell="J19" IsFormula="true">IFERROR((C19-K19)/K19,0)</Value>
+        <Value Cell="K19" IsFormula="true">K20+K21+K22</Value>
+        <Value Cell="L19" IsFormula="true">L20+L21+L22</Value>
+        <Value Cell="M19" IsFormula="true">IFERROR((C19-Q19)/Q19,0)</Value>
+        <Value Cell="N19" IsFormula="true">P19-L19</Value>
+        <Value Cell="O19" IsFormula="true">IFERROR((P19-L19)/L19,0)</Value>
+        <Value Cell="P19" IsFormula="true">P20+P21+P22</Value>
+        <Value Cell="Q19" IsFormula="true">Q20+Q21+Q22</Value>
+        <Value Cell="R19" IsFormula="true">R20+R21+R22</Value>
+        <Value Cell="S19" IsFormula="true">IFERROR((P19-R19)/R19,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A20:S20" Style="Header5" Collapsed="true">
+      <Caption Cell="A20">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="B20" IsFormula="true">'Отчет за день'!Q19</Value>
+        <Value Cell="C20" IsFormula="true">AVERAGE('Отчет по грузообороту'!B19:AF19)</Value>
+        <Value Cell="D20" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='IssuedMoscowVVLAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="E20" IsFormula="true">B20-C20</Value>
+        <Value Cell="F20" IsFormula="true">B20-D20</Value>
+        <Value Cell="G20" IsFormula="true">IFERROR((B20-C20)/C20,0)</Value>
+        <Value Cell="H20" IsFormula="true">IFERROR((B20-D20)/D20,0)</Value>
+        <Value Cell="I20" IsFormula="true">C20-K20</Value>
+        <Value Cell="J20" IsFormula="true">IFERROR((C20-K20)/K20,0)</Value>
+        <Value Cell="K20" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='IssuedMoscowVVLAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="L20" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='IssuedMoscowVVLAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="M20" IsFormula="true">IFERROR((C20-Q20)/Q20,0)</Value>
+        <Value Cell="N20" IsFormula="true">P20-L20</Value>
+        <Value Cell="O20" IsFormula="true">IFERROR((P20-L20)/L20,0)</Value>
+        <Value Cell="P20" IsFormula="true">SUM('Отчет по грузообороту'!B19:AF19)</Value>
+        <Value Cell="Q20" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='IssuedMoscowVVLAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="R20" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='IssuedMoscowVVLAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="S20" IsFormula="true">IFERROR((P20-R20)/R20,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A21:S21" Style="Header5" Collapsed="true">
+      <Caption Cell="A21">Nordwind Airlines (+ Pegas Fly)</Caption>
+      <Values>
+        <Value Cell="B21" IsFormula="true">'Отчет за день'!Q20</Value>
+        <Value Cell="C21" IsFormula="true">AVERAGE('Отчет по грузообороту'!B20:AF20)</Value>
+        <Value Cell="D21" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='IssuedMoscowVVLNord'" DataValue="VALUE"></Value>
+        <Value Cell="E21" IsFormula="true">B21-C21</Value>
+        <Value Cell="F21" IsFormula="true">B21-D21</Value>
+        <Value Cell="G21" IsFormula="true">IFERROR((B21-C21)/C21,0)</Value>
+        <Value Cell="H21" IsFormula="true">IFERROR((B21-D21)/D21,0)</Value>
+        <Value Cell="I21" IsFormula="true">C21-K21</Value>
+        <Value Cell="J21" IsFormula="true">IFERROR((C21-K21)/K21,0)</Value>
+        <Value Cell="K21" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='IssuedMoscowVVLNord'" DataValue="VALUE"></Value>
+        <Value Cell="L21" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='IssuedMoscowVVLNord'" DataValue="VALUE"></Value>
+        <Value Cell="M21" IsFormula="true">IFERROR((C21-Q21)/Q21,0)</Value>
+        <Value Cell="N21" IsFormula="true">P21-L21</Value>
+        <Value Cell="O21" IsFormula="true">IFERROR((P21-L21)/L21,0)</Value>
+        <Value Cell="P21" IsFormula="true">SUM('Отчет по грузообороту'!B20:AF20)</Value>
+        <Value Cell="Q21" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='IssuedMoscowVVLNord'" DataValue="VALUE"></Value>
+        <Value Cell="R21" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='IssuedMoscowVVLNord'" DataValue="VALUE"></Value>
+        <Value Cell="S21" IsFormula="true">IFERROR((P21-R21)/R21,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A22:S22" Style="Header5" Collapsed="true">
+      <Caption Cell="A22">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="B22" IsFormula="true">'Отчет за день'!Q21</Value>
+        <Value Cell="C22" IsFormula="true">AVERAGE('Отчет по грузообороту'!B21:AF21)</Value>
+        <Value Cell="D22" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='IssuedMoscowVVLOther'" DataValue="VALUE"></Value>
+        <Value Cell="E22" IsFormula="true">B22-C22</Value>
+        <Value Cell="F22" IsFormula="true">B22-D22</Value>
+        <Value Cell="G22" IsFormula="true">IFERROR((B22-C22)/C22,0)</Value>
+        <Value Cell="H22" IsFormula="true">IFERROR((B22-D22)/D22,0)</Value>
+        <Value Cell="I22" IsFormula="true">C22-K22</Value>
+        <Value Cell="J22" IsFormula="true">IFERROR((C22-K22)/K22,0)</Value>
+        <Value Cell="K22" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='IssuedMoscowVVLOther'" DataValue="VALUE"></Value>
+        <Value Cell="L22" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='IssuedMoscowVVLOther'" DataValue="VALUE"></Value>
+        <Value Cell="M22" IsFormula="true">IFERROR((C22-Q22)/Q22,0)</Value>
+        <Value Cell="N22" IsFormula="true">P22-L22</Value>
+        <Value Cell="O22" IsFormula="true">IFERROR((P22-L22)/L22,0)</Value>
+        <Value Cell="P22" IsFormula="true">SUM('Отчет по грузообороту'!B21:AF21)</Value>
+        <Value Cell="Q22" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='IssuedMoscowVVLOther'" DataValue="VALUE"></Value>
+        <Value Cell="R22" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='IssuedMoscowVVLOther'" DataValue="VALUE"></Value>
+        <Value Cell="S22" IsFormula="true">IFERROR((P22-R22)/R22,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A23:S23" Style="Header4">
+      <Caption Cell="A23">МВЛ</Caption>
+      <Values>
+        <Value Cell="B23" IsFormula="true">'Отчет за день'!Q22</Value>
+        <Value Cell="C23" IsFormula="true">C24+C25+C26</Value>
+        <Value Cell="D23" IsFormula="true">D24+D25+D26</Value>
+        <Value Cell="E23" IsFormula="true">B23-C23</Value>
+        <Value Cell="F23" IsFormula="true">B23-D23</Value>
+        <Value Cell="G23" IsFormula="true">IFERROR((B23-C23)/C23,0)</Value>
+        <Value Cell="H23" IsFormula="true">IFERROR((B23-D23)/D23,0)</Value>
+        <Value Cell="I23" IsFormula="true">C23-K23</Value>
+        <Value Cell="J23" IsFormula="true">IFERROR((C23-K23)/K23,0)</Value>
+        <Value Cell="K23" IsFormula="true">K24+K25+K26</Value>
+        <Value Cell="L23" IsFormula="true">L24+L25+L26</Value>
+        <Value Cell="M23" IsFormula="true">IFERROR((C23-Q23)/Q23,0)</Value>
+        <Value Cell="N23" IsFormula="true">P23-L23</Value>
+        <Value Cell="O23" IsFormula="true">IFERROR((P23-L23)/L23,0)</Value>
+        <Value Cell="P23" IsFormula="true">P24+P25+P26</Value>
+        <Value Cell="Q23" IsFormula="true">Q24+Q25+Q26</Value>
+        <Value Cell="R23" IsFormula="true">R24+R25+R26</Value>
+        <Value Cell="S23" IsFormula="true">IFERROR((O23-Q23)/Q23,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A24:S24" Style="Header5" Collapsed="true">
+      <Caption Cell="A24">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="B24" IsFormula="true">'Отчет за день'!Q23</Value>
+        <Value Cell="C24" IsFormula="true">AVERAGE('Отчет по грузообороту'!B23:AF23)</Value>
+        <Value Cell="D24" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='IssuedMoscowMVLAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="E24" IsFormula="true">B24-C24</Value>
+        <Value Cell="F24" IsFormula="true">B24-D24</Value>
+        <Value Cell="G24" IsFormula="true">IFERROR((B24-C24)/C24,0)</Value>
+        <Value Cell="H24" IsFormula="true">IFERROR((B24-D24)/D24,0)</Value>
+        <Value Cell="I24" IsFormula="true">C24-K24</Value>
+        <Value Cell="J24" IsFormula="true">IFERROR((C24-K24)/K24,0)</Value>
+        <Value Cell="K24" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='IssuedMoscowMVLAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="L24" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='IssuedMoscowMVLAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="M24" IsFormula="true">IFERROR((C24-Q24)/Q24,0)</Value>
+        <Value Cell="N24" IsFormula="true">P24-L24</Value>
+        <Value Cell="O24" IsFormula="true">IFERROR((P24-L24)/L24,0)</Value>
+        <Value Cell="P24" IsFormula="true">SUM('Отчет по грузообороту'!B23:AF23)</Value>
+        <Value Cell="Q24" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='IssuedMoscowMVLAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="R24" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='IssuedMoscowMVLAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="S24" IsFormula="true">IFERROR((P24-R24)/R24,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A25:S25" Style="Header5" Collapsed="true">
+      <Caption Cell="A25">Nordwind Airlines (+ Pegas Fly)</Caption>
+      <Values>
+        <Value Cell="B25" IsFormula="true">'Отчет за день'!Q24</Value>
+        <Value Cell="C25" IsFormula="true">AVERAGE('Отчет по грузообороту'!B24:AF24)</Value>
+        <Value Cell="D25" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='IssuedMoscowMVLNord'" DataValue="VALUE"></Value>
+        <Value Cell="E25" IsFormula="true">B25-C25</Value>
+        <Value Cell="F25" IsFormula="true">B25-D25</Value>
+        <Value Cell="G25" IsFormula="true">IFERROR((B25-C25)/C25,0)</Value>
+        <Value Cell="H25" IsFormula="true">IFERROR((B25-D25)/D25,0)</Value>
+        <Value Cell="I25" IsFormula="true">C25-K25</Value>
+        <Value Cell="J25" IsFormula="true">IFERROR((C25-K25)/K25,0)</Value>
+        <Value Cell="K25" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='IssuedMoscowMVLNord'" DataValue="VALUE"></Value>
+        <Value Cell="L25" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='IssuedMoscowMVLNord'" DataValue="VALUE"></Value>
+        <Value Cell="M25" IsFormula="true">IFERROR((C25-Q25)/Q25,0)</Value>
+        <Value Cell="N25" IsFormula="true">P25-L25</Value>
+        <Value Cell="O25" IsFormula="true">IFERROR((P25-L25)/L25,0)</Value>
+        <Value Cell="P25" IsFormula="true">SUM('Отчет по грузообороту'!B24:AF24)</Value>
+        <Value Cell="Q25" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='IssuedMoscowMVLNord'" DataValue="VALUE"></Value>
+        <Value Cell="R25" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='IssuedMoscowMVLNord'" DataValue="VALUE"></Value>
+        <Value Cell="S25" IsFormula="true">IFERROR((P25-R25)/R25,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A26:S26" Style="Header5" Collapsed="true">
+      <Caption Cell="A26">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="B26" IsFormula="true">'Отчет за день'!Q25</Value>
+        <Value Cell="C26" IsFormula="true">AVERAGE('Отчет по грузообороту'!B25:AF25)</Value>
+        <Value Cell="D26" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='IssuedMoscowMVLOther'" DataValue="VALUE"></Value>
+        <Value Cell="E26" IsFormula="true">B26-C26</Value>
+        <Value Cell="F26" IsFormula="true">B26-D26</Value>
+        <Value Cell="G26" IsFormula="true">IFERROR((B26-C26)/C26,0)</Value>
+        <Value Cell="H26" IsFormula="true">IFERROR((B26-D26)/D26,0)</Value>
+        <Value Cell="I26" IsFormula="true">C26-K26</Value>
+        <Value Cell="J26" IsFormula="true">IFERROR((C26-K26)/K26,0)</Value>
+        <Value Cell="K26" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='IssuedMoscowMVLOther'" DataValue="VALUE"></Value>
+        <Value Cell="L26" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='IssuedMoscowMVLOther'" DataValue="VALUE"></Value>
+        <Value Cell="M26" IsFormula="true">IFERROR((C26-Q26)/Q26,0)</Value>
+        <Value Cell="N26" IsFormula="true">P26-L26</Value>
+        <Value Cell="O26" IsFormula="true">IFERROR((P26-L26)/L26,0)</Value>
+        <Value Cell="P26" IsFormula="true">SUM('Отчет по грузообороту'!B25:AF25)</Value>
+        <Value Cell="Q26" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='IssuedMoscowMVLOther'" DataValue="VALUE"></Value>
+        <Value Cell="R26" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='IssuedMoscowMVLOther'" DataValue="VALUE"></Value>
+        <Value Cell="S26" IsFormula="true">IFERROR((P26-R26)/R26,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A27:S27" Style="Header3">
+      <Caption Cell="A27">Выдано на другие СВХ в Москве</Caption>
+      <Values>
+        <Value Cell="B27" IsFormula="true">'Отчет за день'!Q26</Value>
+        <Value Cell="C27" IsFormula="true">C28+C31</Value>
+        <Value Cell="D27" IsFormula="true">D28+D31</Value>
+        <Value Cell="E27" IsFormula="true">B27-C27</Value>
+        <Value Cell="F27" IsFormula="true">B27-D27</Value>
+        <Value Cell="G27" IsFormula="true">IFERROR((B27-C27)/C27,0)</Value>
+        <Value Cell="H27" IsFormula="true">IFERROR((B27-D27)/D27,0)</Value>
+        <Value Cell="I27" IsFormula="true">C27-K27</Value>
+        <Value Cell="J27" IsFormula="true">IFERROR((C27-K27)/K27,0)</Value>
+        <Value Cell="K27" IsFormula="true">K28+K31</Value>
+        <Value Cell="L27" IsFormula="true">L28+L31</Value>
+        <Value Cell="M27" IsFormula="true">IFERROR((C27-Q27)/Q27,0)</Value>
+        <Value Cell="N27" IsFormula="true">P27-L27</Value>
+        <Value Cell="O27" IsFormula="true">IFERROR((P27-L27)/L27,0)</Value>
+        <Value Cell="P27" IsFormula="true">P28+P31</Value>
+        <Value Cell="Q27" IsFormula="true">Q28+Q31</Value>
+        <Value Cell="R27" IsFormula="true">R28+R31</Value>
+        <Value Cell="S27" IsFormula="true">IFERROR((P27-R27)/R27,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A28:S28" Style="Header4">
+      <Caption Cell="A28">с рейсов Аэрофлот</Caption>
+      <Values>
+        <Value Cell="B28" IsFormula="true">'Отчет за день'!Q27</Value>
+        <Value Cell="C28" IsFormula="true">C29+C30</Value>
+        <Value Cell="D28" IsFormula="true">D29+D20</Value>
+        <Value Cell="E28" IsFormula="true">B28-C28</Value>
+        <Value Cell="F28" IsFormula="true">B28-D28</Value>
+        <Value Cell="G28" IsFormula="true">IFERROR((B28-C28)/C28,0)</Value>
+        <Value Cell="H28" IsFormula="true">IFERROR((B28-D28)/D28,0)</Value>
+        <Value Cell="I28" IsFormula="true">C28-K28</Value>
+        <Value Cell="J28" IsFormula="true">IFERROR((C28-K28)/K28,0)</Value>
+        <Value Cell="K28" IsFormula="true">K29+K30</Value>
+        <Value Cell="L28" IsFormula="true">L29+L30</Value>
+        <Value Cell="M28" IsFormula="true">IFERROR((C28-Q28)/Q28,0)</Value>
+        <Value Cell="N28" IsFormula="true">P28-L28</Value>
+        <Value Cell="O28" IsFormula="true">IFERROR((P28-L28)/L28,0)</Value>
+        <Value Cell="P28" IsFormula="true">P29+P30</Value>
+        <Value Cell="Q28" IsFormula="true">Q29+Q30</Value>
+        <Value Cell="Q28" IsFormula="true">R29+R30</Value>
+        <Value Cell="S28" IsFormula="true">IFERROR((P28-R28)/R28,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A29:S29" Style="Header5" Collapsed="true">
+      <Caption Cell="A29">через склад</Caption>
+      <Values>
+        <Value Cell="B29" IsFormula="true">'Отчет за день'!Q28</Value>
+        <Value Cell="C29" IsFormula="true">AVERAGE('Отчет по грузообороту'!B28:AF28)</Value>
+        <Value Cell="D29" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='IssuedSVHAeroflotStock'" DataValue="VALUE"></Value>
+        <Value Cell="E29" IsFormula="true">B29-C29</Value>
+        <Value Cell="F29" IsFormula="true">B29-D29</Value>
+        <Value Cell="G29" IsFormula="true">IFERROR((B29-C29)/C29,0)</Value>
+        <Value Cell="H29" IsFormula="true">IFERROR((B29-D29)/D29,0)</Value>
+        <Value Cell="I29" IsFormula="true">C29-K29</Value>
+        <Value Cell="J29" IsFormula="true">IFERROR((C29-K29)/K29,0)</Value>
+        <Value Cell="K29" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='IssuedSVHAeroflotStock'" DataValue="VALUE"></Value>
+        <Value Cell="L29" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='IssuedSVHAeroflotStock'" DataValue="VALUE"></Value>
+        <Value Cell="M29" IsFormula="true">IFERROR((C29-Q29)/Q29,0)</Value>
+        <Value Cell="N29" IsFormula="true">P29-L29</Value>
+        <Value Cell="O29" IsFormula="true">IFERROR((P29-L29)/L29,0)</Value>
+        <Value Cell="P29" IsFormula="true">SUM('Отчет по грузообороту'!B28:AF28)</Value>
+        <Value Cell="Q29" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='IssuedSVHAeroflotStock'" DataValue="VALUE"></Value>
+        <Value Cell="R29" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='IssuedSVHAeroflotStock'" DataValue="VALUE"></Value>
+        <Value Cell="S29" IsFormula="true">IFERROR((P29-R29)/R29,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A30:S30" Style="Header5" Collapsed="true">
+      <Caption Cell="A30">из под борта</Caption>
+      <Values>
+        <Value Cell="B30" IsFormula="true">'Отчет за день'!Q29</Value>
+        <Value Cell="C30" IsFormula="true">AVERAGE('Отчет по грузообороту'!B29:AF29)</Value>
+        <Value Cell="D30" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='IssuedSVHAeroflotBoard'" DataValue="VALUE"></Value>
+        <Value Cell="E30" IsFormula="true">B30-C30</Value>
+        <Value Cell="F30" IsFormula="true">B30-D30</Value>
+        <Value Cell="G30" IsFormula="true">IFERROR((B30-C30)/C30,0)</Value>
+        <Value Cell="H30" IsFormula="true">IFERROR((B30-D30)/D30,0)</Value>
+        <Value Cell="I30" IsFormula="true">C30-K30</Value>
+        <Value Cell="J30" IsFormula="true">IFERROR((C30-K30)/K30,0)</Value>
+        <Value Cell="K30" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='IssuedSVHAeroflotBoard'" DataValue="VALUE"></Value>
+        <Value Cell="L30" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='IssuedSVHAeroflotBoard'" DataValue="VALUE"></Value>
+        <Value Cell="M30" IsFormula="true">IFERROR((C30-Q30)/Q30,0)</Value>
+        <Value Cell="N30" IsFormula="true">P30-L30</Value>
+        <Value Cell="O30" IsFormula="true">IFERROR((P30-L30)/L30,0)</Value>
+        <Value Cell="P30" IsFormula="true">SUM('Отчет по грузообороту'!B29:AF29)</Value>
+        <Value Cell="Q30" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='IssuedSVHAeroflotBoard'" DataValue="VALUE"></Value>
+        <Value Cell="R30" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='IssuedSVHAeroflotBoard'" DataValue="VALUE"></Value>
+        <Value Cell="S30" IsFormula="true">IFERROR((P30-R30)/R30,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A31:S31" Style="Header4">
+      <Caption Cell="A31">с рейсов AirBridgeCargo</Caption>
+      <Values>
+        <Value Cell="B31" IsFormula="true">'Отчет за день'!Q30</Value>
+        <Value Cell="C31" IsFormula="true">C32+C33</Value>
+        <Value Cell="D31" IsFormula="true">D32+D33</Value>
+        <Value Cell="E31" IsFormula="true">B31-C31</Value>
+        <Value Cell="F31" IsFormula="true">B31-D31</Value>
+        <Value Cell="G31" IsFormula="true">IFERROR((B31-C31)/C31,0)</Value>
+        <Value Cell="H31" IsFormula="true">IFERROR((B31-D31)/D31,0)</Value>
+        <Value Cell="I31" IsFormula="true">C31-K31</Value>
+        <Value Cell="J31" IsFormula="true">IFERROR((C31-K31)/K31,0)</Value>
+        <Value Cell="K31" IsFormula="true">K32+K33</Value>
+        <Value Cell="L31" IsFormula="true">L32+L33</Value>
+        <Value Cell="M31" IsFormula="true">IFERROR((C31-Q31)/Q31,0)</Value>
+        <Value Cell="N31" IsFormula="true">P31-L31</Value>
+        <Value Cell="O31" IsFormula="true">IFERROR((P31-L31)/L31,0)</Value>
+        <Value Cell="P31" IsFormula="true">P32+P33</Value>
+        <Value Cell="Q31" IsFormula="true">Q32+Q33</Value>
+        <Value Cell="R31" IsFormula="true">R32+R33</Value>
+        <Value Cell="S31" IsFormula="true">IFERROR((P31-R31)/R31,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A32:S32" Style="Header5" Collapsed="true">
+      <Caption Cell="A32">через склад</Caption>
+      <Values>
+        <Value Cell="B32" IsFormula="true">'Отчет за день'!Q31</Value>
+        <Value Cell="C32" IsFormula="true">AVERAGE('Отчет по грузообороту'!B31:AF31)</Value>
+        <Value Cell="D32" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='IssuedSVHBridgeStock'" DataValue="VALUE"></Value>
+        <Value Cell="E32" IsFormula="true">B32-C32</Value>
+        <Value Cell="F32" IsFormula="true">B32-D32</Value>
+        <Value Cell="G32" IsFormula="true">IFERROR((B32-C32)/C32,0)</Value>
+        <Value Cell="H32" IsFormula="true">IFERROR((B32-D32)/D32,0)</Value>
+        <Value Cell="I32" IsFormula="true">C32-K32</Value>
+        <Value Cell="J32" IsFormula="true">IFERROR((C32-K32)/K32,0)</Value>
+        <Value Cell="K32" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='IssuedSVHBridgeStock'" DataValue="VALUE"></Value>
+        <Value Cell="L32" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='IssuedSVHBridgeStock'" DataValue="VALUE"></Value>
+        <Value Cell="M32" IsFormula="true">IFERROR((C32-Q32)/Q32,0)</Value>
+        <Value Cell="N32" IsFormula="true">P32-L32</Value>
+        <Value Cell="O32" IsFormula="true">IFERROR((P32-L32)/L32,0)</Value>
+        <Value Cell="P32" IsFormula="true">SUM('Отчет по грузообороту'!B31:AF31)</Value>
+        <Value Cell="Q32" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='IssuedSVHBridgeStock'" DataValue="VALUE"></Value>
+        <Value Cell="R32" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='IssuedSVHBridgeStock'" DataValue="VALUE"></Value>
+        <Value Cell="S32" IsFormula="true">IFERROR((P32-R32)/R32,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A33:S33" Style="Header5" Collapsed="true">
+      <Caption Cell="A33">из под борта</Caption>
+      <Values>
+        <Value Cell="B33" IsFormula="true">'Отчет за день'!Q32</Value>
+        <Value Cell="C33" IsFormula="true">AVERAGE('Отчет по грузообороту'!B32:AF32)</Value>
+        <Value Cell="D33" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='IssuedSVHBridgeBoard'" DataValue="VALUE"></Value>
+        <Value Cell="E33" IsFormula="true">B33-C33</Value>
+        <Value Cell="F33" IsFormula="true">B33-D33</Value>
+        <Value Cell="G33" IsFormula="true">IFERROR((B33-C33)/C33,0)</Value>
+        <Value Cell="H33" IsFormula="true">IFERROR((B33-D33)/D33,0)</Value>
+        <Value Cell="I33" IsFormula="true">C33-K33</Value>
+        <Value Cell="J33" IsFormula="true">IFERROR((C33-K33)/K33,0)</Value>
+        <Value Cell="K33" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='IssuedSVHBridgeBoard'" DataValue="VALUE"></Value>
+        <Value Cell="L33" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='IssuedSVHBridgeBoard'" DataValue="VALUE"></Value>
+        <Value Cell="M33" IsFormula="true">IFERROR((C33-Q33)/Q33,0)</Value>
+        <Value Cell="N33" IsFormula="true">P33-L33</Value>
+        <Value Cell="O33" IsFormula="true">IFERROR((P33-L33)/L33,0)</Value>
+        <Value Cell="P33" IsFormula="true">SUM('Отчет по грузообороту'!B32:AF32)</Value>
+        <Value Cell="Q33" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='IssuedSVHBridgeBoard'" DataValue="VALUE"></Value>
+        <Value Cell="R33" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='IssuedSVHBridgeBoard'" DataValue="VALUE"></Value>
+        <Value Cell="S33" IsFormula="true">IFERROR((P33-R33)/R33,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A34:S34" Style="Header4">
+      <Caption Cell="A34">Nordwind Airlines (+ Pegas Fly)</Caption>
+      <Values>
+        <Value Cell="B34" IsFormula="true">'Отчет за день'!Q33</Value>
+        <Value Cell="C34" IsFormula="true">C35+C36</Value>
+        <Value Cell="D34" IsFormula="true">D35+D36</Value>
+        <Value Cell="E34" IsFormula="true">B34-C34</Value>
+        <Value Cell="F34" IsFormula="true">B34-D34</Value>
+        <Value Cell="G34" IsFormula="true">IFERROR((B34-C34)/C34,0)</Value>
+        <Value Cell="H34" IsFormula="true">IFERROR((B34-D34)/D34,0)</Value>
+        <Value Cell="I34" IsFormula="true">C34-K34</Value>
+        <Value Cell="J34" IsFormula="true">IFERROR((C34-K34)/K34,0)</Value>
+        <Value Cell="K34" IsFormula="true">K35+K36</Value>
+        <Value Cell="L34" IsFormula="true">L35+L36</Value>
+        <Value Cell="M34" IsFormula="true">IFERROR((C34-Q34)/Q34,0)</Value>
+        <Value Cell="N34" IsFormula="true">P34-L34</Value>
+        <Value Cell="O34" IsFormula="true">IFERROR((P34-L34)/L34,0)</Value>
+        <Value Cell="P34" IsFormula="true">P35+P36</Value>
+        <Value Cell="Q34" IsFormula="true">Q35+Q36</Value>
+        <Value Cell="R34" IsFormula="true">R35+R36</Value>
+        <Value Cell="S34" IsFormula="true">IFERROR((P34-R34)/R34,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A35:S35" Style="Header5" Collapsed="true">
+      <Caption Cell="A35">через склад</Caption>
+      <Values>
+        <Value Cell="B35" IsFormula="true">'Отчет за день'!Q34</Value>
+        <Value Cell="C35" IsFormula="true">AVERAGE('Отчет по грузообороту'!B34:AF34)</Value>
+        <Value Cell="D35" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='IssuedSVHNordStock'" DataValue="VALUE"></Value>
+        <Value Cell="E35" IsFormula="true">B35-C35</Value>
+        <Value Cell="F35" IsFormula="true">B35-D35</Value>
+        <Value Cell="G35" IsFormula="true">IFERROR((B35-C35)/C35,0)</Value>
+        <Value Cell="H35" IsFormula="true">IFERROR((B35-D35)/D35,0)</Value>
+        <Value Cell="I35" IsFormula="true">C35-K35</Value>
+        <Value Cell="J35" IsFormula="true">IFERROR((C35-K35)/K35,0)</Value>
+        <Value Cell="K35" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='IssuedSVHNordStock'" DataValue="VALUE"></Value>
+        <Value Cell="L35" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='IssuedSVHNordStock'" DataValue="VALUE"></Value>
+        <Value Cell="M35" IsFormula="true">IFERROR((C35-Q35)/Q35,0)</Value>
+        <Value Cell="N35" IsFormula="true">P35-L35</Value>
+        <Value Cell="O35" IsFormula="true">IFERROR((P35-L35)/L35,0)</Value>
+        <Value Cell="P35" IsFormula="true">SUM('Отчет по грузообороту'!B34:AF34)</Value>
+        <Value Cell="Q35" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='IssuedSVHNordStock'" DataValue="VALUE"></Value>
+        <Value Cell="R35" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='IssuedSVHNordStock'" DataValue="VALUE"></Value>
+        <Value Cell="S35" IsFormula="true">IFERROR((P35-R35)/R35,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A36:S36" Style="Header5" Collapsed="true">
+      <Caption Cell="A36">из под борта</Caption>
+      <Values>
+        <Value Cell="B36" IsFormula="true">'Отчет за день'!Q35</Value>
+        <Value Cell="C36" IsFormula="true">AVERAGE('Отчет по грузообороту'!B35:AF35)</Value>
+        <Value Cell="D36" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='IssuedSVHNordBoard'" DataValue="VALUE"></Value>
+        <Value Cell="E36" IsFormula="true">B36-C36</Value>
+        <Value Cell="F36" IsFormula="true">B36-D36</Value>
+        <Value Cell="G36" IsFormula="true">IFERROR((B36-C36)/C36,0)</Value>
+        <Value Cell="H36" IsFormula="true">IFERROR((B36-D36)/D36,0)</Value>
+        <Value Cell="I36" IsFormula="true">C36-K36</Value>
+        <Value Cell="J36" IsFormula="true">IFERROR((C36-K36)/K36,0)</Value>
+        <Value Cell="K36" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='IssuedSVHNordBoard'" DataValue="VALUE"></Value>
+        <Value Cell="L36" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='IssuedSVHNordBoard'" DataValue="VALUE"></Value>
+        <Value Cell="M36" IsFormula="true">IFERROR((C36-Q36)/Q36,0)</Value>
+        <Value Cell="N36" IsFormula="true">P36-L36</Value>
+        <Value Cell="O36" IsFormula="true">IFERROR((P36-L36)/L36,0)</Value>
+        <Value Cell="P36" IsFormula="true">SUM('Отчет по грузообороту'!B35:AF35)</Value>
+        <Value Cell="Q36" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='IssuedSVHNordBoard'" DataValue="VALUE"></Value>
+        <Value Cell="R36" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='IssuedSVHNordBoard'" DataValue="VALUE"></Value>
+        <Value Cell="S36" IsFormula="true">IFERROR((P36-R36)/R36,0)</Value>
+      </Values>
+  </Row>
+  <Row Cell="A37:S37" Style="Header3">
+      <Caption Cell="A37">Обслужено рейсов по вылету</Caption>
+      <Values>
+        <Value Cell="B37" IsFormula="true">'Отчет за день'!Q36</Value>
+        <Value Cell="C37" IsFormula="true">C38+C39+C40+C41</Value>
+        <Value Cell="D37" IsFormula="true">D38+D39+D40+D41</Value>
+        <Value Cell="E37" IsFormula="true">B37-C37</Value>
+        <Value Cell="F37" IsFormula="true">B37-D37</Value>
+        <Value Cell="G37" IsFormula="true">IFERROR((B37-C37)/C37,0)</Value>
+        <Value Cell="H37" IsFormula="true">IFERROR((B37-D37)/D37,0)</Value>
+        <Value Cell="I37" IsFormula="true">C37-K37</Value>
+        <Value Cell="J37" IsFormula="true">IFERROR((C37-K37)/K37,0)</Value>
+        <Value Cell="K37" IsFormula="true">K38+K39+K40+K41</Value>
+        <Value Cell="L37" IsFormula="true">L38+L39+L40+L41</Value>
+        <Value Cell="M37" IsFormula="true">IFERROR((C37-Q37)/Q37,0)</Value>
+        <Value Cell="N37" IsFormula="true">P37-L37</Value>
+        <Value Cell="O37" IsFormula="true">IFERROR((P37-L37)/L37,0)</Value>
+        <Value Cell="P37" IsFormula="true">P38+P39+P40+P41</Value>
+        <Value Cell="Q37" IsFormula="true">Q38+Q39+Q40+Q41</Value>
+        <Value Cell="R37" IsFormula="true">R38+R39+R40+R41</Value>
+        <Value Cell="S37" IsFormula="true">IFERROR((P37-R37)/R37,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A38:S38" Style="Header5" Collapsed="true">
+      <Caption Cell="A38">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="B38" IsFormula="true">'Отчет за день'!Q37</Value>
+        <Value Cell="C38" IsFormula="true">AVERAGE('Отчет по грузообороту'!B37:AF37)</Value>
+        <Value Cell="D38" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='IssuedDepartureAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="E38" IsFormula="true">B38-C38</Value>
+        <Value Cell="F38" IsFormula="true">B38-D38</Value>
+        <Value Cell="G38" IsFormula="true">IFERROR((B38-C38)/C38,0)</Value>
+        <Value Cell="H38" IsFormula="true">IFERROR((B38-D38)/D38,0)</Value>
+        <Value Cell="I38" IsFormula="true">C38-K38</Value>
+        <Value Cell="J38" IsFormula="true">IFERROR((C38-K38)/K38,0)</Value>
+        <Value Cell="K38" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='IssuedDepartureAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="L38" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='IssuedDepartureAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="M38" IsFormula="true">IFERROR((C38-Q38)/Q38,0)</Value>
+        <Value Cell="N38" IsFormula="true">P38-L38</Value>
+        <Value Cell="O38" IsFormula="true">IFERROR((P38-L38)/L38,0)</Value>
+        <Value Cell="P38" IsFormula="true">SUM('Отчет по грузообороту'!B37:AF37)</Value>
+        <Value Cell="Q38" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='IssuedDepartureAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="R38" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='IssuedDepartureAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="S38" IsFormula="true">IFERROR((P38-R38)/R38,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A39:S39" Style="Header5" Collapsed="true">
+      <Caption Cell="A39">AirBridgeCargo</Caption>
+      <Values>
+        <Value Cell="B39" IsFormula="true">'Отчет за день'!Q38</Value>
+        <Value Cell="C39" IsFormula="true">AVERAGE('Отчет по грузообороту'!B38:AF38)</Value>
+        <Value Cell="D39" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='IssuedDepartureBridge'" DataValue="VALUE"></Value>
+        <Value Cell="E39" IsFormula="true">B39-C39</Value>
+        <Value Cell="F39" IsFormula="true">B39-D39</Value>
+        <Value Cell="G39" IsFormula="true">IFERROR((B39-C39)/C39,0)</Value>
+        <Value Cell="H39" IsFormula="true">IFERROR((B39-D39)/D39,0)</Value>
+        <Value Cell="I39" IsFormula="true">C39-K39</Value>
+        <Value Cell="J39" IsFormula="true">IFERROR((C39-K39)/K39,0)</Value>
+        <Value Cell="K39" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='IssuedDepartureBridge'" DataValue="VALUE"></Value>
+        <Value Cell="L39" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='IssuedDepartureBridge'" DataValue="VALUE"></Value>
+        <Value Cell="M39" IsFormula="true">IFERROR((C39-Q39)/Q39,0)</Value>
+        <Value Cell="N39" IsFormula="true">P39-L39</Value>
+        <Value Cell="O39" IsFormula="true">IFERROR((P39-L39)/L39,0)</Value>
+        <Value Cell="P39" IsFormula="true">SUM('Отчет по грузообороту'!B38:AF38)</Value>
+        <Value Cell="Q39" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='IssuedDepartureBridge'" DataValue="VALUE"></Value>
+        <Value Cell="R39" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='IssuedDepartureBridge'" DataValue="VALUE"></Value>
+        <Value Cell="S39" IsFormula="true">IFERROR((P39-R39)/R39,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A40:S40" Style="Header5" Collapsed="true">
+      <Caption Cell="A40">Nordwind Airlines (+ Pegas Fly)</Caption>
+      <Values>
+        <Value Cell="B40" IsFormula="true">'Отчет за день'!Q39</Value>
+        <Value Cell="C40" IsFormula="true">AVERAGE('Отчет по грузообороту'!B39:AF39)</Value>
+        <Value Cell="D40" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='IssuedDepartureNord'" DataValue="VALUE"></Value>
+        <Value Cell="E40" IsFormula="true">B40-C40</Value>
+        <Value Cell="F40" IsFormula="true">B40-D40</Value>
+        <Value Cell="G40" IsFormula="true">IFERROR((B40-C40)/C40,0)</Value>
+        <Value Cell="H40" IsFormula="true">IFERROR((B40-D40)/D40,0)</Value>
+        <Value Cell="I40" IsFormula="true">C40-K40</Value>
+        <Value Cell="J40" IsFormula="true">IFERROR((C40-K40)/K40,0)</Value>
+        <Value Cell="K40" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='IssuedDepartureNord'" DataValue="VALUE"></Value>
+        <Value Cell="L40" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='IssuedDepartureNord'" DataValue="VALUE"></Value>
+        <Value Cell="M40" IsFormula="true">IFERROR((C40-Q40)/Q40,0)</Value>
+        <Value Cell="N40" IsFormula="true">P40-L40</Value>
+        <Value Cell="O40" IsFormula="true">IFERROR((P40-L40)/L40,0)</Value>
+        <Value Cell="P40" IsFormula="true">SUM('Отчет по грузообороту'!B39:AF39)</Value>
+        <Value Cell="Q40" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='IssuedDepartureNord'" DataValue="VALUE"></Value>
+        <Value Cell="R40" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='IssuedDepartureNord'" DataValue="VALUE"></Value>
+        <Value Cell="S40" IsFormula="true">IFERROR((P40-R40)/R40,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A41:S41" Style="Header5" Collapsed="true">
+      <Caption Cell="A41">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="B41" IsFormula="true">'Отчет за день'!Q40</Value>
+        <Value Cell="C41" IsFormula="true">AVERAGE('Отчет по грузообороту'!B40:AF40)</Value>
+        <Value Cell="D41" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='IssuedDepartureOther'" DataValue="VALUE"></Value>
+        <Value Cell="E41" IsFormula="true">B41-C41</Value>
+        <Value Cell="F41" IsFormula="true">B41-D41</Value>
+        <Value Cell="G41" IsFormula="true">IFERROR((B41-C41)/C41,0)</Value>
+        <Value Cell="H41" IsFormula="true">IFERROR((B41-D41)/D41,0)</Value>
+        <Value Cell="I41" IsFormula="true">C41-K41</Value>
+        <Value Cell="J41" IsFormula="true">IFERROR((C41-K41)/K41,0)</Value>
+        <Value Cell="K41" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='IssuedDepartureOther'" DataValue="VALUE"></Value>
+        <Value Cell="L41" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='IssuedDepartureOther'" DataValue="VALUE"></Value>
+        <Value Cell="M41" IsFormula="true">IFERROR((C41-Q41)/Q41,0)</Value>
+        <Value Cell="N41" IsFormula="true">P41-L41</Value>
+        <Value Cell="O41" IsFormula="true">IFERROR((P41-L41)/L41,0)</Value>
+        <Value Cell="P41" IsFormula="true">SUM('Отчет по грузообороту'!B40:AF40)</Value>
+        <Value Cell="Q41" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='IssuedDepartureOther'" DataValue="VALUE"></Value>
+        <Value Cell="R41" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='IssuedDepartureOther'" DataValue="VALUE"></Value>
+        <Value Cell="S41" IsFormula="true">IFERROR((P41-R41)/R41,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A42:S42" Style="Header2">
+      <Caption Cell="A42">Всего груза поступило (в тоннах)</Caption>
+      <Values>
+        <Value Cell="B42" IsFormula="true">'Отчет за день'!Q41</Value>
+        <Value Cell="C42" IsFormula="true">C43+C55+C64</Value>
+        <Value Cell="D42" IsFormula="true">D43+D55+D64</Value>
+        <Value Cell="E42" IsFormula="true">B42-C42</Value>
+        <Value Cell="F42" IsFormula="true">B42-D42</Value>
+        <Value Cell="G42" IsFormula="true">IFERROR((B42-C42)/C42,0)</Value>
+        <Value Cell="H42" IsFormula="true">IFERROR((B42-D42)/D42,0)</Value>
+        <Value Cell="I42" IsFormula="true">C42-K42</Value>
+        <Value Cell="J42" IsFormula="true">IFERROR((C42-K42)/K42,0)</Value>
+        <Value Cell="K42" IsFormula="true">K43+K55+K64</Value>
+        <Value Cell="L42" IsFormula="true">L43+L55+L64</Value>
+        <Value Cell="M42" IsFormula="true">IFERROR((C42-Q42)/Q42,0)</Value>
+        <Value Cell="N42" IsFormula="true">P42-L42</Value>
+        <Value Cell="O42" IsFormula="true">IFERROR((P42-L42)/L42,0)</Value>
+        <Value Cell="P42" IsFormula="true">P43+P55+P64</Value>
+        <Value Cell="Q42" IsFormula="true">Q43+Q55+Q64</Value>
+        <Value Cell="R42" IsFormula="true">R43+R44+R64</Value>
+        <Value Cell="S42" IsFormula="true">IFERROR((P42-R42)/R42,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A43:S43" Style="Header3">
+      <Caption Cell="A43">Прилетело на воздушных судах</Caption>
+      <Values>
+        <Value Cell="B43" IsFormula="true">'Отчет за день'!Q42</Value>
+        <Value Cell="C43" IsFormula="true">C44+C50</Value>
+        <Value Cell="D43" IsFormula="true">ROUND(D44,0)+ROUND(D50,0)</Value>
+        <Value Cell="E43" IsFormula="true">B43-C43</Value>
+        <Value Cell="F43" IsFormula="true">B43-D43</Value>
+        <Value Cell="G43" IsFormula="true">IFERROR((B43-C43)/C43,0)</Value>
+        <Value Cell="H43" IsFormula="true">IFERROR((B43-D43)/D43,0)</Value>
+        <Value Cell="I43" IsFormula="true">C43-K43</Value>
+        <Value Cell="J43" IsFormula="true">IFERROR((C43-K43)/K43,0)</Value>
+        <Value Cell="K43" IsFormula="true">K44+K50</Value>
+        <Value Cell="L43" IsFormula="true">L44+L50</Value>
+        <Value Cell="M43" IsFormula="true">IFERROR((C43-Q43)/Q43,0)</Value>
+        <Value Cell="N43" IsFormula="true">P43-L43</Value>
+        <Value Cell="O43" IsFormula="true">IFERROR((P43-L43)/L43,0)</Value>
+        <Value Cell="P43" IsFormula="true">P44+P50</Value>
+        <Value Cell="Q43" IsFormula="true">Q44+Q50</Value>
+        <Value Cell="R43" IsFormula="true">R44+R50</Value>
+        <Value Cell="S43" IsFormula="true">IFERROR((P43-R43)/R43,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A44:S44" Style="Header4" Collapsed="false">
+      <Caption Cell="A44">Груз</Caption>
+      <Values>
+        <Value Cell="B44" IsFormula="true">'Отчет за день'!Q43</Value>
+        <Value Cell="C44" IsFormula="true">C45+C46+C48+C49</Value>
+        <Value Cell="D44" IsFormula="true">D45+D46+D48+D49</Value>
+        <Value Cell="E44" IsFormula="true">B44-C44</Value>
+        <Value Cell="F44" IsFormula="true">B44-D44</Value>
+        <Value Cell="G44" IsFormula="true">IFERROR((B44-C44)/C44,0)</Value>
+        <Value Cell="H44" IsFormula="true">IFERROR((B44-D44)/D44,0)</Value>
+        <Value Cell="I44" IsFormula="true">C44-K44</Value>
+        <Value Cell="J44" IsFormula="true">IFERROR((C44-K44)/K44,0)</Value>
+        <Value Cell="K44" IsFormula="true">K45+K46+K48+K49</Value>
+        <Value Cell="L44" IsFormula="true">L45+L46+L48+L49</Value>
+        <Value Cell="M44" IsFormula="true">IFERROR((C44-Q44)/P44,0)</Value>
+        <Value Cell="N44" IsFormula="true">P44-L44</Value>
+        <Value Cell="O44" IsFormula="true">IFERROR((P44-L44)/L44,0)</Value>
+        <Value Cell="P44" IsFormula="true">P45+P46+P48+P49</Value>
+        <Value Cell="Q44" IsFormula="true">Q45+Q46+Q48+Q49</Value>
+        <Value Cell="R44" IsFormula="true">R45+R46+R48+R49</Value>
+        <Value Cell="S44" IsFormula="true">IFERROR((P44-R44)/R44,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A45:S45" Style="Header5" Collapsed="false">
+      <Caption Cell="A45">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="B45" IsFormula="true">'Отчет за день'!Q44</Value>
+        <Value Cell="C45" IsFormula="true">AVERAGE('Отчет по грузообороту'!B44:AF44)</Value>
+        <Value Cell="D45" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='ReceivedAirCargoAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="E45" IsFormula="true">B45-C45</Value>
+        <Value Cell="F45" IsFormula="true">B45-D45</Value>
+        <Value Cell="G45" IsFormula="true">IFERROR((B45-C45)/C45,0)</Value>
+        <Value Cell="H45" IsFormula="true">IFERROR((B45-D45)/D45,0)</Value>
+        <Value Cell="I45" IsFormula="true">C45-K45</Value>
+        <Value Cell="J45" IsFormula="true">IFERROR((C45-K45)/K45,0)</Value>
+        <Value Cell="K45" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='ReceivedAirCargoAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="L45" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='ReceivedAirCargoAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="M45" IsFormula="true">IFERROR((C45-Q45)/P45,0)</Value>
+        <Value Cell="N45" IsFormula="true">P45-L45</Value>
+        <Value Cell="O45" IsFormula="true">IFERROR((P45-L45)/L45,0)</Value>
+        <Value Cell="P45" IsFormula="true">SUM('Отчет по грузообороту'!B44:AF44)</Value>
+        <Value Cell="Q45" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='ReceivedAirCargoAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="R45" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='ReceivedAirCargoAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="S45" IsFormula="true">IFERROR((P45-R45)/R45,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A46:S46" Style="Header5" Collapsed="false">
+      <Caption Cell="A46">AirBridgeCargo</Caption>
+      <Values>
+        <Value Cell="B46" IsFormula="true">'Отчет за день'!Q45</Value>
+        <Value Cell="C46" IsFormula="true" Data="" QueryName="" Filter="" DataValue="">C31+C47</Value>
+        <Value Cell="D46" IsFormula="true" Data="" QueryName="" Filter="" DataValue="">D31+D47</Value>
+        <Value Cell="E46" IsFormula="true">B46-C46</Value>
+        <Value Cell="F46" IsFormula="true">B46-D46</Value>
+        <Value Cell="G46" IsFormula="true">IFERROR((B46-C46)/C46,0)</Value>
+        <Value Cell="H46" IsFormula="true">IFERROR((B46-D46)/D46,0)</Value>
+        <Value Cell="I46" IsFormula="true">C46-K46</Value>
+        <Value Cell="J46" IsFormula="true">IFERROR((C46-K46)/K46,0)</Value>
+        <Value Cell="K46" IsFormula="true">K31+K47</Value>
+        <Value Cell="L46" IsFormula="true">L31+L47</Value>
+        <Value Cell="M46" IsFormula="true">IFERROR((C46-Q46)/Q46,0)</Value>
+        <Value Cell="N46" IsFormula="true">P46-L46</Value>
+        <Value Cell="O46" IsFormula="true">IFERROR((P46-L46)/L46,0)</Value>
+        <Value Cell="P46" IsFormula="true">P31+P47</Value>
+        <Value Cell="Q46" IsFormula="true">Q31+Q47</Value>
+        <Value Cell="R46" IsFormula="true">R31+R47</Value>
+        <Value Cell="S46" IsFormula="true">IFERROR((P46-R46)/R46,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A47:S47" Style="Header6" Collapsed="true">
+      <Caption Cell="A47">справочно: в т.ч. Импорт Москва Карго</Caption>
+      <Values>
+        <Value Cell="B47" IsFormula="true">'Отчет за день'!Q46</Value>
+        <Value Cell="C47" IsFormula="true">AVERAGE('Отчет по грузообороту'!B46:AF46)</Value>
+        <Value Cell="D47" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='ReceivedAirCargoBridge'" DataValue="VALUE"></Value>
+        <Value Cell="E47" IsFormula="true">B47-C47</Value>
+        <Value Cell="F47" IsFormula="true">B47-D47</Value>
+        <Value Cell="G47" IsFormula="true">IFERROR((B47-C47)/C47,0)</Value>
+        <Value Cell="H47" IsFormula="true">IFERROR((B47-D47)/D47,0)</Value>
+        <Value Cell="I47" IsFormula="true">C47-K47</Value>
+        <Value Cell="J47" IsFormula="true">IFERROR((C47-K47)/K47,0)</Value>
+        <Value Cell="K47" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='ReceivedAirCargoBridge'" DataValue="VALUE"></Value>
+        <Value Cell="L47" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='ReceivedAirCargoBridge'" DataValue="VALUE"></Value>
+        <Value Cell="M47" IsFormula="true">IFERROR((C47-Q47)/Q47,0)</Value>
+        <Value Cell="N47" IsFormula="true">P47-L47</Value>
+        <Value Cell="O47" IsFormula="true">IFERROR((P47-L47)/L47,0)</Value>
+        <Value Cell="P47" IsFormula="true">SUM('Отчет по грузообороту'!B46:AF46)</Value>
+        <Value Cell="Q47" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='ReceivedAirCargoBridge'" DataValue="VALUE"></Value>
+        <Value Cell="R47" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='ReceivedAirCargoBridge'" DataValue="VALUE"></Value>
+        <Value Cell="S47" IsFormula="true">IFERROR((P47-R47)/R47,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A48:S48" Style="Header5" Collapsed="false">
+      <Caption Cell="A48">Nordwind Airlines (+ Pegas Fly)</Caption>
+      <Values>
+        <Value Cell="B48" IsFormula="true">'Отчет за день'!Q47</Value>
+        <Value Cell="C48" IsFormula="true">AVERAGE('Отчет по грузообороту'!B47:AF47)</Value>
+        <Value Cell="D48" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='ReceivedAirCargoNord'" DataValue="VALUE"></Value>
+        <Value Cell="E48" IsFormula="true">B48-C48</Value>
+        <Value Cell="F48" IsFormula="true">B48-D48</Value>
+        <Value Cell="G48" IsFormula="true">IFERROR((B48-C48)/C48,0)</Value>
+        <Value Cell="H48" IsFormula="true">IFERROR((B48-D48)/D48,0)</Value>
+        <Value Cell="I48" IsFormula="true">C48-K48</Value>
+        <Value Cell="J48" IsFormula="true">IFERROR((C48-K48)/K48,0)</Value>
+        <Value Cell="K48" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='ReceivedAirCargoNord'" DataValue="VALUE"></Value>
+        <Value Cell="L48" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='ReceivedAirCargoNord'" DataValue="VALUE"></Value>
+        <Value Cell="M48" IsFormula="true">IFERROR((C48-Q48)/Q48,0)</Value>
+        <Value Cell="N48" IsFormula="true">P48-L48</Value>
+        <Value Cell="O48" IsFormula="true">IFERROR((P48-L48)/L48,0)</Value>
+        <Value Cell="P48" IsFormula="true">SUM('Отчет по грузообороту'!B47:AF47)</Value>
+        <Value Cell="Q48" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='ReceivedAirCargoNord'" DataValue="VALUE"></Value>
+        <Value Cell="R48" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='ReceivedAirCargoNord'" DataValue="VALUE"></Value>
+        <Value Cell="S48" IsFormula="true">IFERROR((P48-R48)/R48,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A49:S49" Style="Header5" Collapsed="false">
+      <Caption Cell="A49">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="B49" IsFormula="true">'Отчет за день'!Q48</Value>
+        <Value Cell="C49" IsFormula="true">AVERAGE('Отчет по грузообороту'!B48:AF48)</Value>
+        <Value Cell="D49" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='ReceivedAirCargoOther'" DataValue="VALUE"></Value>
+        <Value Cell="E49" IsFormula="true">B49-C49</Value>
+        <Value Cell="F49" IsFormula="true">B49-D49</Value>
+        <Value Cell="G49" IsFormula="true">IFERROR((B49-C49)/C49,0)</Value>
+        <Value Cell="H49" IsFormula="true">IFERROR((B49-D49)/D49,0)</Value>
+        <Value Cell="I49" IsFormula="true">C49-K49</Value>
+        <Value Cell="J49" IsFormula="true">IFERROR((C49-K49)/K49,0)</Value>
+        <Value Cell="K49" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='ReceivedAirCargoOther'" DataValue="VALUE"></Value>
+        <Value Cell="L49" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='ReceivedAirCargoOther'" DataValue="VALUE"></Value>
+        <Value Cell="M49" IsFormula="true">IFERROR((C49-Q49)/Q49,0)</Value>
+        <Value Cell="N49" IsFormula="true">P49-L49</Value>
+        <Value Cell="O49" IsFormula="true">IFERROR((P49-L49)/L49,0)</Value>
+        <Value Cell="P49" IsFormula="true">SUM('Отчет по грузообороту'!B48:AF48)</Value>
+        <Value Cell="Q49" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='ReceivedAirCargoOther'" DataValue="VALUE"></Value>
+        <Value Cell="R49" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='ReceivedAirCargoOther'" DataValue="VALUE"></Value>
+        <Value Cell="S49" IsFormula="true">IFERROR((P49-R49)/R49,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A50:S50" Style="Header4" Collapsed="false">
+      <Caption Cell="A50">Почта</Caption>
+      <Values>
+        <Value Cell="B50" IsFormula="true">'Отчет за день'!Q49</Value>
+        <Value Cell="C50" IsFormula="true">C51+C52+C53+C54</Value>
+        <Value Cell="D50" IsFormula="true">D51+D52+D53+D54</Value>
+        <Value Cell="E50" IsFormula="true">B50-C50</Value>
+        <Value Cell="F50" IsFormula="true">B50-D50</Value>
+        <Value Cell="G50" IsFormula="true">IFERROR((B50-C50)/C50,0)</Value>
+        <Value Cell="H50" IsFormula="true">IFERROR((B50-D50)/D50,0)</Value>
+        <Value Cell="I50" IsFormula="true">C50-K50</Value>
+        <Value Cell="J50" IsFormula="true">IFERROR((C50-K50)/K50,0)</Value>
+        <Value Cell="K50" IsFormula="true">K51+K52+K53+K54</Value>
+        <Value Cell="L50" IsFormula="true">L51+L52+L53+L54</Value>
+        <Value Cell="M50" IsFormula="true">IFERROR((C50-Q50)/Q50,0)</Value>
+        <Value Cell="N50" IsFormula="true">P50-L50</Value>
+        <Value Cell="O50" IsFormula="true">IFERROR((P50-L50)/L50,0)</Value>
+        <Value Cell="P50" IsFormula="true">P51+P52+P53+P54</Value>
+        <Value Cell="Q50" IsFormula="true">Q51+Q52+Q53+Q54</Value>
+        <Value Cell="R50" IsFormula="true">R51+R52+R53+R54</Value>
+        <Value Cell="S50" IsFormula="true">IFERROR((P50-R50)/R50,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A51:S51" Style="Header5" Collapsed="false">
+      <Caption Cell="A51">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="B51" IsFormula="true">'Отчет за день'!Q50</Value>
+        <Value Cell="C51" IsFormula="true">AVERAGE('Отчет по грузообороту'!B50:AF50)</Value>
+        <Value Cell="D51" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='ReceivedAirMailAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="E51" IsFormula="true">B51-C51</Value>
+        <Value Cell="F51" IsFormula="true">B51-D51</Value>
+        <Value Cell="G51" IsFormula="true">IFERROR((B51-C51)/C51,0)</Value>
+        <Value Cell="H51" IsFormula="true">IFERROR((B51-D51)/D51,0)</Value>
+        <Value Cell="I51" IsFormula="true">C51-K51</Value>
+        <Value Cell="J51" IsFormula="true">IFERROR((C51-K51)/K51,0)</Value>
+        <Value Cell="K51" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='ReceivedAirMailAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="L51" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='ReceivedAirMailAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="M51" IsFormula="true">IFERROR((C51-Q51)/Q51,0)</Value>
+        <Value Cell="N51" IsFormula="true">P51-L51</Value>
+        <Value Cell="O51" IsFormula="true">IFERROR((P51-L51)/L51,0)</Value>
+        <Value Cell="P51" IsFormula="true">SUM('Отчет по грузообороту'!B50:AF50)</Value>
+        <Value Cell="Q51" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='ReceivedAirMailAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="R51" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='ReceivedAirMailAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="S51" IsFormula="true">IFERROR((P51-R51)/R51,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A52:S52" Style="Header5" Collapsed="false">
+      <Caption Cell="A52">AirBridgeCargo</Caption>
+      <Values>
+        <Value Cell="B52" IsFormula="true">'Отчет за день'!Q51</Value>
+        <Value Cell="C52" IsFormula="true">AVERAGE('Отчет по грузообороту'!B51:AF51)</Value>
+        <Value Cell="D52" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='ReceivedAirMailBridge'" DataValue="VALUE"></Value>
+        <Value Cell="E52" IsFormula="true">B52-C52</Value>
+        <Value Cell="F52" IsFormula="true">B52-D52</Value>
+        <Value Cell="G52" IsFormula="true">IFERROR((B52-C52)/C52,0)</Value>
+        <Value Cell="H52" IsFormula="true">IFERROR((B52-D52)/D52,0)</Value>
+        <Value Cell="I52" IsFormula="true">C52-K52</Value>
+        <Value Cell="J52" IsFormula="true">IFERROR((C52-K52)/K52,0)</Value>
+        <Value Cell="K52" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='ReceivedAirMailBridge'" DataValue="VALUE"></Value>
+        <Value Cell="L52" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='ReceivedAirMailBridge'" DataValue="VALUE"></Value>
+        <Value Cell="M52" IsFormula="true">IFERROR((C52-Q52)/Q52,0)</Value>
+        <Value Cell="N52" IsFormula="true">P52-L52</Value>
+        <Value Cell="O52" IsFormula="true">IFERROR((P52-L52)/L52,0)</Value>
+        <Value Cell="P52" IsFormula="true">SUM('Отчет по грузообороту'!B51:AF51)</Value>
+        <Value Cell="Q52" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='ReceivedAirMailBridge'" DataValue="VALUE"></Value>
+        <Value Cell="R52" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='ReceivedAirMailBridge'" DataValue="VALUE"></Value>
+        <Value Cell="S52" IsFormula="true">IFERROR((P52-R52)/R52,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A53:S53" Style="Header5" Collapsed="false">
+      <Caption Cell="A53">Nordwind Airlines (+ Pegas Fly)</Caption>
+      <Values>
+        <Value Cell="B53" IsFormula="true">'Отчет за день'!Q52</Value>
+        <Value Cell="C53" IsFormula="true">AVERAGE('Отчет по грузообороту'!B52:AF52)</Value>
+        <Value Cell="D53" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='ReceivedAirMailNord'" DataValue="VALUE"></Value>
+        <Value Cell="E53" IsFormula="true">B53-C53</Value>
+        <Value Cell="F53" IsFormula="true">B53-D53</Value>
+        <Value Cell="G53" IsFormula="true">IFERROR((B53-C53)/C53,0)</Value>
+        <Value Cell="H53" IsFormula="true">IFERROR((B53-D53)/D53,0)</Value>
+        <Value Cell="I53" IsFormula="true">C53-K53</Value>
+        <Value Cell="J53" IsFormula="true">IFERROR((C53-K53)/K53,0)</Value>
+        <Value Cell="K53" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='ReceivedAirMailNord'" DataValue="VALUE"></Value>
+        <Value Cell="L53" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='ReceivedAirMailNord'" DataValue="VALUE"></Value>
+        <Value Cell="M53" IsFormula="true">IFERROR((C53-Q53)/Q53,0)</Value>
+        <Value Cell="N53" IsFormula="true">P53-L53</Value>
+        <Value Cell="O53" IsFormula="true">IFERROR((P53-L53)/L53,0)</Value>
+        <Value Cell="P53" IsFormula="true">SUM('Отчет по грузообороту'!B52:AF52)</Value>
+        <Value Cell="Q53" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='ReceivedAirMailNord'" DataValue="VALUE"></Value>
+        <Value Cell="R53" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='ReceivedAirMailNord'" DataValue="VALUE"></Value>
+        <Value Cell="S53" IsFormula="true">IFERROR((P53-R53)/R53,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A54:S54" Style="Header5" Collapsed="false">
+      <Caption Cell="A54">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="B54" IsFormula="true">'Отчет за день'!Q53</Value>
+        <Value Cell="C54" IsFormula="true">AVERAGE('Отчет по грузообороту'!B53:AF53)</Value>
+        <Value Cell="D54" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='ReceivedAirMailOther'" DataValue="VALUE"></Value>
+        <Value Cell="E54" IsFormula="true">B54-C54</Value>
+        <Value Cell="F54" IsFormula="true">B54-D54</Value>
+        <Value Cell="G54" IsFormula="true">IFERROR((B54-C54)/C54,0)</Value>
+        <Value Cell="H54" IsFormula="true">IFERROR((B54-D54)/D54,0)</Value>
+        <Value Cell="I54" IsFormula="true">C54-K54</Value>
+        <Value Cell="J54" IsFormula="true">IFERROR((C54-K54)/K54,0)</Value>
+        <Value Cell="K54" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='ReceivedAirMailOther'" DataValue="VALUE"></Value>
+        <Value Cell="L54" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='ReceivedAirMailOther'" DataValue="VALUE"></Value>
+        <Value Cell="M54" IsFormula="true">IFERROR((C54-Q54)/Q54,0)</Value>
+        <Value Cell="N54" IsFormula="true">P54-L54</Value>
+        <Value Cell="O54" IsFormula="true">IFERROR((P54-L54)/L54,0)</Value>
+        <Value Cell="P54" IsFormula="true">SUM('Отчет по грузообороту'!B53:AF53)</Value>
+        <Value Cell="Q54" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='ReceivedAirMailOther'" DataValue="VALUE"></Value>
+        <Value Cell="R54" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='ReceivedAirMailOther'" DataValue="VALUE"></Value>
+        <Value Cell="S54" IsFormula="true">IFERROR((P54-R54)/R54,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A55:S55" Style="Header3">
+      <Caption Cell="A55">Принято от клиентов в Москве</Caption>
+      <Values>
+        <Value Cell="B55" IsFormula="true">'Отчет за день'!Q54</Value>
+        <Value Cell="C55" IsFormula="true">C56+C60</Value>
+        <Value Cell="D55" IsFormula="true">D56+D60</Value>
+        <Value Cell="E55" IsFormula="true">B55-C55</Value>
+        <Value Cell="F55" IsFormula="true">B55-D55</Value>
+        <Value Cell="G55" IsFormula="true">IFERROR((B55-C55)/C55,0)</Value>
+        <Value Cell="H55" IsFormula="true">IFERROR((B55-D55)/D55,0)</Value>
+        <Value Cell="I55" IsFormula="true">C55-K55</Value>
+        <Value Cell="J55" IsFormula="true">IFERROR((C55-K55)/K55,0)</Value>
+        <Value Cell="K55" IsFormula="true">K56+K60</Value>
+        <Value Cell="L55" IsFormula="true">L56+L60</Value>
+        <Value Cell="M55" IsFormula="true">IFERROR((C55-Q55)/Q55,0)</Value>
+        <Value Cell="N55" IsFormula="true">P55-L55</Value>
+        <Value Cell="O55" IsFormula="true">IFERROR((P55-L55)/L55,0)</Value>
+        <Value Cell="P55" IsFormula="true">P56+P60</Value>
+        <Value Cell="Q55" IsFormula="true">Q56+Q60</Value>
+        <Value Cell="R55" IsFormula="true">R56+R60</Value>
+        <Value Cell="S55" IsFormula="true">IFERROR((P55-R55)/R55,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A56:S56" Style="Header4">
+      <Caption Cell="A56">ВВЛ</Caption>
+      <Values>
+        <Value Cell="B56" IsFormula="true">'Отчет за день'!Q55</Value>
+        <Value Cell="C56" IsFormula="true">C57+C58+C59</Value>
+        <Value Cell="D56" IsFormula="true">D57+D58+D59</Value>
+        <Value Cell="E56" IsFormula="true">B56-C56</Value>
+        <Value Cell="F56" IsFormula="true">B56-D56</Value>
+        <Value Cell="G56" IsFormula="true">IFERROR((B56-C56)/C56,0)</Value>
+        <Value Cell="H56" IsFormula="true">IFERROR((B56-D56)/D56,0)</Value>
+        <Value Cell="I56" IsFormula="true">C56-K56</Value>
+        <Value Cell="J56" IsFormula="true">IFERROR((C56-K56)/K56,0)</Value>
+        <Value Cell="K56" IsFormula="true">K57+K58+K59</Value>
+        <Value Cell="L56" IsFormula="true">L57+L58+L59</Value>
+        <Value Cell="M56" IsFormula="true">IFERROR((C56-Q56)/Q56,0)</Value>
+        <Value Cell="N56" IsFormula="true">P56-L56</Value>
+        <Value Cell="O56" IsFormula="true">IFERROR((P56-L56)/L56,0)</Value>
+        <Value Cell="P56" IsFormula="true">P57+P58+P59</Value>
+        <Value Cell="Q56" IsFormula="true">Q57+Q58+Q59</Value>
+        <Value Cell="R56" IsFormula="true">R57+R58+R59</Value>
+        <Value Cell="S56" IsFormula="true">IFERROR((P56-R56)/R56,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A57:S57" Style="Header5" Collapsed="true">
+      <Caption Cell="A57">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="B57" IsFormula="true">'Отчет за день'!Q56</Value>
+        <Value Cell="C57" IsFormula="true">AVERAGE('Отчет по грузообороту'!B56:AF56)</Value>
+        <Value Cell="D57" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='ReceivedMoscowVVLAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="E57" IsFormula="true">B57-C57</Value>
+        <Value Cell="F57" IsFormula="true">B57-D57</Value>
+        <Value Cell="G57" IsFormula="true">IFERROR((B57-C57)/C57,0)</Value>
+        <Value Cell="H57" IsFormula="true">IFERROR((B57-D57)/D57,0)</Value>
+        <Value Cell="I57" IsFormula="true">C57-K57</Value>
+        <Value Cell="J57" IsFormula="true">IFERROR((C57-K57)/K57,0)</Value>
+        <Value Cell="K57" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='ReceivedMoscowVVLAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="L57" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='ReceivedMoscowVVLAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="M57" IsFormula="true">IFERROR((C57-Q57)/Q57,0)</Value>
+        <Value Cell="N57" IsFormula="true">P57-L57</Value>
+        <Value Cell="O57" IsFormula="true">IFERROR((P57-L57)/L57,0)</Value>
+        <Value Cell="P57" IsFormula="true">SUM('Отчет по грузообороту'!B56:AF56)</Value>
+        <Value Cell="Q57" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='ReceivedMoscowVVLAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="R57" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='ReceivedMoscowVVLAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="S57" IsFormula="true">IFERROR((P57-R57)/R57,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A58:S58" Style="Header5" Collapsed="true">
+      <Caption Cell="A58">Nordwind Airlines (+ Pegas Fly)</Caption>
+      <Values>
+        <Value Cell="B58" IsFormula="true">'Отчет за день'!Q57</Value>
+        <Value Cell="C58" IsFormula="true">AVERAGE('Отчет по грузообороту'!B57:AF57)</Value>
+        <Value Cell="D58" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='ReceivedMoscowVVLNord'" DataValue="VALUE"></Value>
+        <Value Cell="E58" IsFormula="true">B58-C58</Value>
+        <Value Cell="F58" IsFormula="true">B58-D58</Value>
+        <Value Cell="G58" IsFormula="true">IFERROR((B58-C58)/C58,0)</Value>
+        <Value Cell="H58" IsFormula="true">IFERROR((B58-D58)/D58,0)</Value>
+        <Value Cell="I58" IsFormula="true">C58-K58</Value>
+        <Value Cell="J58" IsFormula="true">IFERROR((C58-K58)/K58,0)</Value>
+        <Value Cell="K58" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='ReceivedMoscowVVLNord'" DataValue="VALUE"></Value>
+        <Value Cell="L58" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='ReceivedMoscowVVLNord'" DataValue="VALUE"></Value>
+        <Value Cell="M58" IsFormula="true">IFERROR((C58-Q58)/Q58,0)</Value>
+        <Value Cell="N58" IsFormula="true">P58-L58</Value>
+        <Value Cell="O58" IsFormula="true">IFERROR((P58-L58)/L58,0)</Value>
+        <Value Cell="P58" IsFormula="true">SUM('Отчет по грузообороту'!B57:AF57)</Value>
+        <Value Cell="Q58" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='ReceivedMoscowVVLNord'" DataValue="VALUE"></Value>
+        <Value Cell="R58" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='ReceivedMoscowVVLNord'" DataValue="VALUE"></Value>
+        <Value Cell="S58" IsFormula="true">IFERROR((P58-R58)/R58,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A59:S59" Style="Header5" Collapsed="true">
+      <Caption Cell="A59">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="B59" IsFormula="true">'Отчет за день'!Q58</Value>
+        <Value Cell="C59" IsFormula="true">AVERAGE('Отчет по грузообороту'!B58:AF58)</Value>
+        <Value Cell="D59" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='ReceivedMoscowVVLOther'" DataValue="VALUE"></Value>
+        <Value Cell="E59" IsFormula="true">B59-C59</Value>
+        <Value Cell="F59" IsFormula="true">B59-D59</Value>
+        <Value Cell="G59" IsFormula="true">IFERROR((B59-C59)/C59,0)</Value>
+        <Value Cell="H59" IsFormula="true">IFERROR((B59-D59)/D59,0)</Value>
+        <Value Cell="I59" IsFormula="true">C59-K59</Value>
+        <Value Cell="J59" IsFormula="true">IFERROR((C59-K59)/K59,0)</Value>
+        <Value Cell="K59" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='ReceivedMoscowVVLOther'" DataValue="VALUE"></Value>
+        <Value Cell="L59" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='ReceivedMoscowVVLOther'" DataValue="VALUE"></Value>
+        <Value Cell="M59" IsFormula="true">IFERROR((C59-Q59)/Q59,0)</Value>
+        <Value Cell="N59" IsFormula="true">P59-L59</Value>
+        <Value Cell="O59" IsFormula="true">IFERROR((P59-L59)/L59,0)</Value>
+        <Value Cell="P59" IsFormula="true">SUM('Отчет по грузообороту'!B58:AF58)</Value>
+        <Value Cell="Q59" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='ReceivedMoscowVVLOther'" DataValue="VALUE"></Value>
+        <Value Cell="R59" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='ReceivedMoscowVVLOther'" DataValue="VALUE"></Value>
+        <Value Cell="S59" IsFormula="true">IFERROR((P59-R59)/R59,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A60:S60" Style="Header4">
+      <Caption Cell="A60">МВЛ</Caption>
+      <Values>
+        <Value Cell="B60" IsFormula="true">'Отчет за день'!Q59</Value>
+        <Value Cell="C60" IsFormula="true">C61+C62+C63</Value>
+        <Value Cell="D60" IsFormula="true">D61+D62+D63</Value>
+        <Value Cell="E60" IsFormula="true">B60-C60</Value>
+        <Value Cell="F60" IsFormula="true">B60-D60</Value>
+        <Value Cell="G60" IsFormula="true">IFERROR((B60-C60)/C60,0)</Value>
+        <Value Cell="H60" IsFormula="true">IFERROR((B60-D60)/D60,0)</Value>
+        <Value Cell="I60" IsFormula="true">C60-K60</Value>
+        <Value Cell="J60" IsFormula="true">IFERROR((C60-K60)/K60,0)</Value>
+        <Value Cell="K60" IsFormula="true">K61+K62+K63</Value>
+        <Value Cell="L60" IsFormula="true">L61+L62+L63</Value>
+        <Value Cell="M60" IsFormula="true">IFERROR((C60-Q60)/Q60,0)</Value>
+        <Value Cell="N60" IsFormula="true">P60-L60</Value>
+        <Value Cell="O60" IsFormula="true">IFERROR((P60-L60)/L60,0)</Value>
+        <Value Cell="P60" IsFormula="true">P61+P62+P63</Value>
+        <Value Cell="Q60" IsFormula="true">Q61+Q62+Q63</Value>
+        <Value Cell="R60" IsFormula="true">R61+R62+R63</Value>
+        <Value Cell="S60" IsFormula="true">IFERROR((P60-R60)/R60,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A61:S61" Style="Header5" Collapsed="true">
+      <Caption Cell="A61">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="B61" IsFormula="true">'Отчет за день'!Q60</Value>
+        <Value Cell="C61" IsFormula="true">AVERAGE('Отчет по грузообороту'!B60:AF60)</Value>
+        <Value Cell="D61" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='ReceivedMoscowMVLAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="E61" IsFormula="true">B61-C61</Value>
+        <Value Cell="F61" IsFormula="true">B61-D61</Value>
+        <Value Cell="G61" IsFormula="true">IFERROR((B61-C61)/C61,0)</Value>
+        <Value Cell="H61" IsFormula="true">IFERROR((B61-D61)/D61,0)</Value>
+        <Value Cell="I61" IsFormula="true">C61-K61</Value>
+        <Value Cell="J61" IsFormula="true">IFERROR((C61-K61)/K61,0)</Value>
+        <Value Cell="K61" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='ReceivedMoscowMVLAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="L61" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='ReceivedMoscowMVLAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="M61" IsFormula="true">IFERROR((C61-Q61)/Q61,0)</Value>
+        <Value Cell="N61" IsFormula="true">P61-L61</Value>
+        <Value Cell="O61" IsFormula="true">IFERROR((P61-L61)/L61,0)</Value>
+        <Value Cell="P61" IsFormula="true">SUM('Отчет по грузообороту'!B60:AF60)</Value>
+        <Value Cell="Q61" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='ReceivedMoscowMVLAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="R61" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='ReceivedMoscowMVLAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="S61" IsFormula="true">IFERROR((P61-R61)/R61,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A62:S62" Style="Header5" Collapsed="true">
+      <Caption Cell="A62">Nordwind Airlines (+ Pegas Fly)</Caption>
+      <Values>
+        <Value Cell="B62" IsFormula="true">'Отчет за день'!Q61</Value>
+        <Value Cell="C62" IsFormula="true">AVERAGE('Отчет по грузообороту'!B61:AF61)</Value>
+        <Value Cell="D62" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='ReceivedMoscowMVLNord'" DataValue="VALUE"></Value>
+        <Value Cell="E62" IsFormula="true">B62-C62</Value>
+        <Value Cell="F62" IsFormula="true">B62-D62</Value>
+        <Value Cell="G62" IsFormula="true">IFERROR((B62-C62)/C62,0)</Value>
+        <Value Cell="H62" IsFormula="true">IFERROR((B62-D62)/D62,0)</Value>
+        <Value Cell="I62" IsFormula="true">C62-K62</Value>
+        <Value Cell="J62" IsFormula="true">IFERROR((C62-K62)/K62,0)</Value>
+        <Value Cell="K62" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='ReceivedMoscowMVLNord'" DataValue="VALUE"></Value>
+        <Value Cell="L62" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='ReceivedMoscowMVLNord'" DataValue="VALUE"></Value>
+        <Value Cell="M62" IsFormula="true">IFERROR((C62-Q62)/Q62,0)</Value>
+        <Value Cell="N62" IsFormula="true">P62-L62</Value>
+        <Value Cell="O62" IsFormula="true">IFERROR((P62-L62)/L62,0)</Value>
+        <Value Cell="P62" IsFormula="true">SUM('Отчет по грузообороту'!B61:AF61)</Value>
+        <Value Cell="Q62" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='ReceivedMoscowMVLNord'" DataValue="VALUE"></Value>
+        <Value Cell="R62" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='ReceivedMoscowMVLNord'" DataValue="VALUE"></Value>
+        <Value Cell="S62" IsFormula="true">IFERROR((P62-R62)/R62,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A63:S63" Style="Header5" Collapsed="true">
+      <Caption Cell="A63">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="B63" IsFormula="true">'Отчет за день'!Q62</Value>
+        <Value Cell="C63" IsFormula="true">AVERAGE('Отчет по грузообороту'!B62:AF62)</Value>
+        <Value Cell="D63" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='ReceivedMoscowMVLOther'" DataValue="VALUE"></Value>
+        <Value Cell="E63" IsFormula="true">B63-C63</Value>
+        <Value Cell="F63" IsFormula="true">B63-D63</Value>
+        <Value Cell="G63" IsFormula="true">IFERROR((B63-C63)/C63,0)</Value>
+        <Value Cell="H63" IsFormula="true">IFERROR((B63-D63)/D63,0)</Value>
+        <Value Cell="I63" IsFormula="true">C63-K63</Value>
+        <Value Cell="J63" IsFormula="true">IFERROR((C63-K63)/K63,0)</Value>
+        <Value Cell="K63" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='ReceivedMoscowMVLOther'" DataValue="VALUE"></Value>
+        <Value Cell="L63" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='ReceivedMoscowMVLOther'" DataValue="VALUE"></Value>
+        <Value Cell="M63" IsFormula="true">IFERROR((C63-Q63)/Q63,0)</Value>
+        <Value Cell="N63" IsFormula="true">P63-L63</Value>
+        <Value Cell="O63" IsFormula="true">IFERROR((P63-L63)/L63,0)</Value>
+        <Value Cell="P63" IsFormula="true">SUM('Отчет по грузообороту'!B62:AF62)</Value>
+        <Value Cell="Q63" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='ReceivedMoscowMVLOther'" DataValue="VALUE"></Value>
+        <Value Cell="R63" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='ReceivedMoscowMVLOther'" DataValue="VALUE"></Value>
+        <Value Cell="S63" IsFormula="true">IFERROR((P63-R63)/R63,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A64:S64" Style="Header3">
+      <Caption Cell="A64">Получено с  других СВХ в Москве</Caption>
+      <Values>
+        <Value Cell="B64" IsFormula="true">'Отчет за день'!Q63</Value>
+        <Value Cell="C64" IsFormula="true">C65+C69</Value>
+        <Value Cell="D64" IsFormula="true">D65+D69</Value>
+        <Value Cell="E64" IsFormula="true">B64-C64</Value>
+        <Value Cell="F64" IsFormula="true">B64-D64</Value>
+        <Value Cell="G64" IsFormula="true">IFERROR((B64-C64)/C64,0)</Value>
+        <Value Cell="H64" IsFormula="true">IFERROR((B64-D64)/D64,0)</Value>
+        <Value Cell="I64" IsFormula="true">C64-K64</Value>
+        <Value Cell="J64" IsFormula="true">IFERROR((C64-K64)/K64,0)</Value>
+        <Value Cell="K64" IsFormula="true">K53+K56</Value>
+        <Value Cell="L64" IsFormula="true">L65+L69</Value>
+        <Value Cell="M64" IsFormula="true">IFERROR((C64-Q64)/Q64,0)</Value>
+        <Value Cell="N64" IsFormula="true">P64-L64</Value>
+        <Value Cell="O64" IsFormula="true">IFERROR((P64-L64)/L64,0)</Value>
+        <Value Cell="P64" IsFormula="true">P65+P69</Value>
+        <Value Cell="Q64" IsFormula="true">Q65+Q69</Value>
+        <Value Cell="R64" IsFormula="true">R65+R69</Value>
+        <Value Cell="S64" IsFormula="true">IFERROR((P64-R64)/R64,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A65:S65" Style="Header4" Collapsed="true">
+      <Caption Cell="A65">ВВЛ</Caption>
+      <Values>
+        <Value Cell="B65" IsFormula="true">'Отчет за день'!Q64</Value>
+        <Value Cell="C65" IsFormula="true">C66+C67+C68</Value>
+        <Value Cell="D65" IsFormula="true">D66+D67+D68</Value>
+        <Value Cell="E65" IsFormula="true">B65-C65</Value>
+        <Value Cell="F65" IsFormula="true">B65-D65</Value>
+        <Value Cell="G65" IsFormula="true">IFERROR((B65-C65)/C65,0)</Value>
+        <Value Cell="H65" IsFormula="true">IFERROR((B65-D65)/D65,0)</Value>
+        <Value Cell="I65" IsFormula="true">C65-K65</Value>
+        <Value Cell="J65" IsFormula="true">IFERROR((C65-K65)/K65,0)</Value>
+        <Value Cell="K65" IsFormula="true">K66+K67+K68</Value>
+        <Value Cell="L65" IsFormula="true">L66+L67+L68</Value>
+        <Value Cell="M65" IsFormula="true">IFERROR((C65-Q65)/Q65,0)</Value>
+        <Value Cell="N65" IsFormula="true">P65-L65</Value>
+        <Value Cell="O65" IsFormula="true">IFERROR((P65-L65)/L65,0)</Value>
+        <Value Cell="P65" IsFormula="true">P66+P67+P68</Value>
+        <Value Cell="Q65" IsFormula="true">Q66+Q67+Q68</Value>
+        <Value Cell="R65" IsFormula="true">R66+R67+R68</Value>
+        <Value Cell="S65" IsFormula="true">IFERROR((P65-R65)/R65,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A66:S66" Style="Header5" Collapsed="true">
+      <Caption Cell="A66">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="B66" IsFormula="true">'Отчет за день'!Q65</Value>
+        <Value Cell="C66" IsFormula="true">AVERAGE('Отчет по грузообороту'!B66:AF66)</Value>
+        <Value Cell="D66" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='ReceivedSVHVVLAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="E66" IsFormula="true">B66-C66</Value>
+        <Value Cell="F66" IsFormula="true">B66-D66</Value>
+        <Value Cell="G66" IsFormula="true">IFERROR((B66-C66)/C66,0)</Value>
+        <Value Cell="H66" IsFormula="true">IFERROR((B66-D66)/D66,0)</Value>
+        <Value Cell="I66" IsFormula="true">C66-K66</Value>
+        <Value Cell="J66" IsFormula="true">IFERROR((C66-K66)/K66,0)</Value>
+        <Value Cell="K66" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='ReceivedSVHVVLAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="L66" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='ReceivedSVHVVLAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="M66" IsFormula="true">IFERROR((C66-Q66)/Q66,0)</Value>
+        <Value Cell="N66" IsFormula="true">P66-L66</Value>
+        <Value Cell="O66" IsFormula="true">IFERROR((P66-L66)/L66,0)</Value>
+        <Value Cell="P66" IsFormula="true">SUM('Отчет по грузообороту'!B65:AF65)</Value>
+        <Value Cell="Q66" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='ReceivedSVHVVLAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="R66" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='ReceivedSVHVVLAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="S66" IsFormula="true">IFERROR((P66-R66)/R66,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A67:S67" Style="Header5" Collapsed="true">
+      <Caption Cell="A67">Nordwind Airlines (+ Pegas Fly)</Caption>
+      <Values>
+        <Value Cell="B67" IsFormula="true">'Отчет за день'!Q66</Value>
+        <Value Cell="C67" IsFormula="true">AVERAGE('Отчет по грузообороту'!B66:AF66)</Value>
+        <Value Cell="D67" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='ReceivedSVHVVLNord'" DataValue="VALUE"></Value>
+        <Value Cell="E67" IsFormula="true">B67-C67</Value>
+        <Value Cell="F67" IsFormula="true">B67-D67</Value>
+        <Value Cell="G67" IsFormula="true">IFERROR((B67-C67)/C67,0)</Value>
+        <Value Cell="H67" IsFormula="true">IFERROR((B67-D67)/D67,0)</Value>
+        <Value Cell="I67" IsFormula="true">C67-K67</Value>
+        <Value Cell="J67" IsFormula="true">IFERROR((C67-K67)/K67,0)</Value>
+        <Value Cell="K67" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='ReceivedSVHVVLNord'" DataValue="VALUE"></Value>
+        <Value Cell="L67" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='ReceivedSVHVVLNord'" DataValue="VALUE"></Value>
+        <Value Cell="M67" IsFormula="true">IFERROR((C67-Q67)/Q67,0)</Value>
+        <Value Cell="N67" IsFormula="true">P67-L67</Value>
+        <Value Cell="O67" IsFormula="true">IFERROR((P67-L67)/L67,0)</Value>
+        <Value Cell="P67" IsFormula="true">SUM('Отчет по грузообороту'!B66:AF66)</Value>
+        <Value Cell="Q67" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='ReceivedSVHVVLNord'" DataValue="VALUE"></Value>
+        <Value Cell="R67" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='ReceivedSVHVVLNord'" DataValue="VALUE"></Value>
+        <Value Cell="S67" IsFormula="true">IFERROR((P67-R67)/R67,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A68:S68" Style="Header5" Collapsed="true">
+      <Caption Cell="A68">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="B68" IsFormula="true">'Отчет за день'!Q67</Value>
+        <Value Cell="C68" IsFormula="true">AVERAGE('Отчет по грузообороту'!B67:AF67)</Value>
+        <Value Cell="D68" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='ReceivedSVHVVLOther'" DataValue="VALUE"></Value>
+        <Value Cell="E68" IsFormula="true">B68-C68</Value>
+        <Value Cell="F68" IsFormula="true">B68-D68</Value>
+        <Value Cell="G68" IsFormula="true">IFERROR((B68-C68)/C68,0)</Value>
+        <Value Cell="H68" IsFormula="true">IFERROR((B68-D68)/D68,0)</Value>
+        <Value Cell="I68" IsFormula="true">C68-K68</Value>
+        <Value Cell="J68" IsFormula="true">IFERROR((C68-K68)/K68,0)</Value>
+        <Value Cell="K68" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='ReceivedSVHVVLOther'" DataValue="VALUE"></Value>
+        <Value Cell="L68" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='ReceivedSVHVVLOther'" DataValue="VALUE"></Value>
+        <Value Cell="M68" IsFormula="true">IFERROR((C68-Q68)/Q68,0)</Value>
+        <Value Cell="N68" IsFormula="true">P68-L68</Value>
+        <Value Cell="O68" IsFormula="true">IFERROR((P68-L68)/L68,0)</Value>
+        <Value Cell="P68" IsFormula="true">SUM('Отчет по грузообороту'!B67:AF67)</Value>
+        <Value Cell="Q68" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='ReceivedSVHVVLOther'" DataValue="VALUE"></Value>
+        <Value Cell="R68" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='ReceivedSVHVVLOther'" DataValue="VALUE"></Value>
+        <Value Cell="S68" IsFormula="true">IFERROR((P68-R68)/R68,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A69:S69" Style="Header4" Collapsed="true">
+      <Caption Cell="A69">МВЛ</Caption>
+      <Values>
+        <Value Cell="B69" IsFormula="true">'Отчет за день'!Q68</Value>
+        <Value Cell="C69" IsFormula="true">C70+C71+C72</Value>
+        <Value Cell="D69" IsFormula="true">D70+D71+D72</Value>
+        <Value Cell="E69" IsFormula="true">B69-C69</Value>
+        <Value Cell="F69" IsFormula="true">B69-D69</Value>
+        <Value Cell="G69" IsFormula="true">IFERROR((B69-C69)/C69,0)</Value>
+        <Value Cell="H69" IsFormula="true">IFERROR((B69-D69)/D69,0)</Value>
+        <Value Cell="I69" IsFormula="true">C69-K69</Value>
+        <Value Cell="J69" IsFormula="true">IFERROR((C69-K69)/K69,0)</Value>
+        <Value Cell="K69" IsFormula="true">K70+K71+K72</Value>
+        <Value Cell="L69" IsFormula="true">L70+L71+L72</Value>
+        <Value Cell="M69" IsFormula="true">IFERROR((C69-Q69)/Q69,0)</Value>
+        <Value Cell="N69" IsFormula="true">P69-L69</Value>
+        <Value Cell="O69" IsFormula="true">IFERROR((P69-L69)/L69,0)</Value>
+        <Value Cell="P69" IsFormula="true">P70+P71+P72</Value>
+        <Value Cell="Q69" IsFormula="true">Q70+Q71+Q72</Value>
+        <Value Cell="R69" IsFormula="true">R70+R71+R72</Value>
+        <Value Cell="S69" IsFormula="true">IFERROR((P69-R69)/R69,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A70:S70" Style="Header5" Collapsed="true">
+      <Caption Cell="A70">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="B70" IsFormula="true">'Отчет за день'!Q69</Value>
+        <Value Cell="C70" IsFormula="true">AVERAGE('Отчет по грузообороту'!B69:AF69)</Value>
+        <Value Cell="D70" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='ReceivedSVHMVLAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="E70" IsFormula="true">B70-C70</Value>
+        <Value Cell="F70" IsFormula="true">B70-D70</Value>
+        <Value Cell="G70" IsFormula="true">IFERROR((B70-C70)/C70,0)</Value>
+        <Value Cell="H70" IsFormula="true">IFERROR((B70-D70)/D70,0)</Value>
+        <Value Cell="I70" IsFormula="true">C70-K70</Value>
+        <Value Cell="J70" IsFormula="true">IFERROR((C70-K70)/K70,0)</Value>
+        <Value Cell="K70" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='ReceivedSVHMVLAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="L70" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='ReceivedSVHMVLAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="M70" IsFormula="true">IFERROR((C70-Q70)/Q70,0)</Value>
+        <Value Cell="N70" IsFormula="true">P70-L70</Value>
+        <Value Cell="O70" IsFormula="true">IFERROR((P70-L70)/L70,0)</Value>
+        <Value Cell="P70" IsFormula="true">SUM('Отчет по грузообороту'!B69:AF69)</Value>
+        <Value Cell="Q70" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='ReceivedSVHMVLAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="R70" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='ReceivedSVHMVLAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="S70" IsFormula="true">IFERROR((P70-R70)/R70,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A71:S71" Style="Header5" Collapsed="true">
+      <Caption Cell="A71">Nordwind Airlines (+ Pegas Fly)</Caption>
+      <Values>
+        <Value Cell="B71" IsFormula="true">'Отчет за день'!Q70</Value>
+        <Value Cell="C71" IsFormula="true">AVERAGE('Отчет по грузообороту'!B70:AF70)</Value>
+        <Value Cell="D71" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='ReceivedSVHMVLNord'" DataValue="VALUE"></Value>
+        <Value Cell="E71" IsFormula="true">B71-C71</Value>
+        <Value Cell="F71" IsFormula="true">B71-D71</Value>
+        <Value Cell="G71" IsFormula="true">IFERROR((B71-C71)/C71,0)</Value>
+        <Value Cell="H71" IsFormula="true">IFERROR((B71-D71)/D71,0)</Value>
+        <Value Cell="I71" IsFormula="true">C71-K71</Value>
+        <Value Cell="J71" IsFormula="true">IFERROR((C71-K71)/K71,0)</Value>
+        <Value Cell="K71" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='ReceivedSVHMVLNord'" DataValue="VALUE"></Value>
+        <Value Cell="L71" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='ReceivedSVHMVLNord'" DataValue="VALUE"></Value>
+        <Value Cell="M71" IsFormula="true">IFERROR((C71-Q71)/Q71,0)</Value>
+        <Value Cell="N71" IsFormula="true">P71-L71</Value>
+        <Value Cell="O71" IsFormula="true">IFERROR((P71-L71)/L71,0)</Value>
+        <Value Cell="P71" IsFormula="true">SUM('Отчет по грузообороту'!B70:AF70)</Value>
+        <Value Cell="Q71" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='ReceivedSVHMVLNord'" DataValue="VALUE"></Value>
+        <Value Cell="R71" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='ReceivedSVHMVLNord'" DataValue="VALUE"></Value>
+        <Value Cell="S71" IsFormula="true">IFERROR((P71-R71)/R71,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A72:S72" Style="Header5" Collapsed="true">
+      <Caption Cell="A72">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="B72" IsFormula="true">'Отчет за день'!Q71</Value>
+        <Value Cell="C72" IsFormula="true">AVERAGE('Отчет по грузообороту'!B71:AF71)</Value>
+        <Value Cell="D72" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='ReceivedSVHMVLOther'" DataValue="VALUE"></Value>
+        <Value Cell="E72" IsFormula="true">B72-C72</Value>
+        <Value Cell="F72" IsFormula="true">B72-D72</Value>
+        <Value Cell="G72" IsFormula="true">IFERROR((B72-C72)/C72,0)</Value>
+        <Value Cell="H72" IsFormula="true">IFERROR((B72-D72)/D72,0)</Value>
+        <Value Cell="I72" IsFormula="true">C72-K72</Value>
+        <Value Cell="J72" IsFormula="true">IFERROR((C72-K72)/K72,0)</Value>
+        <Value Cell="K72" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='ReceivedSVHMVLOther'" DataValue="VALUE"></Value>
+        <Value Cell="L72" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='ReceivedSVHMVLOther'" DataValue="VALUE"></Value>
+        <Value Cell="M72" IsFormula="true">IFERROR((C72-Q72)/Q72,0)</Value>
+        <Value Cell="N72" IsFormula="true">P72-L72</Value>
+        <Value Cell="O72" IsFormula="true">IFERROR((P72-L72)/L72,0)</Value>
+        <Value Cell="P72" IsFormula="true">SUM('Отчет по грузообороту'!B71:AF71)</Value>
+        <Value Cell="Q72" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='ReceivedSVHMVLOther'" DataValue="VALUE"></Value>
+        <Value Cell="R72" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='ReceivedSVHMVLOther'" DataValue="VALUE"></Value>
+        <Value Cell="S72" IsFormula="true">IFERROR((P72-R72)/R72,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A73:S73" Style="Header3">
+      <Caption Cell="A73">Обслужено рейсов по прилету</Caption>
+      <Values>
+        <Value Cell="B73" IsFormula="true">'Отчет за день'!Q72</Value>
+        <Value Cell="C73" IsFormula="true">SUM(C74:C77)</Value>
+        <Value Cell="D73" IsFormula="true">SUM(D74:D77)</Value>
+        <Value Cell="E73" IsFormula="true">B73-C73</Value>
+        <Value Cell="F73" IsFormula="true">B73-D73</Value>
+        <Value Cell="G73" IsFormula="true">IFERROR((B73-C73)/C73,0)</Value>
+        <Value Cell="H73" IsFormula="true">IFERROR((B73-D73)/D73,0)</Value>
+        <Value Cell="I73" IsFormula="true">C73-K73</Value>
+        <Value Cell="J73" IsFormula="true">IFERROR((C73-K73)/K73,0)</Value>
+        <Value Cell="K73" IsFormula="true">SUM(K74:K77)</Value>
+        <Value Cell="L73" IsFormula="true">SUM(L74:L77)</Value>
+        <Value Cell="M73" IsFormula="true">IFERROR((C73-Q73)/Q73,0)</Value>
+        <Value Cell="N73" IsFormula="true">P73-L73</Value>
+        <Value Cell="O73" IsFormula="true">IFERROR((P73-L73)/L73,0)</Value>
+        <Value Cell="P73" IsFormula="true">SUM(P74:P77)</Value>
+        <Value Cell="Q73" IsFormula="true">SUM(Q74:Q77)</Value>
+        <Value Cell="R73" IsFormula="true">SUM(R74:R77)</Value>
+        <Value Cell="S73" IsFormula="true">IFERROR((P73-R73)/R73,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A74:S74" Style="Header5" Collapsed="true">
+      <Caption Cell="A74">Аэрофлот</Caption>
+      <Values>
+        <Value Cell="B74" IsFormula="true">'Отчет за день'!Q73</Value>
+        <Value Cell="C74" IsFormula="true">AVERAGE('Отчет по грузообороту'!B73:AF73)</Value>
+        <Value Cell="D74" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='ReceivedDepartureAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="E74" IsFormula="true">B74-C74</Value>
+        <Value Cell="F74" IsFormula="true">B74-D74</Value>
+        <Value Cell="G74" IsFormula="true">IFERROR((B74-C74)/C74,0)</Value>
+        <Value Cell="H74" IsFormula="true">IFERROR((B74-D74)/D74,0)</Value>
+        <Value Cell="I74" IsFormula="true">C74-K74</Value>
+        <Value Cell="J74" IsFormula="true">IFERROR((C74-K74)/K74,0)</Value>
+        <Value Cell="K74" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='ReceivedDepartureAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="L74" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='ReceivedDepartureAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="M74" IsFormula="true">IFERROR((C74-Q74)/Q74,0)</Value>
+        <Value Cell="N74" IsFormula="true">P74-L74</Value>
+        <Value Cell="O74" IsFormula="true">IFERROR((P74-L74)/L74,0)</Value>
+        <Value Cell="P74" IsFormula="true">SUM('Отчет по грузообороту'!B73:AF73)</Value>
+        <Value Cell="Q74" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='ReceivedDepartureAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="R74" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='ReceivedDepartureAeroflot'" DataValue="VALUE"></Value>
+        <Value Cell="S74" IsFormula="true">IFERROR((P74-R74)/R74,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A75:S75" Style="Header5" Collapsed="true">
+      <Caption Cell="A75">AirBridgeCargo</Caption>
+      <Values>
+        <Value Cell="B75" IsFormula="true">'Отчет за день'!Q74</Value>
+        <Value Cell="C75" IsFormula="true">AVERAGE('Отчет по грузообороту'!B74:AF74)</Value>
+        <Value Cell="D75" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='ReceivedDepartureBridge'" DataValue="VALUE"></Value>
+        <Value Cell="E75" IsFormula="true">B75-C75</Value>
+        <Value Cell="F75" IsFormula="true">B75-D75</Value>
+        <Value Cell="G75" IsFormula="true">IFERROR((B75-C75)/C75,0)</Value>
+        <Value Cell="H75" IsFormula="true">IFERROR((B75-D75)/D75,0)</Value>
+        <Value Cell="I75" IsFormula="true">C75-K75</Value>
+        <Value Cell="J75" IsFormula="true">IFERROR((C75-K75)/K75,0)</Value>
+        <Value Cell="K75" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='ReceivedDepartureBridge'" DataValue="VALUE"></Value>
+        <Value Cell="L75" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='ReceivedDepartureBridge'" DataValue="VALUE"></Value>
+        <Value Cell="M75" IsFormula="true">IFERROR((C75-Q75)/Q75,0)</Value>
+        <Value Cell="N75" IsFormula="true">P75-L75</Value>
+        <Value Cell="O75" IsFormula="true">IFERROR((P75-L75)/L75,0)</Value>
+        <Value Cell="P75" IsFormula="true">SUM('Отчет по грузообороту'!B74:AF74)</Value>
+        <Value Cell="Q75" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='ReceivedDepartureBridge'" DataValue="VALUE"></Value>
+        <Value Cell="R75" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='ReceivedDepartureBridge'" DataValue="VALUE"></Value>
+        <Value Cell="S75" IsFormula="true">IFERROR((P75-R75)/R75,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A76:S76" Style="Header5" Collapsed="true">
+      <Caption Cell="A76">Nordwind Airlines (+ Pegas Fly)</Caption>
+      <Values>
+        <Value Cell="B76" IsFormula="true">'Отчет за день'!Q75</Value>
+        <Value Cell="C76" IsFormula="true">AVERAGE('Отчет по грузообороту'!B75:AF75)</Value>
+        <Value Cell="D76" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='ReceivedDepartureNord'" DataValue="VALUE"></Value>
+        <Value Cell="E76" IsFormula="true">B76-C76</Value>
+        <Value Cell="F76" IsFormula="true">B76-D76</Value>
+        <Value Cell="G76" IsFormula="true">IFERROR((B76-C76)/C76,0)</Value>
+        <Value Cell="H76" IsFormula="true">IFERROR((B76-D76)/D76,0)</Value>
+        <Value Cell="I76" IsFormula="true">C76-K76</Value>
+        <Value Cell="J76" IsFormula="true">IFERROR((C76-K76)/K76,0)</Value>
+        <Value Cell="K76" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='ReceivedDepartureNord'" DataValue="VALUE"></Value>
+        <Value Cell="L76" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='ReceivedDepartureNord'" DataValue="VALUE"></Value>
+        <Value Cell="M76" IsFormula="true">IFERROR((C76-Q76)/Q76,0)</Value>
+        <Value Cell="N76" IsFormula="true">P76-L76</Value>
+        <Value Cell="O76" IsFormula="true">IFERROR((P76-L76)/L76,0)</Value>
+        <Value Cell="P76" IsFormula="true">SUM('Отчет по грузообороту'!B75:AF75)</Value>
+        <Value Cell="Q76" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='ReceivedDepartureNord'" DataValue="VALUE"></Value>
+        <Value Cell="R76" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='ReceivedDepartureNord'" DataValue="VALUE"></Value>
+        <Value Cell="S76" IsFormula="true">IFERROR((P76-R76)/R76,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A77:S77" Style="Header5" Collapsed="true">
+      <Caption Cell="A77">Другие авиакомпании</Caption>
+      <Values>
+        <Value Cell="B77" IsFormula="true">'Отчет за день'!Q76</Value>
+        <Value Cell="C77" IsFormula="true">AVERAGE('Отчет по грузообороту'!B76:AF76)</Value>
+        <Value Cell="D77" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='ReceivedDepartureOther'" DataValue="VALUE"></Value>
+        <Value Cell="E77" IsFormula="true">B77-C77</Value>
+        <Value Cell="F77" IsFormula="true">B77-D77</Value>
+        <Value Cell="G77" IsFormula="true">IFERROR((B77-C77)/C77,0)</Value>
+        <Value Cell="H77" IsFormula="true">IFERROR((B77-D77)/D77,0)</Value>
+        <Value Cell="I77" IsFormula="true">C77-K77</Value>
+        <Value Cell="J77" IsFormula="true">IFERROR((C77-K77)/K77,0)</Value>
+        <Value Cell="K77" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='ReceivedDepartureOther'" DataValue="VALUE"></Value>
+        <Value Cell="L77" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='ReceivedDepartureOther'" DataValue="VALUE"></Value>
+        <Value Cell="M77" IsFormula="true">IFERROR((C77-Q77)/Q77,0)</Value>
+        <Value Cell="N77" IsFormula="true">P77-L77</Value>
+        <Value Cell="O77" IsFormula="true">IFERROR((P77-L77)/L77,0)</Value>
+        <Value Cell="P77" IsFormula="true">SUM('Отчет по грузообороту'!B76:AF76)</Value>
+        <Value Cell="Q77" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='ReceivedDepartureOther'" DataValue="VALUE"></Value>
+        <Value Cell="R77" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='ReceivedDepartureOther'" DataValue="VALUE"></Value>
+        <Value Cell="S77" IsFormula="true">IFERROR((P77-R77)/R77,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A78:S78" Style="Header2">
+      <Caption Cell="A78">Складские остатки (в тоннах)</Caption>
+      <Values>
+        <Value Cell="B78" IsFormula="true">'Отчет за день'!Q77</Value>
+        <Value Cell="C78" IsFormula="true">C79+C86</Value>
+        <Value Cell="D78" IsFormula="true">D79+D86</Value>
+        <Value Cell="E78" IsFormula="true">B78-C78</Value>
+        <Value Cell="F78" IsFormula="true">B78-D78</Value>
+        <Value Cell="G78" IsFormula="true">IFERROR((B78-C78)/C78,0)</Value>
+        <Value Cell="H78" IsFormula="true">IFERROR((B78-D78)/D78,0)</Value>
+        <Value Cell="I78" IsFormula="true">C78-K78</Value>
+        <Value Cell="J78" IsFormula="true">IFERROR((C78-K78)/K78,0)</Value>
+        <Value Cell="K78" IsFormula="true">K79+K86</Value>
+        <Value Cell="L78" IsFormula="true">L79+L86</Value>
+        <Value Cell="M78" IsFormula="true">IFERROR((C78-Q78)/Q78,0)</Value>
+        <Value Cell="N78" IsFormula="true">P78-L78</Value>
+        <Value Cell="O78" IsFormula="true">IFERROR((P78-L78)/L78,0)</Value>
+        <Value Cell="P78" IsFormula="true">P79+P86</Value>
+        <Value Cell="Q78" IsFormula="true">Q79+Q86</Value>
+        <Value Cell="R78" IsFormula="true">R79+R86</Value>
+        <Value Cell="S78" IsFormula="true">IFERROR((P78-R78)/R78,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A79:S79" Style="Header3">
+      <Caption Cell="A79">Импортный груз</Caption>
+      <Values>
+        <Value Cell="B79" IsFormula="true">'Отчет за день'!Q78</Value>
+        <Value Cell="C79" IsFormula="true">C80+C83</Value>
+        <Value Cell="D79" IsFormula="true">D80+D83</Value>
+        <Value Cell="E79" IsFormula="true">B79-C79</Value>
+        <Value Cell="F79" IsFormula="true">B79-D79</Value>
+        <Value Cell="G79" IsFormula="true">IFERROR((B79-C79)/C79,0)</Value>
+        <Value Cell="H79" IsFormula="true">IFERROR((B79-D79)/D79,0)</Value>
+        <Value Cell="I79" IsFormula="true">C79-K79</Value>
+        <Value Cell="J79" IsFormula="true">IFERROR((C79-K79)/K79,0)</Value>
+        <Value Cell="K79" IsFormula="true">K80+K83</Value>
+        <Value Cell="L79" IsFormula="true">L80+L83</Value>
+        <Value Cell="M79" IsFormula="true">IFERROR((C79-Q79)/Q79,0)</Value>
+        <Value Cell="N79" IsFormula="true">P79-L79</Value>
+        <Value Cell="O79" IsFormula="true">IFERROR((P79-L79)/L79,0)</Value>
+        <Value Cell="P79" IsFormula="true">P80+P83</Value>
+        <Value Cell="Q79" IsFormula="true">Q80+Q83</Value>
+        <Value Cell="R79" IsFormula="true">R80+R83</Value>
+        <Value Cell="S79" IsFormula="true">IFERROR((P79-R79)/R79,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A80:S80" Style="Header4">
+      <Caption Cell="A80">ВВЛ</Caption>
+      <Values>
+        <Value Cell="B80" IsFormula="true">'Отчет за день'!Q79</Value>
+        <Value Cell="C80" IsFormula="true">C81+C82</Value>
+        <Value Cell="D80" IsFormula="true">D81+D82</Value>
+        <Value Cell="E80" IsFormula="true">B80-C80</Value>
+        <Value Cell="F80" IsFormula="true">B80-D80</Value>
+        <Value Cell="G80" IsFormula="true">IFERROR((B80-C80)/C80,0)</Value>
+        <Value Cell="H80" IsFormula="true">IFERROR((B80-D80)/D80,0)</Value>
+        <Value Cell="I80" IsFormula="true">C80-K80</Value>
+        <Value Cell="J80" IsFormula="true">IFERROR((C80-K80)/K80,0)</Value>
+        <Value Cell="K80" IsFormula="true">K81+K82</Value>
+        <Value Cell="L80" IsFormula="true">L81+L82</Value>
+        <Value Cell="M80" IsFormula="true">IFERROR((C80-Q80)/Q80,0)</Value>
+        <Value Cell="N80" IsFormula="true">P80-L80</Value>
+        <Value Cell="O80" IsFormula="true">IFERROR((P80-L80)/L80,0)</Value>
+        <Value Cell="P80" IsFormula="true">P81+P82</Value>
+        <Value Cell="Q80" IsFormula="true">Q81+Q82</Value>
+        <Value Cell="R80" IsFormula="true">R81+R81</Value>
+        <Value Cell="S80" IsFormula="true">IFERROR((P80-R80)/R80,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A81:S81" Style="Header5" Collapsed="true">
+      <Caption Cell="A81">Готов к выдаче</Caption>
+      <Values>
+        <Value Cell="B81" IsFormula="true">'Отчет за день'!Q80</Value>
+        <Value Cell="C81" IsFormula="true">AVERAGE('Отчет по грузообороту'!B80:AF80)</Value>
+        <Value Cell="D81" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='StockImportVVLReady'" DataValue="VALUE"></Value>
+        <Value Cell="E81" IsFormula="true">B81-C81</Value>
+        <Value Cell="F81" IsFormula="true">B81-D81</Value>
+        <Value Cell="G81" IsFormula="true">IFERROR((B81-C81)/C81,0)</Value>
+        <Value Cell="H81" IsFormula="true">IFERROR((B81-D81)/D81,0)</Value>
+        <Value Cell="I81" IsFormula="true">C81-K81</Value>
+        <Value Cell="J81" IsFormula="true">IFERROR((C81-K81)/K81,0)</Value>
+        <Value Cell="K81" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='StockImportVVLReady'" DataValue="VALUE"></Value>
+        <Value Cell="L81" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='StockImportVVLReady'" DataValue="VALUE"></Value>
+        <Value Cell="M81" IsFormula="true">IFERROR((C81-Q81)/Q81,0)</Value>
+        <Value Cell="N81" IsFormula="true">P81-L81</Value>
+        <Value Cell="O81" IsFormula="true">IFERROR((P81-L81)/L81,0)</Value>
+        <Value Cell="P81" IsFormula="true">SUM('Отчет по грузообороту'!B80:AF80)</Value>
+        <Value Cell="Q81" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='StockImportVVLReady'" DataValue="VALUE"></Value>
+        <Value Cell="R81" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='StockImportVVLReady'" DataValue="VALUE"></Value>
+        <Value Cell="S81" IsFormula="true">IFERROR((P81-R81)/R81,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A82:S82" Style="Header5" Collapsed="true">
+      <Caption Cell="A82">В обработке на складе</Caption>
+      <Values>
+        <Value Cell="B82" IsFormula="true">'Отчет за день'!Q81</Value>
+        <Value Cell="C82" IsFormula="true">AVERAGE('Отчет по грузообороту'!B81:AF81)</Value>
+        <Value Cell="D82" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='StockImportVVLProcess'" DataValue="VALUE"></Value>
+        <Value Cell="E82" IsFormula="true">B82-C82</Value>
+        <Value Cell="F82" IsFormula="true">B82-D82</Value>
+        <Value Cell="G82" IsFormula="true">IFERROR((B82-C82)/C82,0)</Value>
+        <Value Cell="H82" IsFormula="true">IFERROR((B82-D82)/D82,0)</Value>
+        <Value Cell="I82" IsFormula="true">C82-K82</Value>
+        <Value Cell="J82" IsFormula="true">IFERROR((C82-K82)/K82,0)</Value>
+        <Value Cell="K82" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='StockImportVVLProcess'" DataValue="VALUE"></Value>
+        <Value Cell="L82" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='StockImportVVLProcess'" DataValue="VALUE"></Value>
+        <Value Cell="M82" IsFormula="true">IFERROR((C82-Q82)/Q82,0)</Value>
+        <Value Cell="N82" IsFormula="true">P82-L82</Value>
+        <Value Cell="O82" IsFormula="true">IFERROR((P82-L82)/L82,0)</Value>
+        <Value Cell="P82" IsFormula="true">SUM('Отчет по грузообороту'!B81:AF81)</Value>
+        <Value Cell="Q82" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='StockImportVVLProcess'" DataValue="VALUE"></Value>
+        <Value Cell="R82" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='StockImportVVLProcess'" DataValue="VALUE"></Value>
+        <Value Cell="S82" IsFormula="true">IFERROR((P82-R82)/R82,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A83:S83" Style="Header4">
+      <Caption Cell="A83">МВЛ</Caption>
+      <Values>
+        <Value Cell="B83" IsFormula="true">'Отчет за день'!Q82</Value>
+        <Value Cell="C83" IsFormula="true">C84+C85</Value>
+        <Value Cell="D83" IsFormula="true">D84+D85</Value>
+        <Value Cell="E83" IsFormula="true">B83-C83</Value>
+        <Value Cell="F83" IsFormula="true">B83-D83</Value>
+        <Value Cell="G83" IsFormula="true">IFERROR((B83-C83)/C83,0)</Value>
+        <Value Cell="H83" IsFormula="true">IFERROR((B83-D83)/D83,0)</Value>
+        <Value Cell="I83" IsFormula="true">C83-K83</Value>
+        <Value Cell="J83" IsFormula="true">IFERROR((C83-K83)/K83,0)</Value>
+        <Value Cell="K83" IsFormula="true">K84+K85</Value>
+        <Value Cell="L83" IsFormula="true">L84+L85</Value>
+        <Value Cell="M83" IsFormula="true">IFERROR((C83-Q83)/Q83,0)</Value>
+        <Value Cell="N83" IsFormula="true">P83-L83</Value>
+        <Value Cell="O83" IsFormula="true">IFERROR((P83-L83)/L83,0)</Value>
+        <Value Cell="P83" IsFormula="true">P84+P85</Value>
+        <Value Cell="Q83" IsFormula="true">Q84+Q85</Value>
+        <Value Cell="R83" IsFormula="true">R84+R85</Value>
+        <Value Cell="S83" IsFormula="true">IFERROR((P83-R83)/R83,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A84:S84" Style="Header5" Collapsed="true">
+      <Caption Cell="A84">Готов к выдаче</Caption>
+      <Values>
+        <Value Cell="B84" IsFormula="true">'Отчет за день'!Q83</Value>
+        <Value Cell="C84" IsFormula="true">AVERAGE('Отчет по грузообороту'!B83:AF83)</Value>
+        <Value Cell="D84" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='StockImportMVLReady'" DataValue="VALUE"></Value>
+        <Value Cell="E84" IsFormula="true">B84-C84</Value>
+        <Value Cell="F84" IsFormula="true">B84-D84</Value>
+        <Value Cell="G84" IsFormula="true">IFERROR((B84-C84)/C84,0)</Value>
+        <Value Cell="H84" IsFormula="true">IFERROR((B84-D84)/D84,0)</Value>
+        <Value Cell="I84" IsFormula="true">C84-K84</Value>
+        <Value Cell="J84" IsFormula="true">IFERROR((C84-K84)/K84,0)</Value>
+        <Value Cell="K84" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='StockImportMVLReady'" DataValue="VALUE"></Value>
+        <Value Cell="L84" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='StockImportMVLReady'" DataValue="VALUE"></Value>
+        <Value Cell="M84" IsFormula="true">IFERROR((C84-Q84)/Q84,0)</Value>
+        <Value Cell="N84" IsFormula="true">P84-L84</Value>
+        <Value Cell="O84" IsFormula="true">IFERROR((P84-L84)/L84,0)</Value>
+        <Value Cell="P84" IsFormula="true">SUM('Отчет по грузообороту'!B83:AF83)</Value>
+        <Value Cell="Q84" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='StockImportMVLReady'" DataValue="VALUE"></Value>
+        <Value Cell="R84" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='StockImportMVLReady'" DataValue="VALUE"></Value>
+        <Value Cell="S84" IsFormula="true">IFERROR((P84-R84)/R84,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A85:S85" Style="Header5" Collapsed="true">
+      <Caption Cell="A85">В обработке на складе</Caption>
+      <Values>
+        <Value Cell="B85" IsFormula="true">'Отчет за день'!Q84</Value>
+        <Value Cell="C85" IsFormula="true">AVERAGE('Отчет по грузообороту'!B84:AF84)</Value>
+        <Value Cell="D85" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='StockImportMVLProcess'" DataValue="VALUE"></Value>
+        <Value Cell="E85" IsFormula="true">B85-C85</Value>
+        <Value Cell="F85" IsFormula="true">B85-D85</Value>
+        <Value Cell="G85" IsFormula="true">IFERROR((B85-C85)/C85,0)</Value>
+        <Value Cell="H85" IsFormula="true">IFERROR((B85-D85)/D85,0)</Value>
+        <Value Cell="I85" IsFormula="true">C85-K85</Value>
+        <Value Cell="J85" IsFormula="true">IFERROR((C85-K85)/K85,0)</Value>
+        <Value Cell="K85" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='StockImportMVLProcess'" DataValue="VALUE"></Value>
+        <Value Cell="L85" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='StockImportMVLProcess'" DataValue="VALUE"></Value>
+        <Value Cell="M85" IsFormula="true">IFERROR((C85-Q85)/Q85,0)</Value>
+        <Value Cell="N85" IsFormula="true">P85-L85</Value>
+        <Value Cell="O85" IsFormula="true">IFERROR((P85-L85)/L85,0)</Value>
+        <Value Cell="P85" IsFormula="true">SUM('Отчет по грузообороту'!B84:AF84)</Value>
+        <Value Cell="Q85" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='StockImportMVLProcess'" DataValue="VALUE"></Value>
+        <Value Cell="R85" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='StockImportMVLProcess'" DataValue="VALUE"></Value>
+        <Value Cell="S85" IsFormula="true">IFERROR((P85-R85)/R85,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A86:S86" Style="Header3">
+      <Caption Cell="A86">Экспортный груз</Caption>
+      <Values>
+        <Value Cell="B86" IsFormula="true">'Отчет за день'!Q85</Value>
+        <Value Cell="C86" IsFormula="true">C87+C90</Value>
+        <Value Cell="D86" IsFormula="true">D87+D90</Value>
+        <Value Cell="E86" IsFormula="true">B86-C86</Value>
+        <Value Cell="F86" IsFormula="true">B86-D86</Value>
+        <Value Cell="G86" IsFormula="true">IFERROR((B86-C86)/C86,0)</Value>
+        <Value Cell="H86" IsFormula="true">IFERROR((B86-D86)/D86,0)</Value>
+        <Value Cell="I86" IsFormula="true">C86-K86</Value>
+        <Value Cell="J86" IsFormula="true">IFERROR((C86-K86)/K86,0)</Value>
+        <Value Cell="K86" IsFormula="true">K87+K90</Value>
+        <Value Cell="L86" IsFormula="true">L87+L90</Value>
+        <Value Cell="M86" IsFormula="true">IFERROR((C86-Q86)/Q86,0)</Value>
+        <Value Cell="N86" IsFormula="true">P86-L86</Value>
+        <Value Cell="O86" IsFormula="true">IFERROR((P86-L86)/L86,0)</Value>
+        <Value Cell="P86" IsFormula="true">P87+P90</Value>
+        <Value Cell="Q86" IsFormula="true">Q87+Q90</Value>
+        <Value Cell="R86" IsFormula="true">R87+R90</Value>
+        <Value Cell="S86" IsFormula="true">IFERROR((P86-R86)/R86,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A87:S87" Style="Header4">
+      <Caption Cell="A87">ВВЛ</Caption>
+      <Values>
+        <Value Cell="B87" IsFormula="true">'Отчет за день'!Q86</Value>
+        <Value Cell="C87" IsFormula="true">C88+C89</Value>
+        <Value Cell="D87" IsFormula="true">D88+D89</Value>
+        <Value Cell="E87" IsFormula="true">B87-C87</Value>
+        <Value Cell="F87" IsFormula="true">B87-D87</Value>
+        <Value Cell="G87" IsFormula="true">IFERROR((B87-C87)/C87,0)</Value>
+        <Value Cell="H87" IsFormula="true">IFERROR((B87-D87)/D87,0)</Value>
+        <Value Cell="I87" IsFormula="true">C87-K87</Value>
+        <Value Cell="J87" IsFormula="true">IFERROR((C87-K87)/K87,0)</Value>
+        <Value Cell="K87" IsFormula="true">K88+K89</Value>
+        <Value Cell="L87" IsFormula="true">L88+L89</Value>
+        <Value Cell="M87" IsFormula="true">IFERROR((C87-Q87)/Q87,0)</Value>
+        <Value Cell="N87" IsFormula="true">P87-L87</Value>
+        <Value Cell="O87" IsFormula="true">IFERROR((P87-L87)/L87,0)</Value>
+        <Value Cell="P87" IsFormula="true">P88+P89</Value>
+        <Value Cell="Q87" IsFormula="true">Q88+Q89</Value>
+        <Value Cell="R87" IsFormula="true">R88+R89</Value>
+        <Value Cell="S87" IsFormula="true">IFERROR((P87-R87)/R87,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A88:S88" Style="Header5" Collapsed="true">
+      <Caption Cell="A88">Трансферный груз</Caption>
+      <Values>
+        <Value Cell="B88" IsFormula="true">'Отчет за день'!Q87</Value>
+        <Value Cell="C88" IsFormula="true">AVERAGE('Отчет по грузообороту'!B87:AF87)</Value>
+        <Value Cell="D88" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='StockExportVVLTransfer'" DataValue="VALUE"></Value>
+        <Value Cell="E88" IsFormula="true">B88-C88</Value>
+        <Value Cell="F88" IsFormula="true">B88-D88</Value>
+        <Value Cell="G88" IsFormula="true">IFERROR((B88-C88)/C88,0)</Value>
+        <Value Cell="H88" IsFormula="true">IFERROR((B88-D88)/D88,0)</Value>
+        <Value Cell="I88" IsFormula="true">C88-K88</Value>
+        <Value Cell="J88" IsFormula="true">IFERROR((C88-K88)/K88,0)</Value>
+        <Value Cell="K88" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='StockExportVVLTransfer'" DataValue="VALUE"></Value>
+        <Value Cell="L88" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='StockExportVVLTransfer'" DataValue="VALUE"></Value>
+        <Value Cell="M88" IsFormula="true">IFERROR((C88-Q88)/Q88,0)</Value>
+        <Value Cell="N88" IsFormula="true">P88-L88</Value>
+        <Value Cell="O88" IsFormula="true">IFERROR((P88-L88)/L88,0)</Value>
+        <Value Cell="P88" IsFormula="true">SUM('Отчет по грузообороту'!B87:AF87)</Value>
+        <Value Cell="Q88" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='StockExportVVLTransfer'" DataValue="VALUE"></Value>
+        <Value Cell="R88" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='StockExportVVLTransfer'" DataValue="VALUE"></Value>
+        <Value Cell="S88" IsFormula="true">IFERROR((P88-R88)/R88,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A89:S89" Style="Header5" Collapsed="true">
+      <Caption Cell="A89">Экспортный груз</Caption>
+      <Values>
+        <Value Cell="B89" IsFormula="true">'Отчет за день'!Q88</Value>
+        <Value Cell="C89" IsFormula="true">AVERAGE('Отчет по грузообороту'!B88:AF88)</Value>
+        <Value Cell="D89" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='StockExportVVLExport'" DataValue="VALUE"></Value>
+        <Value Cell="E89" IsFormula="true">B89-C89</Value>
+        <Value Cell="F89" IsFormula="true">B89-D89</Value>
+        <Value Cell="G89" IsFormula="true">IFERROR((B89-C89)/C89,0)</Value>
+        <Value Cell="H89" IsFormula="true">IFERROR((B89-D89)/D89,0)</Value>
+        <Value Cell="I89" IsFormula="true">C89-K89</Value>
+        <Value Cell="J89" IsFormula="true">IFERROR((C89-K89)/K89,0)</Value>
+        <Value Cell="K89" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='StockExportVVLExport'" DataValue="VALUE"></Value>
+        <Value Cell="L89" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='StockExportVVLExport'" DataValue="VALUE"></Value>
+        <Value Cell="M89" IsFormula="true">IFERROR((C89-Q89)/Q89,0)</Value>
+        <Value Cell="N89" IsFormula="true">P89-L89</Value>
+        <Value Cell="O89" IsFormula="true">IFERROR((P89-L89)/L89,0)</Value>
+        <Value Cell="P89" IsFormula="true">SUM('Отчет по грузообороту'!B88:AF88)</Value>
+        <Value Cell="Q89" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='StockExportVVLExport'" DataValue="VALUE"></Value>
+        <Value Cell="R89" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='StockExportVVLExport'" DataValue="VALUE"></Value>
+        <Value Cell="S89" IsFormula="true">IFERROR((P89-R89)/R89,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A90:S90" Style="Header4">
+      <Caption Cell="A90">МВЛ</Caption>
+      <Values>
+        <Value Cell="B90" IsFormula="true">'Отчет за день'!Q89</Value>
+        <Value Cell="C90" IsFormula="true">C91+C92</Value>
+        <Value Cell="D90" IsFormula="true">D91+D92</Value>
+        <Value Cell="E90" IsFormula="true">B90-C90</Value>
+        <Value Cell="F90" IsFormula="true">B90-D90</Value>
+        <Value Cell="G90" IsFormula="true">IFERROR((B90-C90)/C90,0)</Value>
+        <Value Cell="H90" IsFormula="true">IFERROR((B90-D90)/D90,0)</Value>
+        <Value Cell="I90" IsFormula="true">C90-K90</Value>
+        <Value Cell="J90" IsFormula="true">IFERROR((C90-K90)/K90,0)</Value>
+        <Value Cell="K90" IsFormula="true">K91+K92</Value>
+        <Value Cell="L90" IsFormula="true">L91+L92</Value>
+        <Value Cell="M90" IsFormula="true">IFERROR((C90-Q90)/Q90,0)</Value>
+        <Value Cell="N90" IsFormula="true">P90-L90</Value>
+        <Value Cell="O90" IsFormula="true">IFERROR((P90-L90)/L90,0)</Value>
+        <Value Cell="P90" IsFormula="true">P91+P92</Value>
+        <Value Cell="Q90" IsFormula="true">Q91+Q92</Value>
+        <Value Cell="R90" IsFormula="true">R91+R92</Value>
+        <Value Cell="S90" IsFormula="true">IFERROR((P90-R90)/R90,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A91:S91" Style="Header5" Collapsed="true">
+      <Caption Cell="A91">Трансферный груз</Caption>
+      <Values>
+        <Value Cell="B91" IsFormula="true">'Отчет за день'!Q90</Value>
+        <Value Cell="C91" IsFormula="true">AVERAGE('Отчет по грузообороту'!B90:AF90)</Value>
+        <Value Cell="D91" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='StockExportMVLTransfer'" DataValue="VALUE"></Value>
+        <Value Cell="E91" IsFormula="true">B91-C91</Value>
+        <Value Cell="F91" IsFormula="true">B91-D91</Value>
+        <Value Cell="G91" IsFormula="true">IFERROR((B91-C91)/C91,0)</Value>
+        <Value Cell="H91" IsFormula="true">IFERROR((B91-D91)/D91,0)</Value>
+        <Value Cell="I91" IsFormula="true">C91-K91</Value>
+        <Value Cell="J91" IsFormula="true">IFERROR((C91-K91)/K91,0)</Value>
+        <Value Cell="K91" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='StockExportMVLTransfer'" DataValue="VALUE"></Value>
+        <Value Cell="L91" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='StockExportMVLTransfer'" DataValue="VALUE"></Value>
+        <Value Cell="M91" IsFormula="true">IFERROR((C91-Q91)/Q91,0)</Value>
+        <Value Cell="N91" IsFormula="true">P91-L91</Value>
+        <Value Cell="O91" IsFormula="true">IFERROR((P91-L91)/L91,0)</Value>
+        <Value Cell="P91" IsFormula="true">SUM('Отчет по грузообороту'!B90:AF90)</Value>
+        <Value Cell="Q91" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='StockExportMVLTransfer'" DataValue="VALUE"></Value>
+        <Value Cell="R91" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='StockExportMVLTransfer'" DataValue="VALUE"></Value>
+        <Value Cell="S91" IsFormula="true">IFERROR((P91-R91)/R91,0)</Value>
+      </Values>
+    </Row>
+    <Row Cell="A92:S92" Style="Header5" Collapsed="true">
+      <Caption Cell="A92">Экспортный груз</Caption>
+      <Values>
+        <Value Cell="B92" IsFormula="true">'Отчет за день'!Q91</Value>
+        <Value Cell="C92" IsFormula="true">AVERAGE('Отчет по грузообороту'!B91:AF91)</Value>
+        <Value Cell="D92" IsFormula="false" Data="" QueryName="PrevMonth" Filter="VALUENAME='StockExportMVLExport'" DataValue="VALUE"></Value>
+        <Value Cell="E92" IsFormula="true">B92-C92</Value>
+        <Value Cell="F92" IsFormula="true">B92-D92</Value>
+        <Value Cell="G92" IsFormula="true">IFERROR((B92-C92)/C92,0)</Value>
+        <Value Cell="H92" IsFormula="true">IFERROR((B92-D92)/D92,0)</Value>
+        <Value Cell="I92" IsFormula="true">C92-K92</Value>
+        <Value Cell="J92" IsFormula="true">IFERROR((C92-K92)/K92,0)</Value>
+        <Value Cell="K92" IsFormula="false" Data="" QueryName="PrevMonthYear" Filter="VALUENAME='StockExportMVLExport'" DataValue="VALUE"></Value>
+        <Value Cell="L92" IsFormula="false" Data="" QueryName="PrevMonthYearTotal" Filter="VALUENAME='StockExportMVLExport'" DataValue="VALUE"></Value>
+        <Value Cell="M92" IsFormula="true">IFERROR((C92-Q92)/Q92,0)</Value>
+        <Value Cell="N92" IsFormula="true">P92-L92</Value>
+        <Value Cell="O92" IsFormula="true">IFERROR((P92-L92)/L92,0)</Value>
+        <Value Cell="P92" IsFormula="true">SUM('Отчет по грузообороту'!B91:AF91)</Value>
+        <Value Cell="Q92" IsFormula="false" Data="" QueryName="Prev2MonthYear" Filter="VALUENAME='StockExportMVLExport'" DataValue="VALUE"></Value>
+        <Value Cell="R92" IsFormula="false" Data="" QueryName="Prev2MonthYearTotal" Filter="VALUENAME='StockExportMVLExport'" DataValue="VALUE"></Value>
+        <Value Cell="S92" IsFormula="true">IFERROR((P92-R92)/R92,0)</Value>
+      </Values>
+    </Row>
+  </Table>
+  <CoditionalFormat>E5:J92</CoditionalFormat>
+  <CoditionalFormat>M5:O92</CoditionalFormat>
+  <CoditionalFormat>S5:S92</CoditionalFormat>
+  <WrapText>C3:S3</WrapText>
+  <Merge>A3:A4</Merge>
+  <Merge>B4:D4</Merge>
+  <Merge>E4:F4</Merge>
+  <Merge>G4:H4</Merge>  
+  <Column Width ="15">2</Column>
+  <Column Width ="15">3</Column>
+  <Column Width ="15">4</Column>
+  <Column Width ="15">5</Column>
+  <Column Width ="15">6</Column>
+  <Column Width ="15">7</Column>
+  <Column Width ="20">8</Column>
+  <Column Width ="20">9</Column>
+  <Column Width ="20">10</Column>
+  <Column Hide ="true">11</Column>
+  <Column Hide ="true">12</Column>
+  <Column Width ="20">13</Column>
+  <Column Width ="20">14</Column>
+  <Column Width ="20">15</Column>
+  <Column Hide ="true">16</Column>
+  <Column Hide ="true">17</Column>
+  <Column Hide ="true">18</Column>
+  <Column Width ="20">19</Column>
+  <NumberFormat Cell="G5:H92">#0%</NumberFormat>
+  <NumberFormat Cell="J5:J92">#0%</NumberFormat>
+  <NumberFormat Cell="M5:M92">#0%</NumberFormat>
+  <NumberFormat Cell="O5:O92">#0%</NumberFormat>
+  <NumberFormat Cell="S5:S92">#0%</NumberFormat>
+</ReportStructure>

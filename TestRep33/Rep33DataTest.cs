@@ -12,7 +12,8 @@ namespace TestRep33
         public void ReportManagerTest()
         {
             var reportManager = new ReportManager(Common.RepKind.Manual);
-            var dt = System.DateTime.Today.AddDays(-1);
+            //var dt = System.DateTime.Today.AddDays(-1);
+            var dt = new System.DateTime(2021, 11, 30);
             var ret = reportManager.CreateReport(dt);
             Assert.IsTrue(ret);
             reportManager.SaveFile();
@@ -33,16 +34,12 @@ namespace TestRep33
             var shfn = @"d:\Work\repshablon.xlsx";
             FileInfo shablon = new FileInfo(@"d:\Work\repshablon.xlsx");
             FileInfo newFile = new FileInfo(@"d:\Work\repnew.xlsx");
+            //using (Stream inpStream = File.Open(shfn, FileMode.Open, FileAccess.ReadWrite))
 
-            //var fs = new FileStream(Server.MapPath(@"\Content\NPOITemplate.xls"), FileMode.Open, FileAccess.Read);
-
-//            using (Stream inpStream = File.Open(shfn, FileMode.Open, FileAccess.ReadWrite))
-
-                using var inpStream = new FileStream(shfn, FileMode.Open);
-
+            using var inpStream = new FileStream(shfn, FileMode.Open);
             using (var outStream = new MemoryStream())
             using (var excel = new ExcelPackage(outStream, inpStream))
-//            using (var excel = new ExcelPackage(inpStream))
+            //using (var excel = new ExcelPackage(inpStream))
             //using (var excel = new ExcelPackage(shablon, true)) 
             {
                 ExcelWorksheet worksheet = excel.Workbook.Worksheets.Add("Inventory");

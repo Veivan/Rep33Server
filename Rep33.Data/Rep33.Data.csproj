@@ -6,7 +6,9 @@
 
   <ItemGroup>
     <None Remove="ReportsWorksheets\Comparison.xml" />
+    <None Remove="ReportsWorksheets\ComparisonQ.xml" />
     <None Remove="ReportsWorksheets\Dynamic.xml" />
+    <None Remove="ReportsWorksheets\DynamicQ.xml" />
     <None Remove="ReportsWorksheets\ReportDay.xml" />
     <None Remove="ReportsWorksheets\ReportDayQ.xml" />
     <None Remove="ReportsWorksheets\repshablon.xlsx" />
@@ -14,7 +16,9 @@
 
   <ItemGroup>
     <EmbeddedResource Include="ReportsWorksheets\Comparison.xml" />
+    <EmbeddedResource Include="ReportsWorksheets\ComparisonQ.xml" />
     <EmbeddedResource Include="ReportsWorksheets\Dynamic.xml" />
+    <EmbeddedResource Include="ReportsWorksheets\DynamicQ.xml" />
     <EmbeddedResource Include="ReportsWorksheets\ReportDay.xml" />
     <EmbeddedResource Include="ReportsWorksheets\ReportDayQ.xml" />
     <EmbeddedResource Include="ReportsWorksheets\repshablon.xlsx" />

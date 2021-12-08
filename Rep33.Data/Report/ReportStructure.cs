@@ -143,6 +143,10 @@ namespace Rep33.Data.Report
     {
         [XmlElement(ElementName = "Name")]
         public string Name { get; set; }
+        [XmlElement(ElementName = "wsType")]
+        public string wsType { get; set; }
+
+
         [XmlElement(ElementName = "Header")]
         public Header Header { get; set; }
         [XmlElement(ElementName = "Table")]

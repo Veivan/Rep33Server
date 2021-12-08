@@ -9,6 +9,8 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Xml.Serialization;
+using System.Linq;
+using Rep33.Data.HeaderBuilders;
 
 namespace Rep33.Data.Report
 {
@@ -121,8 +123,11 @@ namespace Rep33.Data.Report
                     _rs = DeSerializeXML(wf, assembly);
                     var ws = excel.Workbook.Worksheets[_rs.Name];
                     ws.OutLineSummaryBelow = false;
-                    var namedCell1 = ws.Names["IssuedAirCargoAeroflot"];
-                    namedCell1.Value = "555";
+
+                    var hBuilder = HBuilderSelector.GetBuilder(_rs.wsType);
+                    hBuilder.FillHeader(ws, _rs, ReportDate);
+
+                    FillTable(ws);
 
                     /*                    AddTable(ws);
                                         string tablecell = _rs.Table.Cell;
@@ -164,6 +169,93 @@ namespace Rep33.Data.Report
                 excelbin = excel.GetAsByteArray();
             }
             return true;
+        }
+
+        private void FillTable(ExcelWorksheet ws)
+        {
+            foreach (var val in _rs.Placeholders.Items)
+            {
+                //var namedCell = ws.Names[val.Data];
+                var namedCell = ws.Names.FirstOrDefault(x => x.Name == val.Data);
+                if (namedCell != null)
+                {
+                    decimal dval = ReportData.GetValueFromQuery(val.QueryName, val.Filter, val.DataValue, val.Data);
+                    namedCell.Value = dval;
+                    if (!string.IsNullOrWhiteSpace(val.Data)) 
+                        _DataToSave.Add(new DataToSave() { ReportDate = ReportDate, ValueName = val.Data, Value = dval });
+                }
+            }
+
+            /*foreach (var row in _rs.Table.Rows)
+            {
+                int level;
+                string NextLetter = "A";
+
+                ws.Cells[row.Caption.Cell].Value = row.Caption.Text;
+                if (row.Values != null)
+                {
+                    foreach (var val in row.Values.Items)
+                    {
+                        if (val.IsPrevDays) { NextLetter = BuildPrevRow(ws, val); }
+                        else
+                        {
+                            string cell = val.Cell;
+                            if (NextLetter != "") { cell = cell.Replace("{#}", NextLetter); }
+                            if (string.IsNullOrWhiteSpace(val.DateFormat))
+                            {
+                                ws.Cells[cell].Style.Numberformat.Format = "0";
+                            }
+                            if (val.IsFormula == true)
+                            {
+                                ws.Cells[cell].Formula = val.Text;
+                            }
+                            else
+                            {
+                                if (!string.IsNullOrWhiteSpace(val.DateFormat))
+                                {
+                                    if (!string.IsNullOrWhiteSpace(val.Data))
+                                    {
+                                        if (val.Data == "ContainDate")
+                                        {
+                                            ws.Cells[cell].Value = val.Text.Replace("{#}", ReportDate.AddYears(val.AddYear).ToString(val.DateFormat));
+                                        }
+                                        else
+                                        {
+                                            ws.Cells[cell].Value = ReportDate.ToString(val.DateFormat);
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    if (val.IsNotConvert)
+                                    {
+                                        try
+                                        {
+                                            decimal dd = Convert.ToDecimal(val.Text);
+                                            ws.Cells[cell].Value = dd;
+                                        }
+                                        catch
+                                        {
+                                            ws.Cells[cell].Value = val.Text;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        decimal dval = ReportData.GetValueFromQuery(val.QueryName, val.Filter, val.DataValue, val.Data);
+                                        ws.Cells[cell].Value = dval;
+                                        //ws.Cells[cell].Value = val.Data;
+                                        if (!string.IsNullOrWhiteSpace(val.Data)) _DataToSave.Add(new DataToSave() { ReportDate = ReportDate, ValueName = val.Data, Value = dval });
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                row.Cell = row.Cell.Replace("{#}", NextLetter);
+                level = SetStyle(ws.Cells[row.Cell], row.Style);
+                ws.Row(ws.Cells[row.Cell].Start.Row).OutlineLevel = level;
+                ws.Row(ws.Cells[row.Cell].Start.Row).Collapsed = row.Collapsed;
+            }*/
         }
 
         private void AddTable(ExcelWorksheet ws)
