@@ -7,7 +7,7 @@ namespace Rep33.Data.HeaderBuilders
     /// <summary>
     /// Формирование и заполнение заголовка для Dynamic
     /// </summary>
-    public class HBuilderT2 : HeaderBuiiderBase
+    class HBuilderT2 : HeaderBuiiderBase
     {
         const string hRange2 = "A2:{#}2";
         const string hRange3 = "A3:{#}3";

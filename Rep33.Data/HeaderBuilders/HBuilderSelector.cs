@@ -3,7 +3,7 @@
     /// <summary>
     /// Подбор строителя заголовка для WorkSheet
     /// </summary>
-    public class HBuilderSelector
+    class HBuilderSelector
     {
         public static HeaderBuiiderBase GetBuilder(string wsType)
         {

@@ -7,7 +7,7 @@ namespace Rep33.Data.HeaderBuilders
     /// <summary>
     /// Заполнение заголовка для ReportDay
     /// </summary>
-    public class HBuilderT1 : HeaderBuiiderBase
+    class HBuilderT1 : HeaderBuiiderBase
     {
         public override void FillHeader(ExcelWorksheet ws, ReportStructure _rs, DateTime reportDate)
         {

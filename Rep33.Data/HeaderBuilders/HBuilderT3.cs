@@ -7,7 +7,7 @@ namespace Rep33.Data.HeaderBuilders
     /// <summary>
     /// Формирование и заполнение заголовка для Comparison
     /// </summary>
-    public class HBuilderT3 : HeaderBuiiderBase
+    class HBuilderT3 : HeaderBuiiderBase
     {
         public override void FillHeader(ExcelWorksheet ws, ReportStructure _rs, DateTime reportDate)
         {

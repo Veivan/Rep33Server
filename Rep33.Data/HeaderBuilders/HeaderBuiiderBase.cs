@@ -4,7 +4,7 @@ using System;
 
 namespace Rep33.Data.HeaderBuilders
 {
-    public abstract class HeaderBuiiderBase
+    abstract class HeaderBuiiderBase
     {
         protected void FillRepDate(ExcelWorksheet ws, DateTime reportDate)
         {
