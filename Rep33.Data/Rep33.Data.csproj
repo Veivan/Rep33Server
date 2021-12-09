@@ -36,8 +36,4 @@
     <ProjectReference Include="..\Rep33.Domain\Rep33.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Report\" />
-  </ItemGroup>
-
 </Project>

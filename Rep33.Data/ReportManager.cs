@@ -78,6 +78,7 @@ namespace Rep33.Data
                 Log.Information("Загрузка шаблонов");
                 // Format: "{Namespace}.{Folder}.{filename}.{Extension}"
                 rpt.AddWorksheet("Rep33.Data.ReportsWorksheets.ReportDayQ.xml");
+                rpt.AddWorksheet("Rep33.Data.ReportsWorksheets.DynamicQ.xml");
                 /*                rpt.AddWorksheet("Rep33.Data.ReportsWorksheets.ReportDay.xml");
                                 rpt.AddWorksheet("Rep33.Data.ReportsWorksheets.Dynamic.xml");
                                 rpt.AddWorksheet("Rep33.Data.ReportsWorksheets.Comparison.xml"); */

@@ -2,8 +2,10 @@
 <ReportStructure>
   <Name>Отчет по грузообороту</Name>
   <wsType>T2</wsType>
+  <Placeholders>
+   </Placeholders>
 
-  <Header>
+      <Header>
     <Row Cell="A1" Style="Header2">
       <Caption Cell="A1">Динамика грузооборота Москва Карго</Caption>
     </Row>
