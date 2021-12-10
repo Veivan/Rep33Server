@@ -51,6 +51,8 @@ namespace Rep33.Data.TableBuilders
                     ws.Cells[cell].Formula = "'Отчет за день'!Q" + range.Start.Row;
                  }
             }
+
+            ws.View.FreezePanes(_rs.Freeze.Row, _rs.Freeze.Col);
         }
     }
 }
