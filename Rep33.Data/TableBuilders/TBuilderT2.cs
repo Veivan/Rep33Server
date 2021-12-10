@@ -17,20 +17,11 @@ namespace Rep33.Data.TableBuilders
 
         public override void FillTable(ExcelWorksheet ws, ReportStructure _rs, DateTime reportDate)
         {
-            int i = 1;
             string letter = "";
-            var lastRow = 98;
-            for (int day = 1; day <= reportDate.Day; day++)
+            for (int day = 1; day < reportDate.Day; day++)
             {
                 DateTime currentDate = new DateTime(reportDate.Year, reportDate.Month, day);
-                letter = Common.GetColumnLetter((i++).ToString());
-
-
-                /*var range = epplusWs.Workbook.Names[rangeName];
-                range.Address = "YourNewRange";
-                epplusWs.Workbook.Names.Remove(rangeName);
-                epplusWs.Workbook.Names.Add(rangeName, range); */
-
+                letter = Common.GetColumnLetter(day.ToString());
                 foreach (var val in _rs.Placeholders.Items)
                 {
                     var range = ws.Names.FirstOrDefault(x => x.Name == val.Data);
@@ -48,16 +39,17 @@ namespace Rep33.Data.TableBuilders
                         }
                     }
                 }
-
-                /* 
-                 * 'Отчет за день'!Q24
-currentWorksheet.Cells["C4"].Formula = "SUM(C2:C3)";             
-                 * for (int j = 4; j <= lastRow; j++)
-                 {
-                     string cellStand = standart + j;
-                     string cell = letter + j;
-                     ws.Names
-                 } */
+            }
+            // Заполнение последнего дня
+            letter = Common.GetColumnLetter(reportDate.Day.ToString());
+            foreach (var val in _rs.Placeholders.Items)
+            {
+                var range = ws.Names.FirstOrDefault(x => x.Name == val.Data);
+                if (range != null)
+                {
+                    string cell = letter + range.Start.Row;
+                    ws.Cells[cell].Formula = "'Отчет за день'!Q" + range.Start.Row;
+                 }
             }
         }
     }
