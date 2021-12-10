@@ -79,9 +79,10 @@ namespace Rep33.Data
                 // Format: "{Namespace}.{Folder}.{filename}.{Extension}"
                 rpt.AddWorksheet("Rep33.Data.ReportsWorksheets.ReportDayQ.xml");
                 rpt.AddWorksheet("Rep33.Data.ReportsWorksheets.DynamicQ.xml");
-                /*                rpt.AddWorksheet("Rep33.Data.ReportsWorksheets.ReportDay.xml");
-                                rpt.AddWorksheet("Rep33.Data.ReportsWorksheets.Dynamic.xml");
-                                rpt.AddWorksheet("Rep33.Data.ReportsWorksheets.Comparison.xml"); */
+                rpt.AddWorksheet("Rep33.Data.ReportsWorksheets.ComparisonQ.xml");
+/*                rpt.AddWorksheet("Rep33.Data.ReportsWorksheets.ReportDay.xml");
+                rpt.AddWorksheet("Rep33.Data.ReportsWorksheets.Dynamic.xml");
+                rpt.AddWorksheet("Rep33.Data.ReportsWorksheets.Comparison.xml"); */
                 rpt.ReportShablon = "Rep33.Data.ReportsWorksheets.repshablon.xlsx";
          
                 rpt.ReportDate = rd;

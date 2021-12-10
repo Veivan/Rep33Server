@@ -3,14 +3,8 @@
   <Name>Сравнение показателей грузооб.</Name>
   <wsType>T3</wsType>
 
-  <Header>
-    <Row Cell="A1" Style="Header2">
-      <Caption Cell="A1">Динамика грузооборота Москва Карго</Caption>
-    </Row>
-    <Row Cell="A2:Q2" Style="Header2">
-      <Caption Cell="A2" Data="Date" DateFormat="dd.MM.yyyy">16.01.2018</Caption>
-    </Row>
-  </Header>
+  <Freeze Row ="5" Col="2"></Freeze>
+
   <Table Cell="A3:S92">
     <Row Cell="A3:S3" Style="Header1">
       <Caption Cell="A3"></Caption>
@@ -24,14 +18,18 @@
         <Value Cell="H3" IsNotConvert="true">Отклонение от среднего предыдущего месяц</Value>
         <Value Cell="I3" DateFormat="yyyy" Data="ContainDate" AddYear="-1">Отклонение от среднего месяца {#} года</Value>
         <Value Cell="J3" DateFormat="yyyy" Data="ContainDate" AddYear="-1">Отклонение от среднего месяца {#} года</Value>
+        
         <Value Cell="K3" DateFormat="yyyy" Data="ContainDate" AddYear="-1">Cреднее месяца {#} года</Value>
         <Value Cell="L3" DateFormat="yyyy" Data="ContainDate" AddYear="-1">Нарастающий итог за месяц {#} года</Value>
+        
         <Value Cell="M3" DateFormat="yyyy" Data="ContainDate" AddYear="-2">Отклонение от среднего месяца {#} года</Value>
         <Value Cell="N3" DateFormat="yyyy" Data="ContainDate" AddYear="-1">Отклонение от нарастающего итога аналогичного месяца {#} года</Value>
         <Value Cell="O3" DateFormat="yyyy" Data="ContainDate" AddYear="-1">Отклонение от нарастающего итога аналогичного месяца {#} года</Value>
+        
         <Value Cell="P3" IsNotConvert="true">Нарастающий итог текущего месяца</Value>
-        <Value Cell="Q3" DateFormat="yyyy" Data="ContainDate" AddYear="-2" >Cреднее месяца {#} года</Value>
+        <Value Cell="Q3" DateFormat="yyyy" Data="ContainDate" AddYear="-2" >Cреднее месяца {#} года</Value>        
         <Value Cell="R3" DateFormat="yyyy" Data="ContainDate" AddYear="-2">Нарастающий итог за месяц {#} года</Value>
+        
         <Value Cell="S3" DateFormat="yyyy" Data="ContainDate" AddYear="-2">Отклонение от нарастающего итога аналогичного месяца {#} года</Value>
       </Values>
     </Row>

@@ -13,50 +13,28 @@ namespace Rep33.Data.HeaderBuilders
         {
             base.FillRepDate(ws, reportDate);
 
+            string[] h1 = { "AvgMonthDevTonn", "AvgMonthDevPerc", "AvgMonth", "ItogMonth", "ItogDevTonn", "ItogDevPerc" };
+            string[] h2 = { "AvgMonthDevPrev", "AvgMonthPrev", "ItogMonthPrev", "ItogDevPrev" };
 
-            /*            foreach (var header in _rs.Header.Rows)
-                        {
-                            string NextLetter = "A";
-                            if (string.IsNullOrWhiteSpace(header.Caption.Data))
-                            {
-                                ws.Cells[header.Caption.Cell].Value = header.Caption.Text;
-                            }
-                            else
-                            {
-                                // Дата неправильно отображается в iOS preview поэтому даты будут в виде текста
-                                if (header.Caption.Data == "Date") ws.Cells[header.Caption.Cell].Value = ReportDate.ToString(header.Caption.DateFormat);
-                            }
-                            if (header.Values != null)
-                            {
-                                foreach (var val in header.Values.Items)
-                                {
-                                    if (val.IsPrevDays) { NextLetter = BuildPrevRow(ws, val); }
-                                    else
-                                    {
-                                        string cell = val.Cell;
-                                        if (NextLetter != "") { cell = cell.Replace("{#}", NextLetter); }
-                                        if (val.IsFormula == true)
-                                        {
-                                            ws.Cells[cell].Formula = val.Text;
-                                        }
-                                        else
-                                        {
-                                            if (!string.IsNullOrWhiteSpace(val.DateFormat))
-                                            {
-                                                if (!string.IsNullOrWhiteSpace(val.Data)) ws.Cells[cell].Value = ReportDate.ToString(val.DateFormat);
-                                            }
-                                            else
-                                            {
-                                                ws.Cells[cell].Value = ReportData.GetValueFromQuery(val.QueryName, val.Filter, val.DataValue, val.Data);
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                            header.Cell = header.Cell.Replace("{#}", NextLetter);
-                            SetStyle(ws.Cells[header.Cell], header.Style);
-                        }
-            */
+            var range = ws.Names["RepDateHead"];
+            if (range != null)
+                range.Value = reportDate.ToString("dd.MM.yyyy");
+
+            foreach (var header in h1)
+            {
+                range = ws.Names[header];
+                if (range != null)
+                    range.Value = ((string)range.Value).Replace("{#}", (reportDate.Year - 1).ToString());
+            }
+
+            foreach (var header in h2)
+            {
+                range = ws.Names[header];
+                if (range != null)
+                    range.Value = ((string)range.Value).Replace("{#}", (reportDate.Year - 2).ToString());
+            }
+
+            ws.View.FreezePanes(_rs.Freeze.Row, _rs.Freeze.Col);
         }
     }
 }

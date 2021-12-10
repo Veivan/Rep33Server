@@ -13,7 +13,7 @@ namespace Rep33.Data.TableBuilders
 
         public override void FillTable(ExcelWorksheet ws, ReportStructure _rs, DateTime reportDate)
         {
-            throw new NotImplementedException();
+           // throw new NotImplementedException();
         }
     }
 }

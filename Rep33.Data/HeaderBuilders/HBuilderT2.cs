@@ -16,12 +16,11 @@ namespace Rep33.Data.HeaderBuilders
         {
             base.FillRepDate(ws, reportDate);
 
-            int i = 1;
             string letter = "";
             for (int day = 1; day <= reportDate.Day; day++)
             {
                 DateTime currentDate = new DateTime(reportDate.Year, reportDate.Month, day);
-                letter = Common.GetColumnLetter((i++).ToString());
+                letter = Common.GetColumnLetter((day).ToString());
                 string cell = letter + "2";
                 ws.Cells[cell].Value = currentDate.ToString("ddd");
                 cell = letter + "3";
