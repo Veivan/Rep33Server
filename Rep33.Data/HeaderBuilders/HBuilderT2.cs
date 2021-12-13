@@ -30,6 +30,8 @@ namespace Rep33.Data.HeaderBuilders
             RepStyler.SetStyle(ws.Cells[rng], "Header2");
             rng = hRange3.Replace("{#}", letter);
             RepStyler.SetStyle(ws.Cells[rng], "Header1");
+
+            ws.View.FreezePanes(_rs.Freeze.Row, _rs.Freeze.Col);
         }
     }
 }

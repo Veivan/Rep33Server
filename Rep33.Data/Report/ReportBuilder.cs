@@ -74,6 +74,8 @@ namespace Rep33.Data.Report
                                    {
                                        ws.Cells[nf.Cell].Style.Numberformat.Format = nf.Text;
                                    }
+
+
                                    foreach (var cf in _rs.CoditionalFormats)
                                    {
                                        SetCoditionalFormat(ws, new ExcelAddress(cf));
