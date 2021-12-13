@@ -133,17 +133,6 @@ namespace Rep33.Data.Report
                     if (_rs.Freeze != null) 
                         ws.View.FreezePanes(_rs.Freeze.Row, _rs.Freeze.Col);
                     wsBuilder.FillTable(ws, _rs, ReportDate);
-
-
-                    /*                    AddTable(ws);
-                                        string tablecell = _rs.Table.Cell;
-                                        tablecell = tablecell.Replace("{#}", Common.GetColumnLetter((ReportDate.Day).ToString()));
-                                        ws.Cells[tablecell].Style.Border.Bottom.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
-                                        ws.Cells[tablecell].Style.Border.Left.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
-                                        ws.Cells[tablecell].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
-                                        ws.Cells[tablecell].Style.Border.Right.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
-
-                                        */
                 }
                 excel.Workbook.Calculate();
                 excel.Workbook.Worksheets[0].View.ZoomScale = 80;
@@ -329,22 +318,6 @@ namespace Rep33.Data.Report
                 }
             }
             return Common.GetColumnLetter((i).ToString());
-        }
-
-        private void SetCoditionalFormat(ExcelWorksheet ws, ExcelAddress addr)
-        {
-            //ExcelAddress addr = new ExcelAddress("Q4:Q76");
-            var ic = ws.ConditionalFormatting.AddThreeIconSet(addr, eExcelconditionalFormatting3IconsSetType.Arrows);
-            ic.Icon1.Type = eExcelConditionalFormattingValueObjectType.Percent;
-            ic.Icon1.Value = 0;
-            ic.Icon2.Type = eExcelConditionalFormattingValueObjectType.Num;
-            ic.Icon2.Value = 0;
-            ic.Icon3.Type = eExcelConditionalFormattingValueObjectType.Num;
-            ic.Icon3.Value = 0;
-            var node = ic.Node.ChildNodes[0].ChildNodes[2];
-            var attr = node.OwnerDocument.CreateAttribute("gte");
-            attr.Value = "0";
-            node.Attributes.Append(attr);
         }
 
         private int SetStyle(ExcelRange er, string StyleName)
