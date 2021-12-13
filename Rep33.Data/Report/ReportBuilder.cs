@@ -12,6 +12,7 @@ using System.Xml.Serialization;
 using System.Linq;
 using Rep33.Data.HeaderBuilders;
 using Rep33.Data.TableBuilders;
+using Rep33.Data.WsBuilders;
 
 namespace Rep33.Data.Report
 {
@@ -127,11 +128,11 @@ namespace Rep33.Data.Report
                     var ws = excel.Workbook.Worksheets[_rs.Name];
                     ws.OutLineSummaryBelow = false;
 
-                    var hBuilder = HBuilderSelector.GetBuilder(_rs.wsType);
-                    hBuilder.FillHeader(ws, _rs, ReportDate);
-
-                    var tBuilder = TBuilderSelector.GetBuilder(_rs.wsType, this);
-                    tBuilder.FillTable(ws, _rs, ReportDate);
+                    var wsBuilder = WsBuilderSelector.GetBuilder(_rs.wsType, this);
+                    wsBuilder.FillHeader(ws, _rs, ReportDate);
+                    if (_rs.Freeze != null) 
+                        ws.View.FreezePanes(_rs.Freeze.Row, _rs.Freeze.Col);
+                    wsBuilder.FillTable(ws, _rs, ReportDate);
 
 
                     /*                    AddTable(ws);
@@ -142,29 +143,7 @@ namespace Rep33.Data.Report
                                         ws.Cells[tablecell].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
                                         ws.Cells[tablecell].Style.Border.Right.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
 
-                                        foreach (var nf in _rs.NumberFormats)
-                                        {
-                                            ws.Cells[nf.Cell].Style.Numberformat.Format = nf.Text;
-                                        }
-                                        foreach (var cf in _rs.CoditionalFormats)
-                                        {
-                                            SetCoditionalFormat(ws, new ExcelAddress(cf));
-                                        }
-                                        foreach (var wt in _rs.WrapTexts)
-                                        {
-                                            ws.Cells[wt].Style.WrapText = true;
-                                        }
-                                        ws.Cells[ws.Dimension.Address].AutoFitColumns();
-                                        foreach (var merge in _rs.Merges)
-                                        {
-                                            ws.Cells[merge].Merge = true;
-                                        }
-                                        foreach (var col in _rs.Columns)
-                                        {
-                                            if (col.Hide) ws.Column(col.Number).Hidden = true;
-                                            if (!string.IsNullOrWhiteSpace(col.Width)) ws.Column(col.Number).Width = Convert.ToDouble(col.Width);
-                                        }
-                                        if (_rs.Freeze != null) ws.View.FreezePanes(_rs.Freeze.Row, _rs.Freeze.Col); */
+                                        */
                 }
                 excel.Workbook.Calculate();
                 excel.Workbook.Worksheets[0].View.ZoomScale = 80;

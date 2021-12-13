@@ -1,11 +1,22 @@
 ﻿using OfficeOpenXml;
 using Rep33.Data.Report;
+using Rep33.Domain;
 using System;
+using System.Collections.Generic;
 
-namespace Rep33.Data.HeaderBuilders
+namespace Rep33.Data.WsBuilders
 {
-    abstract class HeaderBuiiderBase
+    abstract class WsBuilderBase
     {
+        protected readonly ReportData reportData;
+        protected List<DataToSave> dataToSave;
+
+        public WsBuilderBase(ReportData ReportData, List<DataToSave> _DataToSave)
+        {
+            reportData = ReportData;
+            dataToSave = _DataToSave;
+        }
+
         protected void FillRepDate(ExcelWorksheet ws, DateTime reportDate)
         {
             var cellRepDate = ws.Names["RepDate"];
@@ -15,5 +26,7 @@ namespace Rep33.Data.HeaderBuilders
         }
 
         public abstract void FillHeader(ExcelWorksheet ws, ReportStructure _rs, DateTime reportDate);
+
+        public abstract void FillTable(ExcelWorksheet ws, ReportStructure _rs, DateTime reportDate);
     }
 }

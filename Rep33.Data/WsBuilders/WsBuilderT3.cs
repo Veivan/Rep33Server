@@ -5,12 +5,38 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Rep33.Data.TableBuilders
+namespace Rep33.Data.WsBuilders
 {
-    class TBuilderT3 : TableBuiiderBase
+    class WsBuilderT3 : WsBuilderBase
     {
-        public TBuilderT3(ReportData ReportData, List<DataToSave> _DataToSave) : base(ReportData, _DataToSave)
+        public WsBuilderT3(ReportData ReportData) : base(ReportData, null)
         { }
+
+        public override void FillHeader(ExcelWorksheet ws, ReportStructure _rs, DateTime reportDate)
+        {
+            base.FillRepDate(ws, reportDate);
+
+            string[] h1 = { "AvgMonthDevTonn", "AvgMonthDevPerc", "AvgMonth", "ItogMonth", "ItogDevTonn", "ItogDevPerc" };
+            string[] h2 = { "AvgMonthDevPrev", "AvgMonthPrev", "ItogMonthPrev", "ItogDevPrev" };
+
+            var range = ws.Names["RepDateHead"];
+            if (range != null)
+                range.Value = reportDate.ToString("dd.MM.yyyy");
+
+            foreach (var header in h1)
+            {
+                range = ws.Names[header];
+                if (range != null)
+                    range.Value = ((string)range.Value).Replace("{#}", (reportDate.Year - 1).ToString());
+            }
+
+            foreach (var header in h2)
+            {
+                range = ws.Names[header];
+                if (range != null)
+                    range.Value = ((string)range.Value).Replace("{#}", (reportDate.Year - 2).ToString());
+            }
+        }
 
         public override void FillTable(ExcelWorksheet ws, ReportStructure _rs, DateTime reportDate)
         {
@@ -41,7 +67,6 @@ namespace Rep33.Data.TableBuilders
                     ws.Cells[cell].Value = reportData.GetValueFromQuery("Prev2MonthYearTotal", val.Filter, val.DataValue, "");
                 }
             }
-
         }
     }
 }

@@ -1,19 +1,24 @@
-﻿using OfficeOpenXml;
-using Rep33.Data.Report;
-using Rep33.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿    using OfficeOpenXml;
+    using Rep33.Data.Report;
+    using Rep33.Domain;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
 
-namespace Rep33.Data.TableBuilders
+namespace Rep33.Data.WsBuilders
 {
     /// <summary>
-    /// Заполнение данными страницы ReportDay
+    /// Формирование страницы ReportDay
     /// </summary>
-    class TBuilderT1 : TableBuiiderBase
+    class WsBuilderT1 : WsBuilderBase
     {
-        public TBuilderT1(ReportData ReportData, List<DataToSave> _DataToSave) : base(ReportData, _DataToSave)
+        public WsBuilderT1(ReportData ReportData, List<DataToSave> _DataToSave) : base(ReportData, _DataToSave)
         { }
+
+        public override void FillHeader(ExcelWorksheet ws, ReportStructure _rs, DateTime reportDate)
+        {
+            base.FillRepDate(ws, reportDate);
+        }
 
         public override void FillTable(ExcelWorksheet ws, ReportStructure _rs, DateTime reportDate)
         {

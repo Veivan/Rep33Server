@@ -5,15 +5,38 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Rep33.Data.TableBuilders
+namespace Rep33.Data.WsBuilders
 {
     /// <summary>
-    /// Заполнение данными страницы Dynamic
+    /// Формирование страницы Dynamic
     /// </summary>
-    class TBuilderT2 : TableBuiiderBase
+    class WsBuilderT2 : WsBuilderBase
     {
-        public TBuilderT2(ReportData ReportData, List<DataToSave> _DataToSave) : base(ReportData, _DataToSave)
+        const string hRange2 = "A2:{#}2";
+        const string hRange3 = "A3:{#}3";
+
+        public WsBuilderT2(ReportData ReportData) : base(ReportData, null)
         { }
+
+        public override void FillHeader(ExcelWorksheet ws, ReportStructure _rs, DateTime reportDate)
+        {
+            base.FillRepDate(ws, reportDate);
+
+            string letter = "";
+            for (int day = 1; day <= reportDate.Day; day++)
+            {
+                DateTime currentDate = new DateTime(reportDate.Year, reportDate.Month, day);
+                letter = Common.GetColumnLetter((day).ToString());
+                string cell = letter + "2";
+                ws.Cells[cell].Value = currentDate.ToString("ddd");
+                cell = letter + "3";
+                ws.Cells[cell].Value = currentDate.ToString("dd.MMM");
+            }
+            var rng = hRange2.Replace("{#}", letter);
+            RepStyler.SetStyle(ws.Cells[rng], "Header2");
+            rng = hRange3.Replace("{#}", letter);
+            RepStyler.SetStyle(ws.Cells[rng], "Header1");
+        }
 
         public override void FillTable(ExcelWorksheet ws, ReportStructure _rs, DateTime reportDate)
         {
@@ -49,7 +72,7 @@ namespace Rep33.Data.TableBuilders
                 {
                     string cell = letter + range.Start.Row;
                     ws.Cells[cell].Formula = "'Отчет за день'!Q" + range.Start.Row;
-                 }
+                }
             }
         }
     }
