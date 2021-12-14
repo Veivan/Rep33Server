@@ -32,9 +32,9 @@ namespace TestRep33
         [TestMethod]
         public void MakeRepFromShablonTest()
         {
-            var shfn = @"d:\Work\repshablon.xlsx";
-            FileInfo shablon = new FileInfo(@"d:\Work\repshablon.xlsx");
-            FileInfo newFile = new FileInfo(@"d:\Work\repnew.xlsx");
+            var shfn = @"d:\Work\temp\repshablon.xlsx";
+            FileInfo shablon = new FileInfo(@"d:\Work\temp\repshablon.xlsx");
+            FileInfo newFile = new FileInfo(@"d:\Work\temp\repnew.xlsx");
             //using (Stream inpStream = File.Open(shfn, FileMode.Open, FileAccess.ReadWrite))
 
             using var inpStream = new FileStream(shfn, FileMode.Open);
@@ -43,8 +43,11 @@ namespace TestRep33
             //using (var excel = new ExcelPackage(inpStream))
             //using (var excel = new ExcelPackage(shablon, true)) 
             {
+                var wsSrc = excel.Workbook.Worksheets[1];
+                var prevFormat = wsSrc.Cells[18, 2].StyleID;
                 ExcelWorksheet worksheet = excel.Workbook.Worksheets.Add("Inventory");
                 worksheet.Cells[1, 1].Value = "ID";
+                worksheet.Cells[1, 1].StyleID = prevFormat;
                 excel.SaveAs(newFile);
             }
         }

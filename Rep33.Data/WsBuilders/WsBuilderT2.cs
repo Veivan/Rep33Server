@@ -1,8 +1,6 @@
 ﻿using OfficeOpenXml;
 using Rep33.Data.Report;
-using Rep33.Domain;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace Rep33.Data.WsBuilders
@@ -12,9 +10,6 @@ namespace Rep33.Data.WsBuilders
     /// </summary>
     class WsBuilderT2 : WsBuilderBase
     {
-        const string hRange2 = "A2:{#}2";
-        const string hRange3 = "A3:{#}3";
-
         public WsBuilderT2(ReportData ReportData) : base(ReportData, null)
         { }
 
@@ -29,13 +24,11 @@ namespace Rep33.Data.WsBuilders
                 letter = Common.GetColumnLetter((day).ToString());
                 string cell = letter + "2";
                 ws.Cells[cell].Value = currentDate.ToString("ddd");
+                ws.Cells[cell].StyleID = ws.Cells["B2"].StyleID;
                 cell = letter + "3";
                 ws.Cells[cell].Value = currentDate.ToString("dd.MMM");
+                ws.Cells[cell].StyleID = ws.Cells["B3"].StyleID;
             }
-            var rng = hRange2.Replace("{#}", letter);
-            RepStyler.SetStyle(ws.Cells[rng], "Header2");
-            rng = hRange3.Replace("{#}", letter);
-            RepStyler.SetStyle(ws.Cells[rng], "Header1");
         }
 
         public override void FillTable(ExcelWorksheet ws, ReportStructure _rs, DateTime reportDate)
@@ -60,6 +53,7 @@ namespace Rep33.Data.WsBuilders
                             ws.Cells[cell].Value = reportData.GetValueFromQuery(val.QueryName,
                                 val.Filter.Replace("{#}", currentDate.ToString("MM/dd/yyyy")), val.DataValue, "");
                         }
+                        ws.Cells[cell].StyleID = range.StyleID;
                     }
                 }
             }
@@ -72,6 +66,7 @@ namespace Rep33.Data.WsBuilders
                 {
                     string cell = letter + range.Start.Row;
                     ws.Cells[cell].Formula = "'Отчет за день'!Q" + range.Start.Row;
+                    ws.Cells[cell].StyleID = range.StyleID;
                 }
             }
             base.FormatTable(ws, _rs);
