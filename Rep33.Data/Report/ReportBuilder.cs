@@ -1,18 +1,11 @@
 ﻿using OfficeOpenXml;
-using OfficeOpenXml.ConditionalFormatting;
+using Rep33.Data.WsBuilders;
 using Rep33.Domain;
-using Serilog;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Reflection;
-using System.Text;
 using System.Xml.Serialization;
-using System.Linq;
-using Rep33.Data.HeaderBuilders;
-using Rep33.Data.TableBuilders;
-using Rep33.Data.WsBuilders;
 
 namespace Rep33.Data.Report
 {

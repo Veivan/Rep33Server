@@ -131,6 +131,8 @@ namespace Rep33.Data.Report
         public string DataValue { get; set; }
         [XmlAttribute(AttributeName = "IsFormula")]
         public bool IsFormula { get; set; }
+        [XmlAttribute(AttributeName = "Style")]
+        public string Style { get; set; }
     }
 
     [XmlRoot(ElementName = "Placeholders")]

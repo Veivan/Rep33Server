@@ -67,6 +67,7 @@ namespace Rep33.Data.WsBuilders
                     ws.Cells[cell].Value = reportData.GetValueFromQuery("Prev2MonthYearTotal", val.Filter, val.DataValue, "");
                 }
             }
+            base.FormatTable(ws, _rs);
         }
     }
 }

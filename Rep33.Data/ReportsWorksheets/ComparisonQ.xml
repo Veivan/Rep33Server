@@ -4,99 +4,99 @@
   <wsType>T3</wsType>
 
   <Placeholders>
-    <!--Caption>Общий грузооборот</Caption-->
-      <!--Caption>Всего груза выдано (в тоннах)</Caption-->
-        <!--Caption>Вылетело на воздушных судах</Caption-->
-          <!--Caption>Груз</Caption-->
+    <PValue Caption="Общий грузооборот" Data="calc1" IsFormula="true">17</PValue>
+      <PValue Caption="Всего груза выдано (в тоннах)" Data="calc2" IsFormula="true">17</PValue>
+        <PValue Caption="Вылетело на воздушных судах" Data="calc3" IsFormula="true">17</PValue>
+          <PValue Caption="Груз" Data="calc4" IsFormula="true">17</PValue>
             <PValue Caption="Аэрофлот" Data="IssuedAirCargoAeroflot" Filter="VALUENAME='IssuedAirCargoAeroflot'" DataValue="VALUE">17</PValue>
             <PValue Caption="AirBridgeCargo" Data="IssuedAirCargoBridge" Filter="VALUENAME='IssuedAirCargoBridge'" DataValue="VALUE">17</PValue>
             <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="IssuedAirCargoNord" Filter="VALUENAME='IssuedAirCargoNord'" DataValue="VALUE">17</PValue>
             <PValue Caption="Другие авиакомпании" Data="IssuedAirCargoOther" Filter="VALUENAME='IssuedAirCargoOther'" DataValue="VALUE">17</PValue>
-          <!--Caption>Почта</Caption-->
+          <PValue Caption="Почта" Data="calc5" IsFormula="true">17</PValue>
             <PValue Caption="Аэрофлот" Data="IssuedAirMailAeroflot" Filter="VALUENAME='IssuedAirMailAeroflot'" DataValue="VALUE">17</PValue>
             <PValue Caption="AirBridgeCargo" Data="IssuedAirMailBridge" Filter="VALUENAME='IssuedAirMailBridge'" DataValue="VALUE">17</PValue>
             <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="IssuedAirMailNord" Filter="VALUENAME='IssuedAirMailNord'" DataValue="VALUE">17</PValue>
             <PValue Caption="Другие авиакомпании" Data="IssuedAirMailOther" Filter="VALUENAME='IssuedAirMailOther'" DataValue="VALUE">17</PValue>
-        <!--Caption>Выдано клиентам в Москве </Caption-->
-          <!--Caption>ВВЛ</Caption-->
+        <PValue Caption="Выдано клиентам в Москве" Data="calc6" IsFormula="true">17</PValue>
+          <PValue Caption="ВВЛ" Data="calc7" IsFormula="true">17</PValue>
             <PValue Caption="Аэрофлот" Data="IssuedMoscowVVLAeroflot" Filter="VALUENAME='IssuedMoscowVVLAeroflot'" DataValue="VALUE">17</PValue>
             <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="IssuedMoscowVVLNord" Filter="VALUENAME='IssuedMoscowVVLNord'" DataValue="VALUE">17</PValue>
             <PValue Caption="Другие авиакомпании" Data="IssuedMoscowVVLOther" Filter="VALUENAME='IssuedMoscowVVLOther'" DataValue="VALUE">17</PValue>
-          <!--Caption>МВЛ</Caption-->
-            <!--Caption>ГТ-1</Caption-->
+          <PValue Caption="МВЛ" Data="calc8" IsFormula="true">17</PValue>
+            <PValue Caption="ГТ-1" Data="calc9" IsFormula="true">17</PValue>
               <PValue Caption="Аэрофлот" Data="IssuedMoscowMVLAeroflotGT1" Filter="VALUENAME='IssuedMoscowMVLAeroflotGT1'" DataValue="VALUE">17</PValue>
               <PValue Caption="AirBridgeCargo" Data="IssuedMoscowMVLAirBridgeGT1" Filter="VALUENAME='IssuedMoscowMVLAirBridgeGT1'" DataValue="VALUE">17</PValue>
               <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="IssuedMoscowMVLNordGT1" Filter="VALUENAME='IssuedMoscowMVLNordGT1'" DataValue="VALUE">17</PValue>
               <PValue Caption="Другие авиакомпании" Data="IssuedMoscowMVLOtherGT1" Filter="VALUENAME='IssuedMoscowMVLOtherGT1'" DataValue="VALUE">17</PValue>
-            <!--Caption>ГТ-2</Caption-->
+            <PValue Caption="ГТ-2" Data="calc10" IsFormula="true">17</PValue>
               <PValue Caption="Аэрофлот" Data="IssuedMoscowMVLAeroflotGT2" Filter="VALUENAME='IssuedMoscowMVLAeroflotGT2'" DataValue="VALUE">17</PValue>
               <PValue Caption="AirBridgeCargo" Data="IssuedMoscowMVLAirBridgeGT2" Filter="VALUENAME='IssuedMoscowMVLAirBridgeGT2'" DataValue="VALUE">17</PValue>
               <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="IssuedMoscowMVLNordGT2" Filter="VALUENAME='IssuedMoscowMVLNordGT2'" DataValue="VALUE">17</PValue>
               <PValue Caption="Другие авиакомпании" Data="IssuedMoscowMVLOtherGT2" Filter="VALUENAME='IssuedMoscowMVLOtherGT2'" DataValue="VALUE">17</PValue>
-        <!--Caption>Выдано на другие СВХ в Москве</Caption-->
-          <!--Caption>с рейсов Аэрофлот</Caption-->
+        <PValue Caption="Выдано на другие СВХ в Москве" Data="calc11" IsFormula="true">17</PValue>
+          <PValue Caption="с рейсов Аэрофлот" Data="calc12" IsFormula="true">17</PValue>
             <PValue Caption="через склад" Data="IssuedSVHAeroflotStock" Filter="VALUENAME='IssuedSVHAeroflotStock'" DataValue="VALUE">17</PValue>
             <PValue Caption="из под борта" Data="IssuedSVHAeroflotBoard" Filter="VALUENAME='IssuedSVHAeroflotBoard'" DataValue="VALUE">17</PValue>
-          <!--Caption>с рейсов AirBridgeCargo</Caption-->
+          <PValue Caption="с рейсов AirBridgeCargo" Data="calc13" IsFormula="true">17</PValue>
             <PValue Caption="через склад" Data="IssuedSVHBridgeStock" Filter="VALUENAME='IssuedSVHBridgeStock'" DataValue="VALUE">17</PValue>
             <PValue Caption="из под борта" Data="IssuedSVHBridgeBoard" Filter="VALUENAME='IssuedSVHBridgeBoard'" DataValue="VALUE">17</PValue>
-          <!--Caption>с рейсов Nordwind Airlines (+ Pegas Fly)</Caption-->
+          <PValue Caption="с рейсов Nordwind Airlines (+ Pegas Fly)" Data="calc14" IsFormula="true">17</PValue>
             <PValue Caption="через склад" Data="IssuedSVHNordStock" Filter="VALUENAME='IssuedSVHNordStock'" DataValue="VALUE">17</PValue>
             <PValue Caption="из под борта" Data="IssuedSVHNordBoard" Filter="VALUENAME='IssuedSVHNordBoard'" DataValue="VALUE">17</PValue>
-          <!--Caption>Обслужено рейсов по вылету</Caption-->
-            <PValue Caption="Аэрофлот" Data="IssuedDepartureAeroflot" Filter="VALUENAME='IssuedDepartureAeroflot'" DataValue="VALUE">17</PValue>
-            <PValue Caption="AirBridgeCargo" Data="IssuedDepartureBridge" Filter="VALUENAME='IssuedDepartureBridge'" DataValue="VALUE">17</PValue>
-            <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="IssuedDepartureNord" Filter="VALUENAME='IssuedDepartureNord'" DataValue="VALUE">17</PValue>
-            <PValue Caption="Другие авиакомпании" Data="IssuedDepartureOther" Filter="VALUENAME='IssuedDepartureOther'" DataValue="VALUE">17</PValue>
-    <!--Caption>Всего груза поступило (в тоннах)</Caption-->
-      <!--Caption>Прилетело на воздушных судах</Caption-->
-        <!--Caption>Груз</Caption-->
+        <PValue Caption="Обслужено рейсов по вылету" Data="calc15" IsFormula="true">17</PValue>
+          <PValue Caption="Аэрофлот" Data="IssuedDepartureAeroflot" Filter="VALUENAME='IssuedDepartureAeroflot'" DataValue="VALUE">17</PValue>
+          <PValue Caption="AirBridgeCargo" Data="IssuedDepartureBridge" Filter="VALUENAME='IssuedDepartureBridge'" DataValue="VALUE">17</PValue>
+          <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="IssuedDepartureNord" Filter="VALUENAME='IssuedDepartureNord'" DataValue="VALUE">17</PValue>
+          <PValue Caption="Другие авиакомпании" Data="IssuedDepartureOther" Filter="VALUENAME='IssuedDepartureOther'" DataValue="VALUE">17</PValue>
+    <PValue Caption="Всего груза поступило (в тоннах)" Data="calc16" IsFormula="true">17</PValue>
+      <PValue Caption="Прилетело на воздушных судах" Data="calc17" IsFormula="true">17</PValue>
+        <PValue Caption="Груз" Data="calc18" IsFormula="true">17</PValue>
           <PValue Caption="Аэрофлот" Data="ReceivedAirCargoAeroflot" Filter="VALUENAME='ReceivedAirCargoAeroflot'" DataValue="VALUE">17</PValue>
-          <!--Caption>AirBridgeCargo</Caption-->
+          <PValue Caption="AirBridgeCargo" Data="calc19" IsFormula="true">17</PValue>
             <PValue Caption="справочно: в т.ч. Импорт Москва Карго" Data="ReceivedAirCargoBridge" Filter="VALUENAME='ReceivedAirCargoBridge'" DataValue="VALUE">17</PValue>
-            <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="ReceivedAirCargoNord" Filter="VALUENAME='ReceivedAirCargoNord'" DataValue="VALUE">17</PValue>
-            <PValue Caption="Другие авиакомпании" Data="ReceivedAirCargoOther" Filter="VALUENAME='ReceivedAirCargoOther'" DataValue="VALUE">17</PValue>
-        <!--Caption>Почта</Caption-->
+          <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="ReceivedAirCargoNord" Filter="VALUENAME='ReceivedAirCargoNord'" DataValue="VALUE">17</PValue>
+          <PValue Caption="Другие авиакомпании" Data="ReceivedAirCargoOther" Filter="VALUENAME='ReceivedAirCargoOther'" DataValue="VALUE">17</PValue>
+        <PValue Caption="Почта" Data="calc20" IsFormula="true">17</PValue>
           <PValue Caption="Аэрофлот" Data="ReceivedAirMailAeroflot" Filter="VALUENAME='ReceivedAirMailAeroflot'" DataValue="VALUE">17</PValue>
           <PValue Caption="AirBridgeCargo" Data="ReceivedAirMailBridge" Filter="VALUENAME='ReceivedAirMailBridge'" DataValue="VALUE">17</PValue>
           <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="ReceivedAirMailNord" Filter="VALUENAME='ReceivedAirMailNord'" DataValue="VALUE">17</PValue>
           <PValue Caption="Другие авиакомпании" Data="ReceivedAirMailOther" Filter="VALUENAME='ReceivedAirMailOther'" DataValue="VALUE">17</PValue>
-      <!--Caption>Принято от клиентов в Москве</Caption-->
-        <!--Caption>ВВЛ</Caption-->
+      <PValue Caption="Принято от клиентов в Москве" Data="calc21" IsFormula="true">17</PValue>
+        <PValue Caption="ВВЛ" Data="calc22" IsFormula="true">17</PValue>
           <PValue Caption="Аэрофлот" Data="ReceivedMoscowVVLAeroflot" Filter="VALUENAME='ReceivedMoscowVVLAeroflot'" DataValue="VALUE">17</PValue>
           <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="ReceivedMoscowVVLNord" Filter="VALUENAME='ReceivedMoscowVVLNord'" DataValue="VALUE">17</PValue>
           <PValue Caption="Другие авиакомпании" Data="ReceivedMoscowVVLOther" Filter="VALUENAME='ReceivedMoscowVVLOther'" DataValue="VALUE">17</PValue>
-        <!--Caption>МВЛ</Caption-->
+        <PValue Caption="МВЛ" Data="calc23" IsFormula="true">17</PValue>
           <PValue Caption="Аэрофлот" Data="ReceivedMoscowMVLAeroflot" Filter="VALUENAME='ReceivedMoscowMVLAeroflot'" DataValue="VALUE">17</PValue>
           <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="ReceivedMoscowMVLNord" Filter="VALUENAME='ReceivedMoscowMVLNord'" DataValue="VALUE">17</PValue>
           <PValue Caption="Другие авиакомпании" Data="ReceivedMoscowMVLOther" Filter="VALUENAME='ReceivedMoscowMVLOther'" DataValue="VALUE">17</PValue>
-      <!--Caption>Получено с  других СВХ в Москве</Caption-->
-        <!--Caption>ВВЛ</Caption-->
+      <PValue Caption="Получено с  других СВХ в Москве" Data="calc24" IsFormula="true">17</PValue>
+        <PValue Caption="ВВЛ" Data="calc25" IsFormula="true">17</PValue>
           <PValue Caption="Аэрофлот" Data="ReceivedSVHVVLAeroflot" Filter="VALUENAME='ReceivedSVHVVLAeroflot'" DataValue="VALUE">17</PValue>
           <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="ReceivedSVHVVLNord" Filter="VALUENAME='ReceivedSVHVVLNord'" DataValue="VALUE">17</PValue>
           <PValue Caption="Другие авиакомпании" Data="ReceivedMoscowMVLOther" Filter="VALUENAME='ReceivedMoscowMVLOther'" DataValue="VALUE">17</PValue>
-        <!--Caption>МВЛ</Caption-->
+        <PValue Caption="МВЛ" Data="calc26" IsFormula="true">17</PValue>
           <PValue Caption="Аэрофлот" Data="ReceivedSVHMVLAeroflot" Filter="VALUENAME='ReceivedSVHMVLAeroflot'" DataValue="VALUE">17</PValue>
           <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="ReceivedSVHMVLNord" Filter="VALUENAME='ReceivedSVHMVLNord'" DataValue="VALUE">17</PValue>
           <PValue Caption="Другие авиакомпании" Data="ReceivedSVHMVLOther" Filter="VALUENAME='ReceivedSVHMVLOther'" DataValue="VALUE">17</PValue>
-      <!--Caption>Обслужено рейсов по прилету</Caption-->
+      <PValue Caption="Обслужено рейсов по прилету" Data="calc27" IsFormula="true">17</PValue>
         <PValue Caption="Аэрофлот" Data="ReceivedDepartureAeroflot" Filter="VALUENAME='ReceivedDepartureAeroflot'" DataValue="VALUE">17</PValue>
         <PValue Caption="AirBridgeCargo" Data="ReceivedDepartureBridge" Filter="VALUENAME='ReceivedDepartureBridge'" DataValue="VALUE">17</PValue>
         <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="ReceivedDepartureNord" Filter="VALUENAME='ReceivedDepartureNord'" DataValue="VALUE">17</PValue>
         <PValue Caption="Другие авиакомпании" Data="ReceivedDepartureOther" Filter="VALUENAME='ReceivedDepartureOther'" DataValue="VALUE">17</PValue>
-    <!--Caption>Складские остатки (в тоннах)</Caption-->
-      <!--Caption>Импортный груз</Caption-->
-        <!--Caption>ВВЛ</Caption-->
+    <PValue Caption="Складские остатки (в тоннах)" Data="calc28" IsFormula="true">17</PValue>
+      <PValue Caption="Импортный груз" Data="calc29" IsFormula="true">17</PValue>
+        <PValue Caption="ВВЛ" Data="calc30" IsFormula="true">17</PValue>
           <PValue Caption="Готов к выдаче" Data="StockImportVVLReady" Filter="VALUENAME='StockImportVVLReady'" DataValue="VALUE">17</PValue>
           <PValue Caption="В обработке на складе" Data="StockImportVVLProcess" Filter="VALUENAME='StockImportVVLProcess'" DataValue="VALUE">17</PValue>
-        <!--Caption>МВЛ</Caption-->
+        <PValue Caption="МВЛ" Data="calc31" IsFormula="true">17</PValue>
           <PValue Caption="Готов к выдаче" Data="StockImportMVLReady" Filter="VALUENAME='StockImportMVLReady'" DataValue="VALUE">17</PValue>
           <PValue Caption="В обработке на складе" Data="StockImportMVLProcess" Filter="VALUENAME='StockImportMVLProcess'" DataValue="VALUE">17</PValue>
-      <!--Caption>Экспортный груз</Caption-->
-        <!--Caption>ВВЛ</Caption-->
+      <PValue Caption="Экспортный груз" Data="calc32" IsFormula="true">17</PValue>
+        <PValue Caption="ВВЛ" Data="calc33" IsFormula="true">17</PValue>
           <PValue Caption="Трансферный груз" Data="StockExportVVLTransfer" Filter="VALUENAME='StockExportVVLTransfer'" DataValue="VALUE">17</PValue>
           <PValue Caption="Экспортный груз" Data="StockExportVVLExport" Filter="VALUENAME='StockExportVVLExport'" DataValue="VALUE">17</PValue>
-        <!--Caption>МВЛ</Caption-->
+        <PValue Caption="МВЛ" Data="calc34" IsFormula="true">17</PValue>
           <PValue Caption="Трансферный груз" Data="StockExportMVLTransfer" Filter="VALUENAME='StockExportMVLTransfer'" DataValue="VALUE">17</PValue>
           <PValue Caption="Экспортный груз" Data="StockExportMVLExport" Filter="VALUENAME='StockExportMVLExport'" DataValue="VALUE">17</PValue>
   </Placeholders>

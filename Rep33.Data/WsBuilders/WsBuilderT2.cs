@@ -74,6 +74,7 @@ namespace Rep33.Data.WsBuilders
                     ws.Cells[cell].Formula = "'Отчет за день'!Q" + range.Start.Row;
                 }
             }
+            base.FormatTable(ws, _rs);
         }
     }
 }

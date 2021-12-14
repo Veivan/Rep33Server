@@ -26,7 +26,7 @@ namespace Rep33.Data.WsBuilders
             {
                 //var namedCell = ws.Names[val.Data];
                 var namedCell = ws.Names.FirstOrDefault(x => x.Name == val.Data);
-                if (namedCell != null)
+                if (namedCell != null && !val.IsFormula)
                 {
                     decimal dval = reportData.GetValueFromQuery(val.QueryName, val.Filter, val.DataValue, val.Data);
                     namedCell.Value = dval;
@@ -34,6 +34,7 @@ namespace Rep33.Data.WsBuilders
                         dataToSave.Add(new DataToSave() { ReportDate = reportDate, ValueName = val.Data, Value = dval });
                 }
             }
+            base.FormatTable(ws, _rs);
         }
     }
 }
