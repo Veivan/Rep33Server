@@ -14,7 +14,7 @@ namespace TestRep33
         {
             var reportManager = new ReportManager(Common.RepKind.Manual);
             //var dt = System.DateTime.Today.AddDays(-1);
-            var dt = new System.DateTime(2021, 11, 15);
+            var dt = new System.DateTime(2021, 12, 14);
             var ret = reportManager.CreateReport(dt);
             Assert.IsTrue(ret);
             reportManager.SaveFile();
