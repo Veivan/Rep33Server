@@ -220,7 +220,7 @@ namespace Rep33.Data
             {
                 DataRow[] rs = _QueriesResult["SavedData"].Select($"VALUENAME  = '{ValDataName}'");
                 if (rs.Count<DataRow>() != 0)
-                    return rs[0].IsNull("VALUE") ? 0 : (decimal)rs[0].Field<double>("VALUE");
+                    return rs[0].IsNull("VALUE") ? 0 : rs[0].Field<decimal>("VALUE");
                 else return 0;
             }
         }
