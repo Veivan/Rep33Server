@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ReportStructure>
+  <Name>Отчет по грузообороту</Name>
+  <wsType>T2</wsType>
+  <Placeholders>
+    <PValue Caption="Общий грузооборот" Data="calc1" IsFormula="true">17</PValue>
+      <PValue Caption="Всего груза выдано (в тоннах)" Data="calc2" IsFormula="true">17</PValue>
+        <PValue Caption="Вылетело на воздушных судах" Data="calc3" IsFormula="true">17</PValue>
+          <PValue Caption="Груз" Data="calc4" IsFormula="true">17</PValue>
+            <PValue Caption="Аэрофлот" Data="IssuedAirCargoAeroflot" QueryName="PrevDays" Filter="VALUENAME='IssuedAirCargoAeroflot' and DATEREPORT=#{#}#" DataValue="VALUE">17</PValue>
+            <PValue Caption="AirBridgeCargo" Data="IssuedAirCargoBridge" QueryName="PrevDays" Filter="VALUENAME='IssuedAirCargoBridge' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+            <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="IssuedAirCargoNord" QueryName="PrevDays" Filter="VALUENAME='IssuedAirCargoNord' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+            <PValue Caption="Другие авиакомпании" Data="IssuedAirCargoOther" QueryName="PrevDays" Filter="VALUENAME='IssuedAirCargoOther' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+          <PValue Caption="Почта" Data="calc5" IsFormula="true">17</PValue>
+            <PValue Caption="Аэрофлот" Data="IssuedAirMailAeroflot" QueryName="PrevDays" Filter="VALUENAME='IssuedAirMailAeroflot' and DATEREPORT=#{#}#" DataValue="VALUE">17</PValue>
+            <PValue Caption="AirBridgeCargo" Data="IssuedAirMailBridge" QueryName="PrevDays" Filter="VALUENAME='IssuedAirMailBridge' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+            <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="IssuedAirMailNord" QueryName="PrevDays" Filter="VALUENAME='IssuedAirMailNord' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+            <PValue Caption="Другие авиакомпании" Data="IssuedAirMailOther" QueryName="PrevDays" Filter="VALUENAME='IssuedAirMailOther' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+        <PValue Caption="Выдано клиентам в Москве" Data="calc6" IsFormula="true">17</PValue>
+          <PValue Caption="ВВЛ" Data="calc7" IsFormula="true">17</PValue>
+            <PValue Caption="Аэрофлот" Data="IssuedMoscowVVLAeroflot" QueryName="PrevDays" Filter="VALUENAME='IssuedMoscowVVLAeroflot' and DATEREPORT=#{#}#" DataValue="VALUE">17</PValue>
+            <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="IssuedMoscowVVLNord" QueryName="PrevDays" Filter="VALUENAME='IssuedMoscowVVLNord' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+            <PValue Caption="Другие авиакомпании" Data="IssuedMoscowVVLOther" QueryName="PrevDays" Filter="VALUENAME='IssuedMoscowVVLOther' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+          <PValue Caption="МВЛ" Data="calc8" IsFormula="true">17</PValue>
+            <PValue Caption="ГТ-1" Data="calc9" IsFormula="true">17</PValue>
+              <PValue Caption="Аэрофлот" Data="IssuedMoscowMVLAeroflotGT1" QueryName="PrevDays" Filter="VALUENAME='IssuedMoscowMVLAeroflotGT1' and DATEREPORT=#{#}#" DataValue="VALUE">17</PValue>
+              <PValue Caption="AirBridgeCargo" Data="IssuedMoscowMVLAirBridgeGT1" QueryName="PrevDays" Filter="VALUENAME='IssuedMoscowMVLAirBridgeGT1' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+              <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="IssuedMoscowMVLNordGT1" QueryName="PrevDays" Filter="VALUENAME='IssuedMoscowMVLNordGT1' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+              <PValue Caption="Другие авиакомпании" Data="IssuedMoscowMVLOtherGT1" QueryName="PrevDays" Filter="VALUENAME='IssuedMoscowMVLOtherGT1' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+            <PValue Caption="ГТ-2" Data="calc10" IsFormula="true">17</PValue>
+              <PValue Caption="Аэрофлот" Data="IssuedMoscowMVLAeroflotGT2" QueryName="PrevDays" Filter="VALUENAME='IssuedMoscowMVLAeroflotGT2' and DATEREPORT=#{#}#" DataValue="VALUE">17</PValue>
+              <PValue Caption="AirBridgeCargo" Data="IssuedMoscowMVLAirBridgeGT2" QueryName="PrevDays" Filter="VALUENAME='IssuedMoscowMVLAirBridgeGT2' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+              <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="IssuedMoscowMVLNordGT2" QueryName="PrevDays" Filter="VALUENAME='IssuedMoscowMVLNordGT2' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+              <PValue Caption="Другие авиакомпании" Data="IssuedMoscowMVLOtherGT2" QueryName="PrevDays" Filter="VALUENAME='IssuedMoscowMVLOtherGT2' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+        <PValue Caption="Выдано на другие СВХ в Москве" Data="calc11" IsFormula="true">17</PValue>
+          <PValue Caption="с рейсов Аэрофлот" Data="calc12" IsFormula="true">17</PValue>
+            <PValue Caption="через склад" Data="IssuedSVHAeroflotStock" QueryName="PrevDays" Filter="VALUENAME='IssuedSVHAeroflotStock' and DATEREPORT=#{#}#" DataValue="VALUE">17</PValue>
+            <PValue Caption="из под борта" Data="IssuedSVHAeroflotBoard" QueryName="PrevDays" Filter="VALUENAME='IssuedSVHAeroflotBoard' and DATEREPORT=#{#}#" DataValue="VALUE">17</PValue>
+          <PValue Caption="с рейсов AirBridgeCargo" Data="calc13" IsFormula="true">17</PValue>
+            <PValue Caption="через склад" Data="IssuedSVHBridgeStock" QueryName="PrevDays" Filter="VALUENAME='IssuedSVHBridgeStock' and DATEREPORT=#{#}#" DataValue="VALUE">17</PValue>
+            <PValue Caption="из под борта" Data="IssuedSVHBridgeBoard" QueryName="PrevDays" Filter="VALUENAME='IssuedSVHBridgeBoard' and DATEREPORT=#{#}#" DataValue="VALUE">17</PValue>
+          <PValue Caption="с рейсов Nordwind Airlines (+ Pegas Fly)" Data="calc14" IsFormula="true">17</PValue>
+            <PValue Caption="через склад" Data="IssuedSVHNordStock" QueryName="PrevDays" Filter="VALUENAME='IssuedSVHNordStock' and DATEREPORT=#{#}#" DataValue="VALUE">17</PValue>
+            <PValue Caption="из под борта" Data="IssuedSVHNordBoard" QueryName="PrevDays" Filter="VALUENAME='IssuedSVHNordBoard' and DATEREPORT=#{#}#" DataValue="VALUE">17</PValue>
+        <PValue Caption="Обслужено рейсов по вылету" Data="calc15" IsFormula="true">17</PValue>
+          <PValue Caption="Аэрофлот" Data="IssuedDepartureAeroflot" QueryName="PrevDays" Filter="VALUENAME='IssuedDepartureAeroflot' and DATEREPORT=#{#}#" DataValue="VALUE">17</PValue>
+          <PValue Caption="AirBridgeCargo" Data="IssuedDepartureBridge" QueryName="PrevDays" Filter="VALUENAME='IssuedDepartureBridge' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+          <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="IssuedDepartureNord" QueryName="PrevDays" Filter="VALUENAME='IssuedDepartureNord' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+          <PValue Caption="Другие авиакомпании" Data="IssuedDepartureOther" QueryName="PrevDays" Filter="VALUENAME='IssuedDepartureOther' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+      <PValue Caption="Всего груза поступило (в тоннах)" Data="calc16" IsFormula="true">17</PValue>
+        <PValue Caption="Прилетело на воздушных судах" Data="calc17" IsFormula="true">17</PValue>
+          <PValue Caption="Груз" Data="calc18" IsFormula="true">17</PValue>
+            <PValue Caption="Аэрофлот" Data="ReceivedAirCargoAeroflot" QueryName="PrevDays" Filter="VALUENAME='ReceivedAirCargoAeroflot' and DATEREPORT=#{#}#" DataValue="VALUE">17</PValue>
+            <PValue Caption="AirBridgeCargo" Data="calc19" IsFormula="true">17</PValue>
+              <PValue Caption="справочно: в т.ч. Импорт Москва Карго" Data="ReceivedAirCargoBridge" QueryName="PrevDays" Filter="VALUENAME='ReceivedAirCargoBridge' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+            <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="ReceivedAirCargoNord" QueryName="PrevDays" Filter="VALUENAME='ReceivedAirCargoNord' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+            <PValue Caption="Другие авиакомпании" Data="ReceivedAirCargoOther" QueryName="PrevDays" Filter="VALUENAME='ReceivedAirCargoOther' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+          <PValue Caption="Почта" Data="calc20" IsFormula="true">17</PValue>
+            <PValue Caption="Аэрофлот" Data="ReceivedAirMailAeroflot" QueryName="PrevDays" Filter="VALUENAME='ReceivedAirMailAeroflot' and DATEREPORT=#{#}#" DataValue="VALUE">17</PValue>
+            <PValue Caption="AirBridgeCargo" Data="ReceivedAirMailBridge" QueryName="PrevDays" Filter="VALUENAME='ReceivedAirMailBridge' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+            <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="ReceivedAirMailNord" QueryName="PrevDays" Filter="VALUENAME='ReceivedAirMailNord' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+            <PValue Caption="Другие авиакомпании" Data="ReceivedAirMailOther" QueryName="PrevDays" Filter="VALUENAME='ReceivedAirMailOther' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+        <PValue Caption="Принято от клиентов в Москве" Data="calc21" IsFormula="true">17</PValue>
+          <PValue Caption="ВВЛ" Data="calc22" IsFormula="true">17</PValue>
+            <PValue Caption="Аэрофлот" Data="ReceivedMoscowVVLAeroflot" QueryName="PrevDays" Filter="VALUENAME='ReceivedMoscowVVLAeroflot' and DATEREPORT=#{#}#" DataValue="VALUE">17</PValue>
+            <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="ReceivedMoscowVVLNord" QueryName="PrevDays" Filter="VALUENAME='ReceivedMoscowVVLNord' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+            <PValue Caption="Другие авиакомпании" Data="ReceivedMoscowVVLOther" QueryName="PrevDays" Filter="VALUENAME='ReceivedMoscowVVLOther' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+          <PValue Caption="МВЛ" Data="calc23" IsFormula="true">17</PValue>
+            <PValue Caption="Аэрофлот" Data="ReceivedMoscowMVLAeroflot" QueryName="PrevDays" Filter="VALUENAME='ReceivedMoscowMVLAeroflot' and DATEREPORT=#{#}#" DataValue="VALUE">17</PValue>
+            <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="ReceivedMoscowMVLNord" QueryName="PrevDays" Filter="VALUENAME='ReceivedMoscowMVLNord' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+            <PValue Caption="Другие авиакомпании" Data="ReceivedMoscowMVLOther" QueryName="PrevDays" Filter="VALUENAME='ReceivedMoscowMVLOther' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+        <PValue Caption="Получено с  других СВХ в Москве" Data="calc24" IsFormula="true">17</PValue>
+          <PValue Caption="ВВЛ" Data="calc25" IsFormula="true">17</PValue>
+            <PValue Caption="Аэрофлот" Data="ReceivedSVHVVLAeroflot" QueryName="PrevDays" Filter="VALUENAME='ReceivedSVHVVLAeroflot' and DATEREPORT=#{#}#" DataValue="VALUE">17</PValue>
+            <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="ReceivedSVHVVLNord" QueryName="PrevDays" Filter="VALUENAME='ReceivedSVHVVLNord' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+            <PValue Caption="Другие авиакомпании" Data="ReceivedSVHVVLOther" QueryName="PrevDays" Filter="VALUENAME='ReceivedSVHVVLOther' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+          <PValue Caption="МВЛ" Data="calc26" IsFormula="true">17</PValue>
+            <PValue Caption="Аэрофлот" Data="ReceivedSVHMVLAeroflot" QueryName="PrevDays" Filter="VALUENAME='ReceivedSVHMVLAeroflot' and DATEREPORT=#{#}#" DataValue="VALUE">17</PValue>
+            <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="ReceivedSVHMVLNord" QueryName="PrevDays" Filter="VALUENAME='ReceivedSVHMVLNord' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+            <PValue Caption="Другие авиакомпании" Data="ReceivedSVHMVLOther" QueryName="PrevDays" Filter="VALUENAME='ReceivedSVHMVLOther' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+        <PValue Caption="Обслужено рейсов по прилету" Data="calc27" IsFormula="true">17</PValue>
+          <PValue Caption="Аэрофлот" Data="ReceivedDepartureAeroflot" QueryName="PrevDays" Filter="VALUENAME='ReceivedDepartureAeroflot' and DATEREPORT=#{#}#" DataValue="VALUE">17</PValue>
+          <PValue Caption="AirBridgeCargo" Data="ReceivedDepartureBridge" QueryName="PrevDays" Filter="VALUENAME='ReceivedDepartureBridge' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+          <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="ReceivedDepartureNord" QueryName="PrevDays" Filter="VALUENAME='ReceivedDepartureNord' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+          <PValue Caption="Другие авиакомпании" Data="ReceivedDepartureOther" QueryName="PrevDays" Filter="VALUENAME='ReceivedDepartureOther' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+      <PValue Caption="Складские остатки (в тоннах)" Data="calc28" IsFormula="true">17</PValue>
+        <PValue Caption="Импортный груз" Data="calc29" IsFormula="true">17</PValue>
+          <PValue Caption="ВВЛ" Data="calc30" IsFormula="true">17</PValue>
+            <PValue Caption="Готов к выдаче" Data="StockImportVVLReady" QueryName="PrevDays" Filter="VALUENAME='StockImportVVLReady' and DATEREPORT=#{#}#" DataValue="VALUE">17</PValue>
+            <PValue Caption="В обработке на складе" Data="StockImportVVLProcess" QueryName="PrevDays" Filter="VALUENAME='StockImportVVLProcess' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+          <PValue Caption="МВЛ" Data="calc31" IsFormula="true">17</PValue>
+            <PValue Caption="Готов к выдаче" Data="StockImportMVLReady" QueryName="PrevDays" Filter="VALUENAME='StockImportMVLReady' and DATEREPORT=#{#}#" DataValue="VALUE">17</PValue>
+            <PValue Caption="В обработке на складе" Data="StockImportMVLProcess" QueryName="PrevDays" Filter="VALUENAME='StockImportMVLProcess' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+        <PValue Caption="Экспортный груз" Data="calc32" IsFormula="true">17</PValue>
+          <PValue Caption="ВВЛ" Data="calc33" IsFormula="true">17</PValue>
+            <PValue Caption="Трансферный груз" Data="StockExportVVLTransfer" QueryName="PrevDays" Filter="VALUENAME='StockExportVVLTransfer' and DATEREPORT=#{#}#" DataValue="VALUE">17</PValue>
+            <PValue Caption="Экспортный груз" Data="StockExportVVLExport" QueryName="PrevDays" Filter="VALUENAME='StockExportVVLExport' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+          <PValue Caption="МВЛ" Data="calc34" IsFormula="true">17</PValue>
+            <PValue Caption="Трансферный груз" Data="StockExportMVLTransfer" QueryName="PrevDays" Filter="VALUENAME='StockExportMVLTransfer' and DATEREPORT=#{#}#" DataValue="VALUE">17</PValue>
+            <PValue Caption="Экспортный груз" Data="StockExportMVLExport" QueryName="PrevDays" Filter="VALUENAME='StockExportMVLExport' and DATEREPORT=#{#}#" DataValue="VALUE">22</PValue>
+  </Placeholders>
+
+  <Freeze Row ="4" Col="2"></Freeze>
+</ReportStructure>

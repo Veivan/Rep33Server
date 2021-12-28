@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rep33.Domain", "Rep33.Domai
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rep33.Data", "Rep33.Data\Rep33.Data.csproj", "{859CFFA1-51B5-4267-B2D1-4241B5181B29}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestRep33", "TestRep33\TestRep33.csproj", "{046EC360-3C7A-4665-B648-17C8BDD302A5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{859CFFA1-51B5-4267-B2D1-4241B5181B29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{859CFFA1-51B5-4267-B2D1-4241B5181B29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{859CFFA1-51B5-4267-B2D1-4241B5181B29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{046EC360-3C7A-4665-B648-17C8BDD302A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{046EC360-3C7A-4665-B648-17C8BDD302A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{046EC360-3C7A-4665-B648-17C8BDD302A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{046EC360-3C7A-4665-B648-17C8BDD302A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

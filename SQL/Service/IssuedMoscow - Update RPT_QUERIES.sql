@@ -1,0 +1,48 @@
+
+---//--- Выдано клиентам в Москве
+update REPORTER.RPT_QUERIES q
+set Q.QUERY_TEXT = 
+'SELECT 
+ 	CASE
+        WHEN A.IS_CUSTOMS_CONTROLLED = 0 THEN ''VVL''
+        WHEN A.IS_CUSTOMS_CONTROLLED = 1 THEN ''MVL''
+        ELSE ''?''
+     END
+        AS VL,
+     CASE 
+     	WHEN A.AIRLINE_PREFIX = ''555'' THEN ''AEROFLOT'' 
+     	WHEN A.AIRLINE_PREFIX IN (''216'', ''770'') THEN ''NORD'' 
+     	WHEN A.AIRLINE_PREFIX = ''580'' THEN ''ABC'' 
+     	ELSE ''OTHER'' END
+        AS AIRLINE,
+     CASE
+        WHEN do1.BUILDING = ''MK'' THEN ''ГТ-1''
+        WHEN do1.BUILDING = ''WHS2'' THEN ''ГТ-2''
+        END 
+        AS WHS,
+     ROUND (SUM (-RD.WEIGHT / 1000)) AS WEIGHT
+FROM 
+	DOCUSR.DOC_AWB A
+	INNER JOIN DOCUSR.DOC_AWB_RECEIPT_DISPATCH RD ON A.ID = RD.DOC_ID
+    INNER JOIN ( SELECT DISTINCT DOC_AWB_ID, BUILDING FROM M.VW_DOC_CUSTOMS_DO1_V2 ) do1 ON do1.DOC_AWB_ID = A.ID 
+WHERE     
+	RD.OPERATION_TYPE = ''CLNT''
+    AND TRUNC (RD.OPERATION_DATE, ''DD'') = @DBEGIN
+GROUP BY 
+	CASE
+        WHEN A.IS_CUSTOMS_CONTROLLED = 0 THEN ''VVL''
+        WHEN A.IS_CUSTOMS_CONTROLLED = 1 THEN ''MVL''
+        ELSE ''?''
+     END,
+     CASE 
+	     WHEN A.AIRLINE_PREFIX = ''555'' THEN ''AEROFLOT'' 
+	     WHEN A.AIRLINE_PREFIX IN (''216'', ''770'') THEN ''NORD'' 
+	     WHEN A.AIRLINE_PREFIX = ''580'' THEN ''ABC'' 
+	     ELSE ''OTHER'' 
+	 END,  
+	 CASE
+         WHEN do1.BUILDING = ''MK'' THEN ''ГТ-1''
+         WHEN do1.BUILDING = ''WHS2'' THEN ''ГТ-2'' 
+     END'
+where Q.QUERY_NAME = 'IssuedMoscow';
+

@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ReportStructure>
+	<Name>Отчет за день</Name>
+	<wsType>T1</wsType>
+	<Placeholders>
+    <PValue Caption="Общий грузооборот" Data="calc1" IsFormula="true">17</PValue>
+      <PValue Caption="Всего груза выдано (в тоннах)" Data="calc2" IsFormula="true">17</PValue>
+        <PValue Caption="Вылетело на воздушных судах" Data="calc3" IsFormula="true">17</PValue>
+          <PValue Caption="Груз" Data="calc4" IsFormula="true">17</PValue>
+            <PValue Caption="Аэрофлот" Data="IssuedAirCargoAeroflot" QueryName="IssuedAirCargo" Filter="CARGO_TYPE='CARGO' AND AIRLINE='SU'" DataValue="WEIGHT">0</PValue>
+            <PValue Caption="AirBridgeCargo" Data="IssuedAirCargoBridge" QueryName="IssuedAirCargoBridge" Filter="" DataValue="WEIGHT">0</PValue>
+            <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="IssuedAirCargoNord" QueryName="IssuedAirCargo" Filter="CARGO_TYPE='CARGO' AND AIRLINE='NORD'" DataValue="WEIGHT">0</PValue>
+            <PValue Caption="Другие авиакомпании" Data="IssuedAirCargoOther" QueryName="IssuedAirCargo" Filter="CARGO_TYPE='CARGO' AND AIRLINE='OTHER'" DataValue="WEIGHT">0</PValue>
+          <PValue Caption="Почта" Data="calc5" IsFormula="true">17</PValue>
+            <PValue Caption="Аэрофлот" Data="IssuedAirMailAeroflot" DataValue="WEIGHT" Filter="CARGO_TYPE='MAIL' AND AIRLINE='SU'" QueryName="IssuedAirMail">54</PValue>
+            <PValue Caption="AirBridgeCargo" Data="IssuedAirMailBridge" DataValue="WEIGHT" Filter="CARGO_TYPE='MAIL' AND AIRLINE='BRIDGE'" QueryName="IssuedAirMail">45</PValue>
+            <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="IssuedAirMailNord" DataValue="WEIGHT" Filter="CARGO_TYPE='MAIL' AND AIRLINE='NORD'" QueryName="IssuedAirMail">56</PValue>
+            <PValue Caption="Другие авиакомпании" Data="IssuedAirMailOther" DataValue="WEIGHT" Filter="CARGO_TYPE='MAIL' AND AIRLINE='OTHER'" QueryName="IssuedAirMail">56</PValue>
+        <PValue Caption="Выдано клиентам в Москве" Data="calc6" IsFormula="true">17</PValue>
+          <PValue Caption="ВВЛ" Data="calc7" IsFormula="true">17</PValue>
+            <PValue Caption="Аэрофлот" Data="IssuedMoscowVVLAeroflot" QueryName="IssuedMoscow" Filter="VL='VVL' AND AIRLINE='AEROFLOT'" DataValue="WEIGHT">43</PValue>
+            <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="IssuedMoscowVVLNord" QueryName="IssuedMoscow" Filter="VL='VVL' AND AIRLINE='NORD'" DataValue="WEIGHT">34</PValue>
+            <PValue Caption="Другие авиакомпании" Data="IssuedMoscowVVLOther" QueryName="IssuedMoscow" Filter="VL='VVL' AND AIRLINE='OTHER'" DataValue="WEIGHT">34</PValue>
+          <PValue Caption="МВЛ" Data="calc8" IsFormula="true">17</PValue>
+            <PValue Caption="ГТ-1" Data="calc9" IsFormula="true">17</PValue>
+              <PValue Caption="Аэрофлот" Data="IssuedMoscowMVLAeroflotGT1" QueryName="IssuedMoscow" Filter="VL='MVL' AND AIRLINE='AEROFLOT'" DataValue="WEIGHT">78</PValue>
+              <PValue Caption="AirBridgeCargo" Data="IssuedMoscowMVLAirBridgeGT1" QueryName="IssuedMoscow" Filter="VL='MVL' AND AIRLINE='BRIDGE'" DataValue="WEIGHT">45</PValue>
+              <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="IssuedMoscowMVLNordGT1" QueryName="IssuedMoscow" Filter="VL='MVL' AND AIRLINE='NORD'" DataValue="WEIGHT">34</PValue>
+              <PValue Caption="Другие авиакомпании" Data="IssuedMoscowMVLOtherGT1" QueryName="IssuedMoscow" Filter="VL='MVL' AND AIRLINE='OTHER'" DataValue="WEIGHT">34</PValue>
+            <PValue Caption="ГТ-2" Data="calc10" IsFormula="true">17</PValue>
+              <PValue Caption="Аэрофлот" Data="IssuedMoscowMVLAeroflotGT2" QueryName="IssuedMoscow" Filter="VL='MVL' AND AIRLINE='AEROFLOT'" DataValue="WEIGHT">78</PValue>
+              <PValue Caption="AirBridgeCargo" Data="IssuedMoscowMVLAirBridgeGT2" QueryName="IssuedMoscow" Filter="VL='MVL' AND AIRLINE='BRIDGE'" DataValue="WEIGHT">45</PValue>
+              <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="IssuedMoscowMVLNordGT2" QueryName="IssuedMoscow" Filter="VL='MVL' AND AIRLINE='NORD'" DataValue="WEIGHT">34</PValue>
+              <PValue Caption="Другие авиакомпании" Data="IssuedMoscowMVLOtherGT2" QueryName="IssuedMoscow" Filter="VL='MVL' AND AIRLINE='OTHER'" DataValue="WEIGHT">34</PValue>
+        <PValue Caption="Выдано на другие СВХ в Москве" Data="calc11" IsFormula="true">17</PValue>
+          <PValue Caption="с рейсов Аэрофлот" Data="calc12" IsFormula="true">17</PValue>
+            <PValue Caption="через склад" Data="IssuedSVHAeroflotStock" QueryName="IssuedSVHFB" Filter="AIRLINE='SU' AND TECHNOLOGY='WhsAgent'" DataValue="WEIGHT">56</PValue>
+            <PValue Caption="из под борта" Data="IssuedSVHAeroflotBoard" QueryName="IssuedSVHFB" Filter="AIRLINE='SU' AND TECHNOLOGY='RampAgent'" DataValue="WEIGHT">23</PValue>
+          <PValue Caption="с рейсов AirBridgeCargo" Data="calc13" IsFormula="true">17</PValue>
+            <PValue Caption="через склад" Data="IssuedSVHBridgeStock" QueryName="IssuedSVHFB" Filter="AIRLINE='BRIDGE' AND TECHNOLOGY='WhsAgent'" DataValue="WEIGHT">67</PValue>
+            <PValue Caption="из под борта" Data="IssuedSVHBridgeBoard" QueryName="IssuedSVHFB" Filter="AIRLINE='BRIDGE' AND TECHNOLOGY='RampAgent'" DataValue="WEIGHT">67</PValue>
+          <PValue Caption="с рейсов Nordwind Airlines (+ Pegas Fly)" Data="calc14" IsFormula="true">17</PValue>
+            <PValue Caption="через склад" Data="IssuedSVHNordStock" QueryName="IssuedSVHFB" Filter="AIRLINE='NORD' AND TECHNOLOGY='WhsAgent'" DataValue="WEIGHT">67</PValue>
+           <PValue Caption="из под борта" Data="IssuedSVHNordBoard" QueryName="IssuedSVHFB" Filter="AIRLINE='NORD' AND TECHNOLOGY='RampAgent'" DataValue="WEIGHT">67</PValue>
+        <PValue Caption="Обслужено рейсов по вылету" Data="calc15" IsFormula="true">17</PValue>
+          <PValue Caption="Аэрофлот" Data="IssuedDepartureAeroflot" QueryName="IssuedDeparture" Filter="FLIGHT_TYPE='DEP' AND AIRLINE='SU'" DataValue="KOL">78</PValue>
+          <PValue Caption="AirBridgeCargo" Data="IssuedDepartureBridge" QueryName="IssuedDeparture" Filter="FLIGHT_TYPE='DEP' AND AIRLINE='BRIDGE'" DataValue="KOL">45</PValue>
+          <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="IssuedDepartureNord" QueryName="IssuedDeparture" Filter="FLIGHT_TYPE='DEP' AND AIRLINE='NORD'" DataValue="KOL">54</PValue>
+          <PValue Caption="Другие авиакомпании" Data="IssuedDepartureOther" QueryName="IssuedDeparture" Filter="FLIGHT_TYPE='DEP' AND AIRLINE='OTHER'" DataValue="KOL">54</PValue>
+      <PValue Caption="Всего груза поступило (в тоннах)" Data="calc16" IsFormula="true">17</PValue>
+        <PValue Caption="Прилетело на воздушных судах" Data="calc17" IsFormula="true">17</PValue>
+          <PValue Caption="Груз" Data="calc18" IsFormula="true">17</PValue>
+            <PValue Caption="Аэрофлот" Data="ReceivedAirCargoAeroflot" QueryName="ReceivedAirCargo" Filter="CARGO_TYPE='CARGO' AND AIRLINE='SU'" DataValue="WEIGHT">67</PValue>
+            <PValue Caption="AirBridgeCargo" Data="calc19" IsFormula="true">17</PValue>
+              <PValue Caption="справочно: в т.ч. Импорт Москва Карго" Data="ReceivedAirCargoBridge" QueryName="ReceivedAirCargoBridge" Filter="" DataValue="WEIGHT">54</PValue>  
+            <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="ReceivedAirCargoNord" QueryName="ReceivedAirCargo" Filter="CARGO_TYPE='CARGO' AND AIRLINE='NORD'" DataValue="WEIGHT">34</PValue>
+            <PValue Caption="Другие авиакомпании" Data="ReceivedAirCargoOther" QueryName="ReceivedAirCargo" Filter="CARGO_TYPE='CARGO' AND AIRLINE='OTHER'" DataValue="WEIGHT">34</PValue>
+          <PValue Caption="Почта" Data="calc20" IsFormula="true">17</PValue>
+            <PValue Caption="Аэрофлот" Data="ReceivedAirMailAeroflot" QueryName="ReceivedAirMail" Filter="AIRLINE='SU'" DataValue="WEIGHT">33</PValue>
+            <PValue Caption="AirBridgeCargo" Data="ReceivedAirMailBridge" QueryName="ReceivedAirMail" Filter="AIRLINE='BRIDGE'" DataValue="WEIGHT">78</PValue>
+            <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="ReceivedAirMailNord" QueryName="ReceivedAirMail" Filter="AIRLINE='NORD'" DataValue="WEIGHT">28</PValue>
+            <PValue Caption="Другие авиакомпании" Data="ReceivedAirMailOther" QueryName="ReceivedAirMail" Filter="AIRLINE='OTHER'" DataValue="WEIGHT">28</PValue>
+        <PValue Caption="Принято от клиентов в Москве" Data="calc21" IsFormula="true">17</PValue>
+          <PValue Caption="ВВЛ" Data="calc22" IsFormula="true">17</PValue>
+            <PValue Caption="Аэрофлот" Data="ReceivedMoscowVVLAeroflot" QueryName="ReceivedMoscow" Filter="VL='VVL' AND AIRLINE='AEROFLOT'" DataValue="WEIGHT">58</PValue>
+            <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="ReceivedMoscowVVLNord" QueryName="ReceivedMoscow" Filter="VL='VVL' AND AIRLINE='NORD'" DataValue="WEIGHT">44</PValue>
+            <PValue Caption="Другие авиакомпании" Data="ReceivedMoscowVVLOther" QueryName="ReceivedMoscow" Filter="VL='VVL' AND AIRLINE='OTHER'" DataValue="WEIGHT">44</PValue>
+          <PValue Caption="МВЛ" Data="calc23" IsFormula="true">17</PValue>
+            <PValue Caption="Аэрофлот" Data="ReceivedMoscowMVLAeroflot" QueryName="ReceivedMoscow" Filter="VL='MVL' AND AIRLINE='AEROFLOT'" DataValue="WEIGHT">56</PValue>
+            <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="ReceivedMoscowMVLNord" QueryName="ReceivedMoscow" Filter="VL='MVL' AND AIRLINE='NORD'" DataValue="WEIGHT">23</PValue>
+            <PValue Caption="Другие авиакомпании" Data="ReceivedMoscowMVLOther" QueryName="ReceivedMoscow" Filter="VL='MVL' AND AIRLINE='OTHER'" DataValue="WEIGHT">23</PValue>
+        <PValue Caption="Получено с  других СВХ в Москве" Data="calc24" IsFormula="true">17</PValue>
+          <PValue Caption="ВВЛ" Data="calc25" IsFormula="true">17</PValue>
+            <PValue Caption="Аэрофлот" Data="ReceivedSVHVVLAeroflot" QueryName="" Filter="" DataValue="WEIGHT">87</PValue>
+            <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="ReceivedSVHVVLNord" QueryName="" Filter="" DataValue="WEIGHT">0</PValue>
+            <PValue Caption="Другие авиакомпании" Data="ReceivedSVHVVLOther" QueryName="" Filter="" DataValue="WEIGHT">54</PValue>
+          <PValue Caption="МВЛ" Data="calc26" IsFormula="true">17</PValue>
+            <PValue Caption="Аэрофлот" Data="ReceivedSVHMVLAeroflot" QueryName="" Filter="" DataValue="WEIGHT">34</PValue>
+            <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="ReceivedSVHMVLNord" QueryName="" Filter="" DataValue="WEIGHT">0</PValue>
+            <PValue Caption="Другие авиакомпании" Data="ReceivedSVHMVLOther" QueryName="" Filter="" DataValue="WEIGHT">34</PValue>
+        <PValue Caption="Обслужено рейсов по прилету" Data="calc27" IsFormula="true">17</PValue>
+          <PValue Caption="Аэрофлот" Data="ReceivedDepartureAeroflot" QueryName="IssuedDeparture" Filter="FLIGHT_TYPE='ARR' AND AIRLINE='SU'" DataValue="KOL">87</PValue>
+          <PValue Caption="AirBridgeCargo" Data="ReceivedDepartureBridge" QueryName="IssuedDeparture" Filter="FLIGHT_TYPE='ARR' AND AIRLINE='BRIDGE'" DataValue="KOL">23</PValue>
+          <PValue Caption="Nordwind Airlines (+ Pegas Fly)" Data="ReceivedDepartureNord" QueryName="IssuedDeparture" Filter="FLIGHT_TYPE='ARR' AND AIRLINE='NORD'" DataValue="KOL">92</PValue>
+          <PValue Caption="Другие авиакомпании" Data="ReceivedDepartureOther" QueryName="IssuedDeparture" Filter="FLIGHT_TYPE='ARR' AND AIRLINE='OTHER'" DataValue="KOL">92</PValue>
+      <PValue Caption="Складские остатки (в тоннах)" Data="calc28" IsFormula="true">17</PValue>
+        <PValue Caption="Импортный груз" Data="calc29" IsFormula="true">17</PValue>
+          <PValue Caption="ВВЛ" Data="calc30" IsFormula="true">17</PValue>
+            <PValue Caption="Готов к выдаче" Data="StockImportVVLReady" QueryName="StockImportReady" Filter="VL='VVL'" DataValue="WEIGHT">23</PValue>
+            <PValue Caption="В обработке на складе" Data="StockImportVVLProcess" QueryName="StockImportProcess" Filter="VL='VVL'" DataValue="WEIGHT">83</PValue>
+          <PValue Caption="МВЛ" Data="calc31" IsFormula="true">17</PValue>
+            <PValue Caption="Готов к выдаче" Data="StockImportMVLReady" QueryName="StockImportReady" Filter="VL='MVL'" DataValue="WEIGHT">46</PValue>
+            <PValue Caption="В обработке на складе" Data="StockImportMVLProcess" QueryName="StockImportProcess" Filter="VL='MVL'" DataValue="WEIGHT">85</PValue>
+        <PValue Caption="Экспортный груз" Data="calc32" IsFormula="true">17</PValue>
+          <PValue Caption="ВВЛ" Data="calc33" IsFormula="true">17</PValue>
+            <PValue Caption="Трансферный груз" Data="StockExportVVLTransfer" QueryName="StockExport" Filter="TECH='TRF' AND VL='VVL'" DataValue="WEIGHT">33</PValue>
+            <PValue Caption="Экспортный груз" Data="StockExportVVLExport" QueryName="StockExport" Filter="TECH='EXP' AND VL='VVL'" DataValue="WEIGHT">67</PValue>
+          <PValue Caption="МВЛ" Data="calc34" IsFormula="true">17</PValue>
+            <PValue Caption="Трансферный груз" Data="StockExportMVLTransfer" QueryName="StockExport" Filter="TECH='TRF' AND VL='MVL'" DataValue="WEIGHT">44</PValue>
+            <PValue Caption="Экспортный груз" Data="StockExportMVLExport" QueryName="StockExport" Filter="TECH='EXP' AND VL='MVL'" DataValue="WEIGHT">23</PValue>
+  </Placeholders>
+	</ReportStructure>
