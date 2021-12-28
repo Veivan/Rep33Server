@@ -16,8 +16,8 @@ set Q.QUERY_TEXT =
      	ELSE ''OTHER'' END
         AS AIRLINE,
      CASE
-        WHEN do1.BUILDING = ''MK'' THEN ''證-1''
-        WHEN do1.BUILDING = ''WHS2'' THEN ''證-2''
+        WHEN do1.BUILDING = ''MK'' THEN ''GT1''
+        WHEN do1.BUILDING = ''WHS2'' THEN ''GT2''
         END 
         AS WHS,
      ROUND (SUM (-RD.WEIGHT / 1000)) AS WEIGHT
@@ -27,7 +27,7 @@ FROM
     INNER JOIN ( SELECT DISTINCT DOC_AWB_ID, BUILDING FROM M.VW_DOC_CUSTOMS_DO1_V2 ) do1 ON do1.DOC_AWB_ID = A.ID 
 WHERE     
 	RD.OPERATION_TYPE = ''CLNT''
-    AND TRUNC (RD.OPERATION_DATE, ''DD'') = @DBEGIN
+    AND TRUNC (RD.OPERATION_DATE, ''DD'') = :DBEGIN
 GROUP BY 
 	CASE
         WHEN A.IS_CUSTOMS_CONTROLLED = 0 THEN ''VVL''
@@ -41,8 +41,8 @@ GROUP BY
 	     ELSE ''OTHER'' 
 	 END,  
 	 CASE
-         WHEN do1.BUILDING = ''MK'' THEN ''證-1''
-         WHEN do1.BUILDING = ''WHS2'' THEN ''證-2'' 
+         WHEN do1.BUILDING = ''MK'' THEN ''GT1''
+         WHEN do1.BUILDING = ''WHS2'' THEN ''GT2'' 
      END'
 where Q.QUERY_NAME = 'IssuedMoscow';
 

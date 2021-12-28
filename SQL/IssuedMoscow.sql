@@ -12,8 +12,8 @@
      	ELSE 'OTHER' END
         AS AIRLINE,
      CASE
-        WHEN do1.BUILDING = 'MK' THEN '證-1'
-        WHEN do1.BUILDING = 'WHS2' THEN '證-2'
+        WHEN do1.BUILDING = 'MK' THEN 'GT1'
+        WHEN do1.BUILDING = 'WHS2' THEN 'GT2'
         END 
         AS WHS,
      ROUND (SUM (-RD.WEIGHT / 1000)) AS WEIGHT
@@ -37,6 +37,6 @@ GROUP BY
 	     ELSE 'OTHER' 
 	 END,  
 	 CASE
-         WHEN do1.BUILDING = 'MK' THEN '證-1'
-         WHEN do1.BUILDING = 'WHS2' THEN '證-2' 
+         WHEN do1.BUILDING = 'MK' THEN 'GT1'
+         WHEN do1.BUILDING = 'WHS2' THEN 'GT2' 
      END

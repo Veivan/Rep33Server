@@ -12,9 +12,9 @@ namespace TestRep33
         [TestMethod]
         public void ReportManagerTest()
         {
-            var reportManager = new ReportManager(Common.RepKind.Manual);
+            var reportManager = new ReportManager(Common.RepKind.Manual, true, false);
             //var dt = System.DateTime.Today.AddDays(-1);
-            var dt = new System.DateTime(2021, 12, 21);
+            var dt = new System.DateTime(2021, 12, 28);
             var ret = reportManager.CreateReport(dt);
             Assert.IsTrue(ret);
             reportManager.SaveFile();
