@@ -10,6 +10,6 @@ Backend has to deploy into docker container.
 Usually it works by schedule and stores it and another parameters in configuration file.
 
 It has swagger.
-![swagger](https://github.com/Veivan/Rep33Server/blob/develop/rep33.png)
+![swagger](rep33.png)
 
-Frontend to manage [repo](rep33.png)
+Frontend to manage [Client](https://github.com/Veivan/Rep33Client)
