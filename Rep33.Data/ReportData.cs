@@ -20,8 +20,6 @@ namespace Rep33.Data
         Dictionary<string, DataTable> _QueriesResult;
         public bool UseSavedData = false;
 
-        string lic = "License Key=UdKWmLNCOGgy9gkeFWpZ0olVcfBkYIs4QQLxtS/9xaAgzJAmaLGASLr/laYll6NnBhW/P5c7ThG5CPmD/vgVajPO0ekFT8QH5dMLnw7wYSS5YK6hXbleGprFdA4NqO+OxdHvXrXp4RvxCqQtO1B/eoupKg4q78tTA+oqxNu+9geAlrY7oqXpr7S16GQClQOryptsZNGWvHgJricFrB6dwZlTFP8Mw9YjPQV2X1/46LBvHRJgzd/pQG40JPUKzeyJNuNzwn5dxL/qtJCaF1VqH9B7zxOAAajUcezX3OZpxfU=";
-
         public ReportData(string UserName, string Password, string DataSource)
         {
             Error = "";
@@ -51,7 +49,7 @@ namespace Rep33.Data
             Error = "";
             Schema = "smusin";
             _QueriesResult = new Dictionary<string, DataTable>();
-            string _connectionString = string.Format("User Id={0};Password={1};Data Source={2};Validate Connection=true;direct=true;" + lic, UserName, Password, DataSource);
+            string _connectionString = string.Format("User Id={0};Password={1};Data Source={2};Validate Connection=true;direct=true;", UserName, Password, DataSource);
             if (_connection != null)
             {
                 if (_connection.State == ConnectionState.Open) _connection.Close();
